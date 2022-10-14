@@ -39,7 +39,11 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
+<<<<<<< HEAD
 cmake_ninja_workdir = C$:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/
+=======
+cmake_ninja_workdir = C$:/Users/Miguel$ Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug/
+>>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
 # =============================================================================
 # Object build statements for EXECUTABLE target ProjetoAEDSchedule_master
 
@@ -49,7 +53,11 @@ cmake_ninja_workdir = C$:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-
 
 build cmake_object_order_depends_target_ProjetoAEDSchedule_master: phony || CMakeFiles/ProjetoAEDSchedule_master.dir
 
+<<<<<<< HEAD
 build CMakeFiles/ProjetoAEDSchedule_master.dir/main.cpp.obj: CXX_COMPILER__ProjetoAEDSchedule_master_Debug C$:/Users/up202/Downloads/ProjetoAEDSchedule-master/main.cpp || cmake_object_order_depends_target_ProjetoAEDSchedule_master
+=======
+build CMakeFiles/ProjetoAEDSchedule_master.dir/main.cpp.obj: CXX_COMPILER__ProjetoAEDSchedule_master_Debug C$:/Users/Miguel$ Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/main.cpp || cmake_object_order_depends_target_ProjetoAEDSchedule_master
+>>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
   DEP_FILE = CMakeFiles\ProjetoAEDSchedule_master.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\ProjetoAEDSchedule_master.dir
@@ -81,7 +89,11 @@ build ProjetoAEDSchedule_master.exe: CXX_EXECUTABLE_LINKER__ProjetoAEDSchedule_m
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+<<<<<<< HEAD
   COMMAND = cmd.exe /C "cd /D C:\Users\up202\Downloads\ProjetoAEDSchedule-master\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+=======
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Miguel Dionísio\OneDrive\Documentos\AED\ProjetoAEDSchedule-master\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+>>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -92,7 +104,11 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+<<<<<<< HEAD
   COMMAND = cmd.exe /C "cd /D C:\Users\up202\Downloads\ProjetoAEDSchedule-master\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\up202\Downloads\ProjetoAEDSchedule-master -BC:\Users\up202\Downloads\ProjetoAEDSchedule-master\cmake-build-debug"
+=======
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Miguel Dionísio\OneDrive\Documentos\AED\ProjetoAEDSchedule-master\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"C:\Users\Miguel Dionísio\OneDrive\Documentos\AED\ProjetoAEDSchedule-master" -B"C:\Users\Miguel Dionísio\OneDrive\Documentos\AED\ProjetoAEDSchedule-master\cmake-build-debug""
+>>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -110,7 +126,11 @@ build ProjetoAEDSchedule_master: phony ProjetoAEDSchedule_master.exe
 # =============================================================================
 
 #############################################
+<<<<<<< HEAD
 # Folder: C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug
+=======
+# Folder: C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug
+>>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
 
 build all: phony ProjetoAEDSchedule_master.exe
 
