@@ -1,0 +1,3 @@
+C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/ProjetoAEDSchedule_master.dir
+C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
