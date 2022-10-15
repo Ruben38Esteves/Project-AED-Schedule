@@ -21,9 +21,11 @@ int main() {
                 cpu = teste1.read_classes_per_uc();
                 set<string> UCs;
                 set<string> Classes;
+                //criar set de UC's (sem duplicados)
                 for(auto a:cpu){
                     UCs.insert(a.UcCode);
                 }
+                //criar set de Turmas (sem duplicados)
                 for(auto b:cpu){
                     Classes.insert(b.ClassCode);
                 }
