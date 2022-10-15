@@ -1,5 +1,6 @@
 #include <iostream>
 #include "read.h"
+#include "horario_turmas.h"
 #include <set>
 
 int main() {
@@ -16,9 +17,9 @@ int main() {
         switch(escolha){
             //classes_per_uc
             case 1:{
-                Read teste1;
+                Read case1;
                 vector<classes_per_uc> cpu;
-                cpu = teste1.read_classes_per_uc();
+                cpu = case1.read_classes_per_uc();
                 set<string> UCs;
                 set<string> Classes;
                 //criar set de UC's (sem duplicados)
@@ -95,7 +96,39 @@ int main() {
 
             //classes
             case 2:{
+                Read case2;
+                vector<classes> clss;
+                clss = case2.read_classes();
+                int escolha2;
+                set<string> Classes;
+                //criar set de Turmas (sem duplicados)
+                for(auto b:clss){
+                    Classes.insert(b.ClassCode);
+                }
+                //mostar opçoes
+                cout << "1 -> Horario de uma turma" << '\n';
+                cout << "2 -> xxxxxxxxxx" << '\n';
+                cout << "3 -> xxxxxxxxxx" << '\n';
+                //deixar utilizador escolher
+                cin >> escolha2;
+                switch(escolha2){
+                    case 1:{
+                        cout << "Escolha a turma" << '\n';
+                        //mostar opçoes
+                        set<string>::iterator it;
+                        for(it = Classes.begin(); it != Classes.end(); it++){
+                            cout << *it << " / ";
+                        }
+                        cout << '\n';
+                        //deixar utilizador escolher
+                        string escolhaClass;
+                        cin >> escolhaClass;
+                        //mostrar resultados
+                        Horario_Turma escolhida(escolhaClass, clss);
+                        escolhida.Print_Horario();
 
+                    }
+                }
                 break;
             }
 

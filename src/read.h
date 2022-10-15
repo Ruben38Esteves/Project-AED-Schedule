@@ -20,7 +20,7 @@ struct classes{
     string Weekday;
     string StartHour;
     string Duration;
-    string EndHour;
+    double EndHour;
     string Type;
 };
 
@@ -32,17 +32,11 @@ struct students_classes{
 };
 
 struct aula{
-    string UcCode;
     string Weekday;
     double StartHour;
     double Duration;
     double EndHour;
     string Type;
-};
-
-struct horario_turma{
-    string ClassCode;
-    vector<aula> aulas;
 };
 
 class Read{
