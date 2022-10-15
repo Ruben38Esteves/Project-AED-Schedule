@@ -14,6 +14,7 @@ int main() {
         //deixar utilizador escolher
         cin >> escolha;
         switch(escolha){
+            //classes_per_uc
             case 1:{
                 Read teste1;
                 vector<classes_per_uc> cpu;
@@ -34,6 +35,8 @@ int main() {
                 //deixar utilizador escolher
                 cin >> escolha1;
                 switch(escolha1){
+
+                    //Turmas na UC
                     case 1:{
                         cout << "Escolha a UC" << '\n';
                         //mostar opçoes
@@ -54,6 +57,8 @@ int main() {
                         }
                         break;
                     }
+
+                    //UC's da Turma
                     case 2:{
                         cout << "Escolha a turma" << '\n';
                         //mostar opçoes
@@ -67,14 +72,34 @@ int main() {
                         cin >> escolhaClass;
                         //mostrar resultados
                         cout << "As UC's da turma " << escolhaClass << " sao:" << '\n';
-                        for(auto d:cpu){
-                            if(d.ClassCode == escolhaClass){
-                                cout << d.UcCode << '\n';
+                        for(auto e:cpu){
+                            if(e.ClassCode == escolhaClass){
+                                cout << e.UcCode << '\n';
                             }
                         }
                         break;
                     }
+
+                    //Tudo
+                    case 3:{
+                        for(auto f: cpu){
+                            cout << "UC:" << f.UcCode << " / Turma:" << f.ClassCode << '\n';
+                        }
+                        break;
+                    }
                 }
+                break;
+            }
+
+            //classes
+            case 2:{
+
+                break;
+            }
+
+            //student _classes
+            case 3:{
+
                 break;
             }
         }
