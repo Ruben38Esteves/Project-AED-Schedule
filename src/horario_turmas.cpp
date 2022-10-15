@@ -35,11 +35,23 @@ Horario_Turma::Horario_Turma(string ClassCode,vector<classes> ClassLines){
 };
 
 void Horario_Turma::Print_Horario(){
-    cout << "O Horario da turma " << this->ClassCode << "é: " << '\n';
+    cout << "O Horario da turma " << this->ClassCode << " é: " << '\n';
     map<string,vector<aula>>::iterator itr;
     for(itr = this->aulas.begin(); itr !=this->aulas.end();itr++ ){
         for(auto a: itr->second){
-            cout << "Aula " << a.Type << " de " << itr->first << " desde as " << a.StartHour << " ate " << a.EndHour << '\n';
+            cout << "Aula " << a.Type << " de " << itr->first << " no dia " <<  a.Weekday << " desde as " << a.StartHour << " ate " << a.EndHour << '\n';
+        }
+    }
+}
+
+void Horario_Turma::Print_Horario_Dia(string weekday){
+    cout << "O Horario da turma " << this->ClassCode << " no dia " << weekday << " é: " << '\n';
+    map<string,vector<aula>>::iterator itr;
+    for(itr = this->aulas.begin(); itr !=this->aulas.end();itr++ ){
+        for(auto a: itr->second){
+            if(a.Weekday == weekday){
+                cout << "Aula " << a.Type << " de " << itr->first << " desde as " << a.StartHour << " ate " << a.EndHour << '\n';
+            }
         }
     }
 }

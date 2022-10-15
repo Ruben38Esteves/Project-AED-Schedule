@@ -123,10 +123,24 @@ int main() {
                         //deixar utilizador escolher
                         string escolhaClass;
                         cin >> escolhaClass;
+                        cout << "Escolha o dia:" << '\n';
+                        cout << "Monday" << '\n';
+                        cout << "Tuesday" << '\n';
+                        cout << "Wednsday" << '\n';
+                        cout << "Thursday" << '\n';
+                        cout << "Friday" << '\n';
+                        cout << "Todos" << '\n';
                         //mostrar resultados
-                        Horario_Turma escolhida(escolhaClass, clss);
-                        escolhida.Print_Horario();
-
+                        string escolhadia;
+                        cin >> escolhadia;
+                        if(escolhadia=="Todos"){
+                            Horario_Turma escolhida(escolhaClass, clss);
+                            escolhida.Print_Horario();
+                        }else{
+                            Horario_Turma escolhida(escolhaClass, clss);
+                            escolhida.Print_Horario_Dia(escolhadia);
+                        }
+                        break;
                     }
                 }
                 break;

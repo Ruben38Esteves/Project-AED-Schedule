@@ -18,7 +18,7 @@ class Horario_Turma{
     public:
         Horario_Turma(string ClassCode,vector<classes> ClassLine);
         void Print_Horario();
-
+        void Print_Horario_Dia(string weekday);
 };
 
 #endif
