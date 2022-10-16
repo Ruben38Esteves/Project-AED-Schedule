@@ -99,3 +99,45 @@ vector<classes> Read::read_classes(){
     }
     return aulas;
 }
+
+vector<students_classes> Read::read_students_classes(){
+        vector<students_classes> sc;
+        //abrir ficheiro
+        ifstream file_students_classes;
+        file_students_classes.open("../students_classes.csv");
+        //verificar se foi possível abrir
+        if(!file_students_classes.is_open()){
+            return sc;
+        }
+
+        string str;
+        //ir buscar primeira linha(StudentCode,StudentName,UcCode,ClassCode)
+        getline(file_students_classes, str);
+
+        //ler linha a linha
+        while(getline(file_students_classes, str)){
+            stringstream line(str);
+            string buffer;
+            students_classes temp;
+
+            //buscar StudentCode
+            getline(line,buffer,',');
+            temp.ClassCode=buffer;
+
+            //buscar StudentName
+            getline(line,buffer,',');
+            temp.StudentName=buffer;
+
+            //buscar UcCode
+            getline(line,buffer,',');
+            temp.UcCode=buffer;
+
+            //buscar Classcode;
+            getline(line,buffer,',');
+            temp.ClassCode=buffer;
+
+            //adicionar ao vetor
+            sc.push_back(temp);
+        }
+        return sc;
+}
