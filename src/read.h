@@ -9,37 +9,37 @@
 
 using namespace std;
 
-struct classes_per_uc
-{
+struct classes_per_uc{
     string UcCode;
     string ClassCode;
 };
 
-struct classes
-{
+struct classes{
     string ClassCode;
     string UcCode;
     string Weekday;
     string StartHour;
     string Duration;
+    double EndHour;
     string Type;
 };
 
-struct students_classes
-{
+struct students_classes{
     string StudentCode;
     string StudentName;
     string UcCode;
     string ClassCode;
 };
 
-struct schedule_struct
-{
-     
+struct aula{
+    string Weekday;
+    double StartHour;
+    double Duration;
+    double EndHour;
+    string Type;
 };
 
-class Read
-{
+class Read{
     public:
         vector<classes_per_uc> read_classes_per_uc();
         vector<classes> read_classes();
