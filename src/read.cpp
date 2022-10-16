@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #include "read.h"
 
 vector<classes_per_uc> Read::read_classes_per_uc(){
@@ -135,7 +133,7 @@ vector<students_classes> Read::read_students_classes(){
             temp.UcCode=buffer;
 
             //buscar Classcode;
-            getline(line,buffer,',');
+            getline(line,buffer,'\r');
             temp.ClassCode=buffer;
 
             //adicionar ao vetor
@@ -143,4 +141,3 @@ vector<students_classes> Read::read_students_classes(){
         }
         return sc;
 }
->>>>>>> 2f27155230a8b815160bd612623b9ad76b6dcacb

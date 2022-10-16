@@ -1,6 +1,14 @@
-cmake_minimum_required(VERSION 3.23)
+
 project(ProjetoAEDSchedule_master)
+include_directories(src)
+set(SOURCE
+src/main.cpp
+src/read.h
+src/read.cpp
+src/horario_turmas.h
+src/horario_turmas.cpp
+)
 
-set(CMAKE_CXX_STANDARD 14)
+add_executable(${PROJECT_NAME} ${SOURCE})
 
-add_executable(ProjetoAEDSchedule_master main.cpp)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

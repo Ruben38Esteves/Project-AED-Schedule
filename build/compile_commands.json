@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/raben/AED/Projeto/build",
+  "command": "/usr/bin/g++   -I/home/raben/AED/Projeto/src  -g   -std=gnu++17 -o CMakeFiles/ProjetoAEDSchedule_master.dir/src/main.o -c /home/raben/AED/Projeto/src/main.cpp",
+  "file": "/home/raben/AED/Projeto/src/main.cpp"
+},
+{
+  "directory": "/home/raben/AED/Projeto/build",
+  "command": "/usr/bin/g++   -I/home/raben/AED/Projeto/src  -g   -std=gnu++17 -o CMakeFiles/ProjetoAEDSchedule_master.dir/src/read.o -c /home/raben/AED/Projeto/src/read.cpp",
+  "file": "/home/raben/AED/Projeto/src/read.cpp"
+},
+{
+  "directory": "/home/raben/AED/Projeto/build",
+  "command": "/usr/bin/g++   -I/home/raben/AED/Projeto/src  -g   -std=gnu++17 -o CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_turmas.o -c /home/raben/AED/Projeto/src/horario_turmas.cpp",
+  "file": "/home/raben/AED/Projeto/src/horario_turmas.cpp"
+}
+]

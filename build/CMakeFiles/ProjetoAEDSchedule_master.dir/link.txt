@@ -1,0 +1,1 @@
+/usr/bin/g++  -g  -rdynamic CMakeFiles/ProjetoAEDSchedule_master.dir/src/main.o CMakeFiles/ProjetoAEDSchedule_master.dir/src/read.o CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_turmas.o  -o ProjetoAEDSchedule_master 
