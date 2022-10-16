@@ -21,7 +21,8 @@ class Horario_Aluno{
         map<string,vector<aula>> aulas;
 
     public:
-        Horario_Aluno(string student,vector<pair<string,string>> sc_lines);
+        Horario_Aluno(string student,vector<classes> ClassLine);
+        void Print_Horario();
 };
 
 #endif

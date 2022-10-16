@@ -46,6 +46,8 @@ class Read{
         vector<classes> read_classes();
         vector<students_classes> read_students_classes();
         vector<pair<string,string>> read_students_classes_per_studentcode(string studentcode);
+        string nome_por_code(string code);
+        string code_por_nome(string nome);
         vector<pair<string,string>> read_students_classes_per_studentname(string studentname);
         vector<pair<string,string>> read_students_classes_per_UC(string UC);
         vector<pair<string,string>> read_students_classes_per_Class(string Class);

@@ -317,3 +317,65 @@ vector<pair<string,string>> Read::read_students_classes_per_Class(string Class){
     }
     return ret;
 };
+
+string Read::nome_por_code(string code){
+    string ret;
+    //abrir ficheiro
+    ifstream file_students_classes;
+    file_students_classes.open("../students_classes.csv");
+    //verificar se foi possível abrir
+    if(!file_students_classes.is_open()){
+        return ret;
+    }
+    string str;
+    //ir buscar primeira linha(StudentCode,StudentName,UcCode,ClassCode)
+    getline(file_students_classes, str);
+
+    //ler linha a linha
+    while(getline(file_students_classes, str)){
+        stringstream line(str);
+        string buffer;
+        //buscar student code
+        getline(line,buffer,',');
+        if(buffer==code){
+            getline(line,buffer,',');
+            return buffer;
+        }else{
+            getline(line,buffer,'\r');
+        }
+
+    }
+    return ret;
+};
+
+string Read::code_por_nome(string nome){
+    string ret;
+    //abrir ficheiro
+    ifstream file_students_classes;
+    file_students_classes.open("../students_classes.csv");
+    //verificar se foi possível abrir
+    if(!file_students_classes.is_open()){
+        return ret;
+    }
+    string str;
+    //ir buscar primeira linha(StudentCode,StudentName,UcCode,ClassCode)
+    getline(file_students_classes, str);
+
+    //ler linha a linha
+    while(getline(file_students_classes, str)){
+        stringstream line(str);
+        string buffer;
+        string code;
+        //buscar student code
+        getline(line,buffer,',');
+        code=buffer;
+        //buscar nome
+        getline(line,buffer,',');
+        if(buffer==nome){
+            return code;
+        }else{
+            getline(line,buffer,'\r');
+        }
+    }
+    return ret;
+}

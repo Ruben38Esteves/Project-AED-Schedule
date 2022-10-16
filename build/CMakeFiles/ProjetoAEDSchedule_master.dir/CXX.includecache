@@ -6,11 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/raben/AED/Projeto/src/horario_turmas.cpp
-horario_turmas.h
-/home/raben/AED/Projeto/src/horario_turmas.h
-
-/home/raben/AED/Projeto/src/horario_turmas.h
+/home/raben/AED/Projeto/src/horario_aluno.h
 vector
 -
 string
@@ -24,6 +20,22 @@ map
 read.h
 /home/raben/AED/Projeto/src/read.h
 
+/home/raben/AED/Projeto/src/horario_turmas.h
+vector
+-
+string
+-
+iostream
+-
+set
+-
+map
+-
+ctype.h
+-
+read.h
+/home/raben/AED/Projeto/src/read.h
+
 /home/raben/AED/Projeto/src/main.cpp
 iostream
 -
@@ -31,17 +43,17 @@ read.h
 /home/raben/AED/Projeto/src/read.h
 horario_turmas.h
 /home/raben/AED/Projeto/src/horario_turmas.h
+horario_aluno.h
+/home/raben/AED/Projeto/src/horario_aluno.h
 set
 -
-
-/home/raben/AED/Projeto/src/read.cpp
-read.h
-/home/raben/AED/Projeto/src/read.h
 
 /home/raben/AED/Projeto/src/read.h
 vector
 -
 string
+-
+map
 -
 fstream
 -
