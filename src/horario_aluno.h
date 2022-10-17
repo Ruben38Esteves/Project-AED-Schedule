@@ -18,11 +18,14 @@ class Horario_Aluno{
     //turmas/Ucs em que o aluno esta inscrito
         vector<pair<string,string>> turmas;
     //aulas em que o aluno esta inscrito
-        map<string,vector<aula>> aulas;
+        vector<pair<string,vector<aula>>> aulas;
+
+        vector<aula> aulas_sorted_weekday;
 
     public:
         Horario_Aluno(string student,vector<classes> ClassLine);
         void Print_Horario();
+        void Print_Horario_Sorted();
 };
 
 #endif
