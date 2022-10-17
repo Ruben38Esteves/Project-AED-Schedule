@@ -1,0 +1,3 @@
+/home/raben/AED/Projeto/build/CMakeFiles/rebuild_cache.dir
+/home/raben/AED/Projeto/build/CMakeFiles/edit_cache.dir
+/home/raben/AED/Projeto/build/CMakeFiles/ProjetoAEDSchedule_master.dir
