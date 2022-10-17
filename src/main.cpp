@@ -163,8 +163,11 @@ int main() {
                         string StudentNameOrCode;
                         cout << "Escolha o aluno" << '\n';
                         cin >> StudentNameOrCode;
+                        
                         Horario_Aluno escolhido(StudentNameOrCode,clss);
-                        escolhido.Print_Horario();
+                        
+                        escolhido.Print_Horario_Sorted();
+                        
                         break;
                     }
                 }

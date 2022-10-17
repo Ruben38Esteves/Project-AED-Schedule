@@ -124,6 +124,21 @@ ProjetoAEDSchedule_master/fast:
 .PHONY : ProjetoAEDSchedule_master/fast
 
 # target to build an object file
+src/horario_aluno.o:
+	$(MAKE) -f CMakeFiles/ProjetoAEDSchedule_master.dir/build.make CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_aluno.o
+.PHONY : src/horario_aluno.o
+
+# target to preprocess a source file
+src/horario_aluno.i:
+	$(MAKE) -f CMakeFiles/ProjetoAEDSchedule_master.dir/build.make CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_aluno.i
+.PHONY : src/horario_aluno.i
+
+# target to generate assembly for a file
+src/horario_aluno.s:
+	$(MAKE) -f CMakeFiles/ProjetoAEDSchedule_master.dir/build.make CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_aluno.s
+.PHONY : src/horario_aluno.s
+
+# target to build an object file
 src/horario_turmas.o:
 	$(MAKE) -f CMakeFiles/ProjetoAEDSchedule_master.dir/build.make CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_turmas.o
 .PHONY : src/horario_turmas.o
@@ -177,6 +192,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ProjetoAEDSchedule_master"
+	@echo "... src/horario_aluno.o"
+	@echo "... src/horario_aluno.i"
+	@echo "... src/horario_aluno.s"
 	@echo "... src/horario_turmas.o"
 	@echo "... src/horario_turmas.i"
 	@echo "... src/horario_turmas.s"
