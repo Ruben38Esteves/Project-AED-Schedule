@@ -1,6 +1,7 @@
 #include <iostream>
 #include "read.h"
 #include "horario_turmas.h"
+#include "horario_aluno.h"
 #include <set>
 
 int main() {
@@ -148,7 +149,25 @@ int main() {
 
             //student _classes
             case 3:{
-
+                Read case3;
+                vector<classes> clss;
+                clss = case3.read_classes();
+                int escolha3;
+                //mostar opçoes
+                cout << "1 -> Horario de um aluno" << '\n';
+                cout << "2 -> xxxxxxxxxx" << '\n';
+                cout << "3 -> xxxxxxxxxx" << '\n';
+                cin >> escolha3;
+                switch(escolha3){
+                    case 1:{
+                        string StudentNameOrCode;
+                        cout << "Escolha o aluno" << '\n';
+                        cin >> StudentNameOrCode;
+                        Horario_Aluno escolhido(StudentNameOrCode,clss);
+                        escolhido.Print_Horario();
+                        break;
+                    }
+                }
                 break;
             }
         }

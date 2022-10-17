@@ -27,6 +27,7 @@ Horario_Turma::Horario_Turma(string ClassCode,vector<classes> ClassLines){
         }
         //adicionar o par UC/vetor de aulas ao horario
         horario.insert(pair<string,vector<aula>>(b,Aulas_Uc)); 
+        //limpar vetor de aulas
         Aulas_Uc.clear();
     }
     //guardar valores na classe
