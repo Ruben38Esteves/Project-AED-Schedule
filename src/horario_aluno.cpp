@@ -10,10 +10,6 @@ bool sortHorario(aula s1, aula s2){
 Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine){
     vector<pair<string,string>> turmas;
     vector<aula> Aulas_Uc;
-
-    map<string,vector<aula>> horario;
-    //verificar se é code ou name
-
     vector<pair<string,vector<aula>>> horario;
     vector<aula> aulas_sorted_weekday;
     //verificar set é code ou name

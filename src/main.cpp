@@ -60,12 +60,24 @@ int main() {
                             }
                         }
                         break;
+
+                        //deixar utilizador escolher
+                        cout<< "Escolha a turma" << '\n';
+                        int escolhaturma;
+                        cin>>escolhaturma;
+
+                        //alunos da turma
+                        switch(escolhaturma){
+                            case 1:{
+                                cout<< "Turma" << escolhaturma << "na UC:" << escolhaUC << Read::students_per_class_UC(escolhaturma, escolhaUC) << '\n';
+                            }
+                        }
                     }
 
                     //UC's da Turma
                     case 2:{
                         cout << "Escolha a turma" << '\n';
-                        //mostar opçoes
+                        //mostrar opçoes
                         set<string>::iterator it;
                         for(it = Classes.begin(); it != Classes.end(); it++){
                             cout << *it << " / ";
@@ -82,6 +94,7 @@ int main() {
                             }
                         }
                         break;
+
                     }
 
                     //Tudo
