@@ -115,7 +115,7 @@ vector<students_classes> Read::read_students_classes(){
         students_classes temp;
         //buscar StudentCode
         getline(line,buffer,',');
-        temp.ClassCode=buffer;
+        temp.StudentCode=buffer;
         //buscar StudentName
         getline(line,buffer,',');
         temp.StudentName=buffer;
