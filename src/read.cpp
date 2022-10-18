@@ -379,3 +379,45 @@ string Read::code_por_nome(string nome){
     }
     return ret;
 }
+
+vector<string> Read:: students_per_class_UC(string turma, string UC){
+        vector<string> alunos;
+        //abrir ficheiro
+        ifstream file_students_classes;
+        file_students_classes.open("../students_classes.csv");
+        //verificar se foi possível abrir
+        if(!file_students_classes.is_open()){
+            return alunos;
+        }
+        //ler primeira linha
+        string str;
+        getline(file_students_classes,str);
+
+        //ler linha a linha
+        while(getline(file_students_classes,str)){
+            stringstream line(str);
+            string buffer;
+            string nome;
+            string UcCode;
+            string ClassCode;
+
+            //ignorar StudentCode
+            getline(file_students_classes,buffer,',');
+
+            //guardar o nome
+            getline(file_students_classes, buffer, ',');
+            nome=buffer;
+            //guardar o UcCode
+            getline(file_students_classes, buffer, ',');
+            UcCode=buffer;
+            //guardar o ClassCode
+            getline(file_students_classes, buffer, '\r');
+            ClassCode=buffer;
+
+            if(UcCode==UC && ClassCode==turma){
+                alunos.push_back(nome);
+            }
+        }
+        return alunos;
+
+}

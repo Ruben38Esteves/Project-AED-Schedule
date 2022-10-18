@@ -13,6 +13,7 @@ Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine){
     vector<pair<string,vector<aula>>> horario;
     vector<aula> aulas_sorted_weekday;
     //verificar set é code ou name
+
     if(isdigit(student[0])){
         string Code = student;
         //atribuir code
