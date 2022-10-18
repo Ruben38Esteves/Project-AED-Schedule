@@ -11,7 +11,7 @@ int main() {
         cout << "Escolha o ficheiro:" << '\n';
         cout << "1 -> classes_per_uc" << '\n';
         cout << "2 -> classes" << '\n';
-        cout << "3 -> student _classes" << '\n';
+        cout << "3 -> student_classes" << '\n';
         cout << "4 -> Sair" << '\n';
         //deixar utilizador escolher
         cin >> escolha;
@@ -67,11 +67,14 @@ int main() {
                         cin>>escolhaturma;
 
                         //alunos da turma
+                        /*
                         switch(escolhaturma){
+                            Read escolhacaso1;
                             case 1:{
-                                cout<< "Turma" << escolhaturma << "na UC:" << escolhaUC << Read::students_per_class_UC(escolhaturma, escolhaUC) << '\n';
+                                cout<< "Turma" << escolhaturma << "na UC:" << escolhaUC << escolhacaso1.students_per_class_UC(escolhaturma, escolhaUC) << '\n';
                             }
                         }
+                        */
                     }
 
                     //UC's da Turma
@@ -176,8 +179,9 @@ int main() {
                         string StudentNameOrCode;
                         cout << "Escolha o aluno" << '\n';
                         cin >> StudentNameOrCode;
+                        //print ao horario
                         Horario_Aluno escolhido(StudentNameOrCode,clss);
-                        escolhido.Print_Horario_Sorted();
+                        escolhido.Print_Horario();
                         break;
                     }
                 }
