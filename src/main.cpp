@@ -175,7 +175,7 @@ int main() {
                 break;
             }
 
-            /*
+
             //student _classes
             case 3:{
                 Read case3;
@@ -199,7 +199,7 @@ int main() {
                     }
                 }
                 break;
-            } */
+            }
         }
 
     }
