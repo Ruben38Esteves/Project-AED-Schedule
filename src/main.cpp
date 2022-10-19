@@ -77,6 +77,9 @@ int main() {
                                 vector<string> alunos;
                                 alunos = at.students_per_class_UC(escolhaturma, escolhaUC);
                                 cout << "Turma " << escolhaturma << " na UC" << escolhaUC << ':' << '\n';
+
+                                //ordenar por ordem alfabética
+                                sort(alunos.begin(),alunos.end());
                                 for (string a: alunos) {
                                     cout << a << '\n';
                                 }
