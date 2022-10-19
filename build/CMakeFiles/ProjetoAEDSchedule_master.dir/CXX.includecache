@@ -25,6 +25,8 @@ map
 -
 read.h
 /home/raben/AED/Projeto/src/read.h
+sort.h
+/home/raben/AED/Projeto/src/sort.h
 
 /home/raben/AED/Projeto/src/horario_turmas.h
 vector
@@ -67,4 +69,12 @@ iostream
 -
 sstream
 -
+
+/home/raben/AED/Projeto/src/sort.h
+algorithm
+-
+string
+-
+read.h
+/home/raben/AED/Projeto/src/read.h
 
