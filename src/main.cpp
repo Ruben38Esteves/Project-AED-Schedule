@@ -63,13 +63,18 @@ int main() {
 
                         //deixar utilizador escolher
                         cout<< "Escolha a turma" << '\n';
-                        int escolhaturma;
+                        string escolhaturma;
                         cin>>escolhaturma;
 
                         //alunos da turma
                         switch(escolhaturma){
                             case 1:{
-                                cout<< "Turma" << escolhaturma << "na UC:" << escolhaUC << Read::students_per_class_UC(escolhaturma, escolhaUC) << '\n';
+                                cout<< "Turma" << escolhaturma << "na UC:" << escolhaUC<< '\n';
+                                vector<string> alunos;
+                                alunos=case1.students_per_class_UC(escolhaturma, escolhaUC);
+                                for(string a: alunos){
+                                    cout<< a <<'\n';
+                                }
                             }
                         }
                     }
