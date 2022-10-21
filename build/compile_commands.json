@@ -13,5 +13,10 @@
   "directory": "/home/raben/AED/Projeto/build",
   "command": "/usr/bin/g++   -I/home/raben/AED/Projeto/src  -g   -std=gnu++17 -o CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_turmas.o -c /home/raben/AED/Projeto/src/horario_turmas.cpp",
   "file": "/home/raben/AED/Projeto/src/horario_turmas.cpp"
+},
+{
+  "directory": "/home/raben/AED/Projeto/build",
+  "command": "/usr/bin/g++   -I/home/raben/AED/Projeto/src  -g   -std=gnu++17 -o CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_aluno.o -c /home/raben/AED/Projeto/src/horario_aluno.cpp",
+  "file": "/home/raben/AED/Projeto/src/horario_aluno.cpp"
 }
 ]

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_aluno.o"
   "CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_turmas.o"
   "CMakeFiles/ProjetoAEDSchedule_master.dir/src/main.o"
   "CMakeFiles/ProjetoAEDSchedule_master.dir/src/read.o"

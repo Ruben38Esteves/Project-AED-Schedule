@@ -7,6 +7,8 @@ src/read.h
 src/read.cpp
 src/horario_turmas.h
 src/horario_turmas.cpp
+src/horario_aluno.h
+src/horario_aluno.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCE})
