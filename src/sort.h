@@ -6,14 +6,11 @@
 
 using namespace std;
 
-class Sort{
-    public:
 
         int weekday_to_int(string weekday);
         bool sortHorario_hora(aula s1, aula s2);
         bool sortHorario_weekday(aula a1, aula a2);
-    
-};
+
 
 
 
