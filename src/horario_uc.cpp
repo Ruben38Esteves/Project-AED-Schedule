@@ -3,8 +3,7 @@
 
 Horario_UC::Horario_UC(string UCCode, vector<classes> ClassLines){
     set<string> Classes;
-    vector<aula> aula_class;
-    map<string, vector<aula>> horario;
+    vector <pair<string, aula>> horario;
 
     for(auto a: ClassLines){
         if (a.UcCode == UCCode){
@@ -20,11 +19,9 @@ Horario_UC::Horario_UC(string UCCode, vector<classes> ClassLines){
                 temp.Duration = stod(b.Duration);
                 temp.EndHour = b.EndHour;
                 temp.Type = b.Type;
-                aula_class.push_back(temp);
+                horario.push_back(pair<string, aula>(a, temp));
             }
         }
-        horario.insert(pair<string, vector<aula>>(a, aula_class));
-        aula_class.clear();
     }
     
     this->UCCode = UCCode;
