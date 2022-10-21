@@ -6,10 +6,9 @@
 
 using namespace std;
 
-
-        int weekday_to_int(string weekday);
-        bool sortHorario_hora(aula s1, aula s2);
-        bool sortHorario_weekday(aula a1, aula a2);
+int weekday_to_int(string weekday);
+bool sortHorario_hora(pair<string, aula> s1, pair<string, aula> s2);
+bool sortHorario_weekday(pair<string, aula> s1, pair<string, aula> s2);
 
 
 

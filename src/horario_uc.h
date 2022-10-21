@@ -8,6 +8,7 @@
 #include <map>
 #include <ctype.h>
 #include "read.h"
+#include "sort.h"
 
 
 using namespace std;
