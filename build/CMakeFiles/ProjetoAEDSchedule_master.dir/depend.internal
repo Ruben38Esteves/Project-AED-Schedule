@@ -5,6 +5,7 @@ CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_aluno.o
  /home/raben/AED/Projeto/src/horario_aluno.cpp
  /home/raben/AED/Projeto/src/horario_aluno.h
  /home/raben/AED/Projeto/src/read.h
+ /home/raben/AED/Projeto/src/sort.h
 CMakeFiles/ProjetoAEDSchedule_master.dir/src/horario_turmas.o
  /home/raben/AED/Projeto/src/horario_turmas.cpp
  /home/raben/AED/Projeto/src/horario_turmas.h
@@ -14,6 +15,7 @@ CMakeFiles/ProjetoAEDSchedule_master.dir/src/main.o
  /home/raben/AED/Projeto/src/horario_turmas.h
  /home/raben/AED/Projeto/src/main.cpp
  /home/raben/AED/Projeto/src/read.h
+ /home/raben/AED/Projeto/src/sort.h
 CMakeFiles/ProjetoAEDSchedule_master.dir/src/read.o
  /home/raben/AED/Projeto/src/read.cpp
  /home/raben/AED/Projeto/src/read.h

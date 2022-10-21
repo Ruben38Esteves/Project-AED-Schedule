@@ -51,6 +51,7 @@ class Read{
         vector<pair<string,string>> read_students_classes_per_studentname(string studentname);
         vector<pair<string,string>> read_students_classes_per_UC(string UC);
         vector<pair<string,string>> read_students_classes_per_Class(string Class);
+        vector<string> students_per_class_UC(string turma, string UC);
         
 };
 

@@ -7,6 +7,7 @@
 #include <set>
 #include <map>
 #include "read.h"
+#include "sort.h"
 
 using namespace std;
 
@@ -19,13 +20,11 @@ class Horario_Aluno{
         vector<pair<string,string>> turmas;
     //aulas em que o aluno esta inscrito
         vector<pair<string,vector<aula>>> aulas;
-
-        vector<aula> aulas_sorted_weekday;
+        vector<pair<pair<string,string>,aula>> horario_novo;
 
     public:
         Horario_Aluno(string student,vector<classes> ClassLine);
         void Print_Horario();
-        void Print_Horario_Sorted();
 };
 
 #endif

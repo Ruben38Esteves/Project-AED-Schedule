@@ -11,7 +11,7 @@ int main() {
         cout << "Escolha o ficheiro:" << '\n';
         cout << "1 -> classes_per_uc" << '\n';
         cout << "2 -> classes" << '\n';
-        cout << "3 -> student _classes" << '\n';
+        cout << "3 -> student_classes" << '\n';
         cout << "4 -> Sair" << '\n';
         //deixar utilizador escolher
         cin >> escolha;
@@ -59,13 +59,40 @@ int main() {
                                 cout << d.ClassCode << '\n';
                             }
                         }
+
+                        //dar a possibilidade de ver alunos da turma
+                        cout << "1-> ver alunos por turma" << '\n';
+                        int turma;
+                        cin>> turma;
+                        switch(turma){
+                            case 1:{
+                                //deixar utilizador escolher turma
+                                cout<< "Escolha a turma:" << '\n';
+                                string escolhaturma;
+                                cin>>escolhaturma;
+
+                                //alunos da turma
+
+                                Read at;
+                                vector<string> alunos;
+                                alunos = at.students_per_class_UC(escolhaturma, escolhaUC);
+                                cout << "Turma " << escolhaturma << " na UC" << escolhaUC << ':' << '\n';
+
+                                //ordenar por ordem alfabética
+                                sort(alunos.begin(),alunos.end());
+                                for (string a: alunos) {
+                                    cout << a << '\n';
+                                }
+                                break;
+                            }
+                        }
                         break;
                     }
 
                     //UC's da Turma
                     case 2:{
                         cout << "Escolha a turma" << '\n';
-                        //mostar opçoes
+                        //mostrar opçoes
                         set<string>::iterator it;
                         for(it = Classes.begin(); it != Classes.end(); it++){
                             cout << *it << " / ";
@@ -82,6 +109,7 @@ int main() {
                             }
                         }
                         break;
+
                     }
 
                     //Tudo
@@ -147,6 +175,7 @@ int main() {
                 break;
             }
 
+
             //student _classes
             case 3:{
                 Read case3;
@@ -163,11 +192,9 @@ int main() {
                         string StudentNameOrCode;
                         cout << "Escolha o aluno" << '\n';
                         cin >> StudentNameOrCode;
-                        
+                        //print ao horario
                         Horario_Aluno escolhido(StudentNameOrCode,clss);
-                        
-                        escolhido.Print_Horario_Sorted();
-                        
+                        escolhido.Print_Horario();
                         break;
                     }
                 }

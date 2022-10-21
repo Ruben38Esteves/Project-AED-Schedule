@@ -1,18 +1,39 @@
 #include "horario_aluno.h"
 #include <algorithm>
-
-
-bool sortHorario(aula s1, aula s2){
-    return s1.StartHour < s2.StartHour;
+//transformar dia da semana em int para se conseguir ordenar
+int weekday_to_int(string weekday){
+    if(weekday=="Monday"){
+        return 1;
+    }
+    if(weekday=="Tuesday"){
+        return 2;
+    }
+    if(weekday=="Wednesday"){
+        return 3;
+    }
+    if(weekday=="Thursday"){
+        return 4;
+    }
+    if(weekday=="Friday"){
+        return 5;
+    }
+    return 0;
 }
-
+//ordenar por hora de inicio
+bool sortaula_hora(pair<pair<string,string>,aula> a, pair<pair<string,string>,aula> b){
+    return a.second.StartHour < b.second.StartHour;
+}
+//ordenar por dia da semana
+bool sortaula_dia(pair<pair<string,string>,aula> a, pair<pair<string,string>,aula> b){
+    return weekday_to_int(a.second.Weekday) < weekday_to_int(b.second.Weekday);
+}
 
 Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine){
     vector<pair<string,string>> turmas;
-    vector<aula> Aulas_Uc;
-    vector<pair<string,vector<aula>>> horario;
+    vector<pair<pair<string,string>,aula>> horario_novo;
     vector<aula> aulas_sorted_weekday;
     //verificar set é code ou name
+
     if(isdigit(student[0])){
         string Code = student;
         //atribuir code
@@ -44,80 +65,36 @@ Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine){
                 temp.Duration = stod(b.Duration);
                 temp.EndHour = b.EndHour;
                 temp.Type = b.Type;
-                //adicionar aula a vetor de aulas
-                Aulas_Uc.push_back(temp);
+                //adicionar aula a vetor de (UC/Turma)/aula
+                horario_novo.push_back(pair<pair<string,string>,aula>(a,temp));
             }
         }
-        //adicionar o par UC/vetor de aulas ao horario
-        horario.push_back(pair<string,vector<aula>>(a.first,Aulas_Uc));
-        //limpar vetor de aulas
-        Aulas_Uc.clear();
     }
-    //ordenar horario
-    for (int i = 0; i < horario.size(); i++){
-        sort(horario[i].second.begin(), horario[i].second.end(), sortHorario);
+    //ordenar por hora
+    for(auto a:horario_novo){
+        sort(horario_novo.begin(),horario_novo.end(),sortaula_hora);
     }
-
-    //guardar valores na classe
-    this->aulas=horario;
-    //criar vetor so de aulas
-    for (int i = 0; i < horario.size(); i++){
-        for(int j = 0;j<horario[i].second.size();j++){
-            aulas_sorted_weekday.push_back(horario[i].second[j]);
-        }
+    //ordenar por dias
+    for(auto a:horario_novo){
+        sort(horario_novo.begin(),horario_novo.end(),sortaula_dia);
     }
-    //ordenar
-    for(int k=0; k<aulas_sorted_weekday.size();k++){
-        sort(aulas_sorted_weekday.begin(), aulas_sorted_weekday.end(), sortHorario);
-    }
-
-    this->aulas_sorted_weekday=aulas_sorted_weekday;
-    
+    //guardar
+    this->horario_novo=horario_novo;
 };
 
 void Horario_Aluno::Print_Horario(){
     cout << "O horario do aluno " << this->StudentName << '(' << this->StudentCode << ") é:" << '\n';
-    
-    for(int i = 0; i < aulas.size(); i++){
-        for(auto a: aulas[i].second){
-            cout << "Aula " << a.Type << " de " << aulas[i].first << " no dia " <<  a.Weekday << " desde as " << a.StartHour << " ate " << a.EndHour << '\n';
+    //inicializar o ultimo dia
+    string lastday;
+    lastday = this->horario_novo[0].second.Weekday;
+    cout << lastday << ':' << '\n';
+    for(auto a: horario_novo){
+        //se se mudar de dia, indicar isso
+        if(a.second.Weekday != lastday){
+                    cout << a.second.Weekday << ':' << '\n';
+                    lastday = a.second.Weekday;
         }
+        //print ao horario
+        cout << "    " << a.first.first << " com a turma " << a.first.second<< " do tipo " << a.second.Type<< " desde as " << a.second.StartHour<< " ate as " << a.second.EndHour<< " / " <<'\n';
     }
-    
-   
-    for(auto a : aulas_sorted_weekday){
-        cout << a.Type << " / " << a.Weekday << " / " << a.StartHour << " / " << a.EndHour << '\n';
-    }
-
-
-    
 };
-
-void Horario_Aluno::Print_Horario_Sorted(){
-    cout << "O horario do aluno " << this->StudentName << '(' << this->StudentCode << ") é:" << '\n';
-    for(auto a: aulas_sorted_weekday){
-        if(a.Weekday=="Monday"){
-            cout << a.Type << " / " << a.Weekday << " / " << a.StartHour << " / " << a.EndHour << '\n';
-        }
-    }
-    for(auto a: aulas_sorted_weekday){
-        if(a.Weekday=="Tuesday"){
-            cout << a.Type << " / " << a.Weekday << " / " << a.StartHour << " / " << a.EndHour << '\n';
-        }
-    }
-    for(auto a: aulas_sorted_weekday){
-        if(a.Weekday=="Wednesday"){
-            cout << a.Type << " / " << a.Weekday << " / " << a.StartHour << " / " << a.EndHour << '\n';
-        }
-    }
-    for(auto a: aulas_sorted_weekday){
-        if(a.Weekday=="Thursday"){
-            cout << a.Type << " / " << a.Weekday << " / " << a.StartHour << " / " << a.EndHour << '\n';
-        }
-    }
-    for(auto a: aulas_sorted_weekday){
-        if(a.Weekday=="Friday"){
-            cout << a.Type << " / " << a.Weekday << " / " << a.StartHour << " / " << a.EndHour << '\n';
-        }
-    }
-}
