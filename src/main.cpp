@@ -59,22 +59,34 @@ int main() {
                                 cout << d.ClassCode << '\n';
                             }
                         }
-                        break;
 
-                        //deixar utilizador escolher
-                        cout<< "Escolha a turma" << '\n';
-                        int escolhaturma;
-                        cin>>escolhaturma;
-
-                        //alunos da turma
-                        /*
-                        switch(escolhaturma){
-                            Read escolhacaso1;
+                        //dar a possibilidade de ver alunos da turma
+                        cout << "1-> ver alunos por turma" << '\n';
+                        int turma;
+                        cin>> turma;
+                        switch(turma){
                             case 1:{
-                                cout<< "Turma" << escolhaturma << "na UC:" << escolhaUC << escolhacaso1.students_per_class_UC(escolhaturma, escolhaUC) << '\n';
+                                //deixar utilizador escolher turma
+                                cout<< "Escolha a turma:" << '\n';
+                                string escolhaturma;
+                                cin>>escolhaturma;
+
+                                //alunos da turma
+
+                                Read at;
+                                vector<string> alunos;
+                                alunos = at.students_per_class_UC(escolhaturma, escolhaUC);
+                                cout << "Turma " << escolhaturma << " na UC" << escolhaUC << ':' << '\n';
+
+                                //ordenar por ordem alfabética
+                                sort(alunos.begin(),alunos.end());
+                                for (string a: alunos) {
+                                    cout << a << '\n';
+                                }
+                                break;
                             }
                         }
-                        */
+                        break;
                     }
 
                     //UC's da Turma
@@ -162,6 +174,7 @@ int main() {
                 }
                 break;
             }
+
 
             //student _classes
             case 3:{
