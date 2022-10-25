@@ -7,7 +7,7 @@ int weekday_to_int(string weekday){
     if(weekday=="Tuesday"){
         return 2;
     }
-    if(weekday=="Wednsday"){
+    if(weekday=="Wednesday"){
         return 3;
     }
     if(weekday=="Thursday"){
