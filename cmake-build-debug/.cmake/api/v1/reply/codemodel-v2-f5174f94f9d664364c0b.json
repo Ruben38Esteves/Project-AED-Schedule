@@ -7,10 +7,6 @@
 				{
 					"build" : ".",
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
-					"minimumCMakeVersion" : 
-					{
-						"string" : "3.23"
-					},
 					"projectIndex" : 0,
 					"source" : ".",
 					"targetIndexes" : 
@@ -39,7 +35,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ProjetoAEDSchedule_master::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ProjetoAEDSchedule_master-Debug-123660523566a9e61567.json",
+					"jsonFile" : "target-ProjetoAEDSchedule_master-Debug-fe725e176f20cac57885.json",
 					"name" : "ProjetoAEDSchedule_master",
 					"projectIndex" : 0
 				}

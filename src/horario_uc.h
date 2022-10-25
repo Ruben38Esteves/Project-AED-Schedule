@@ -8,6 +8,7 @@
 #include <map>
 #include <ctype.h>
 #include "read.h"
+#include "sort.h"
 
 
 using namespace std;
@@ -15,7 +16,7 @@ using namespace std;
 class Horario_UC{
     private :
         string UCCode;
-        map<string, vector<aula>> aulas;
+        vector <pair<string, aula>> aulas;
     public:
         Horario_UC(string UCCode, vector<classes> ClassLine);
         void Print_Horario();

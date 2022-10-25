@@ -2,6 +2,7 @@
 #include "read.h"
 #include "horario_turmas.h"
 #include "horario_aluno.h"
+#include "horario_uc.h"
 #include <set>
 
 int main() {
@@ -130,22 +131,26 @@ int main() {
                 clss = case2.read_classes();
                 int escolha2;
                 set<string> Classes;
+                set<string> UCs;
                 //criar set de Turmas (sem duplicados)
                 for(auto b:clss){
+                    UCs.insert(b.UcCode);
                     Classes.insert(b.ClassCode);
                 }
+
+
                 //mostar opçoes
-                cout << "1 -> Horario de uma turma" << '\n';
-                cout << "2 -> xxxxxxxxxx" << '\n';
+                cout << "1 -> Horário de uma turma" << '\n';
+                cout << "2 -> Horário de uma UC" << '\n';
                 cout << "3 -> xxxxxxxxxx" << '\n';
                 //deixar utilizador escolher
                 cin >> escolha2;
-                switch(escolha2){
-                    case 1:{
-                        cout << "Escolha a turma" << '\n';
+                switch(escolha2) {
+                    case 1: {
+                        cout << "Escolha a turma:" << '\n';
                         //mostar opçoes
                         set<string>::iterator it;
-                        for(it = Classes.begin(); it != Classes.end(); it++){
+                        for (it = Classes.begin(); it != Classes.end(); it++) {
                             cout << *it << " / ";
                         }
                         cout << '\n';
@@ -162,14 +167,26 @@ int main() {
                         //mostrar resultados
                         string escolhadia;
                         cin >> escolhadia;
-                        if(escolhadia=="Todos"){
+                        if (escolhadia == "Todos") {
                             Horario_Turma escolhida(escolhaClass, clss);
                             escolhida.Print_Horario();
-                        }else{
+                        } else {
                             Horario_Turma escolhida(escolhaClass, clss);
                             escolhida.Print_Horario_Dia(escolhadia);
                         }
                         break;
+                    }
+                    case 2:{
+                        cout << "Escolha a UC: \n";
+                        set<string>::iterator it;
+                        for (it = UCs.begin(); it!= UCs.end(); it++){
+                            cout << *it << " / ";
+                        }
+                        cout << "\n";
+                        string EscolhaUC;
+                        cin >> EscolhaUC;
+                        Horario_UC escolhido(EscolhaUC, clss);
+                        escolhido.Print_Horario();
                     }
                 }
                 break;

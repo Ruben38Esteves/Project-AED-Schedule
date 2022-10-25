@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/ProjetoAEDSchedule_master.dir
-C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-=======
 C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/ProjetoAEDSchedule_master.dir
 C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
->>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043

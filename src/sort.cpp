@@ -1,6 +1,6 @@
 #include "sort.h"
 
-int Sort::weekday_to_int(string weekday){
+int weekday_to_int(string weekday){
     if(weekday=="Monday"){
         return 1;
     }
@@ -21,9 +21,9 @@ int Sort::weekday_to_int(string weekday){
 
 
 
-bool Sort::sortHorario_hora(aula s1, aula s2){
-    return s1.StartHour < s2.StartHour;
+bool sortHorario_hora(pair<string, aula> s1, pair<string, aula> s2){
+    return s1.second.StartHour < s2.second.StartHour;
 }
-bool Sort::sortHorario_weekday(aula a1, aula a2){
-    return weekday_to_int(a1.Weekday) < weekday_to_int(a2.Weekday);
+bool sortHorario_weekday(pair<string, aula> s1, pair<string, aula> s2){
+    return weekday_to_int(s1.second.Weekday) < weekday_to_int(s2.second.Weekday);
 }

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Install script for directory: C:/Users/up202/Downloads/ProjetoAEDSchedule-master
-=======
 # Install script for directory: C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master
->>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,9 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
-file(WRITE "C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
-=======
 file(WRITE "C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
