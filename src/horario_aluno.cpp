@@ -1,24 +1,6 @@
 #include "horario_aluno.h"
 #include <algorithm>
-//transformar dia da semana em int para se conseguir ordenar
-int weekday_to_int(string weekday){
-    if(weekday=="Monday"){
-        return 1;
-    }
-    if(weekday=="Tuesday"){
-        return 2;
-    }
-    if(weekday=="Wednesday"){
-        return 3;
-    }
-    if(weekday=="Thursday"){
-        return 4;
-    }
-    if(weekday=="Friday"){
-        return 5;
-    }
-    return 0;
-}
+
 //ordenar por hora de inicio
 bool sortaula_hora(pair<pair<string,string>,aula> a, pair<pair<string,string>,aula> b){
     return a.second.StartHour < b.second.StartHour;

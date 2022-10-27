@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/raben/AED/Projeto/src/horario_aluno.cpp
-horario_aluno.h
-/home/raben/AED/Projeto/src/horario_aluno.h
-algorithm
--
-
 /home/raben/AED/Projeto/src/horario_aluno.h
 vector
 -
