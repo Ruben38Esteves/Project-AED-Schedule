@@ -6,6 +6,8 @@
 
 int main() {
     int escolha = 0;
+    //funçoes de ler
+    //xxxxxxxxxxx
     while(escolha != 4){
         //mostar opçoes
         cout << "Escolha o ficheiro:" << '\n';
