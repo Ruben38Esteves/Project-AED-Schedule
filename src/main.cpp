@@ -28,7 +28,7 @@ int main() {
         cin >> mainmenu;
         switch(mainmenu){
             case 1:{
-                cout << "1 -> Studen Schedule" << '\n';
+                cout << "1 -> Student Schedule" << '\n';
                 cout << "2 -> Class Schedule" << '\n';
                 cout << "3 -> UC CSchedule" << '\n';
                 int menu1 = 0;
@@ -71,10 +71,49 @@ int main() {
                 }
                 break;
             }
+            case 2:{
+                cout << "1 -> Show all students" << '\n';
+                cout << "2 -> Show students by class" << '\n';
+                cout << "3 -> Show students by UC" << '\n';
+                cout << "4 -> Show students by Class and UC" << '\n';
+                int menu2;
+                cin >> menu2;
+                switch(menu2){
+                    case 1:{
+                        set<pair<string,string>> StudentsList;
+                        for(auto a : StuClasses){
+                            pair<string,string> temp;
+                            temp = make_pair(a.StudentName,a.StudentCode);
+                            StudentsList.insert(temp);
+                        }
+                        set<pair<string,string>>::iterator it;
+                        for(it=StudentsList.begin();it!=StudentsList.end();it++){
+                            pair<string,string> temp2 = *it;
+                            cout << temp2.first << '(' << temp2.second << ") / ";
+                        }
+                        break;
+                    }
+                    case 2:{
+
+                        break;
+                    }
+                    case 3:{
+
+                        break;
+                    }
+                    case 4:{
+
+                        break;
+                    }
+                } 
+                break;
+            }
         }
     }
     /*
     int escolha = 0;
+    //funçoes de ler
+    //xxxxxxxxxxx
     while(escolha != 4){
         //mostar opçoes
         cout << "Escolha o ficheiro:" << '\n';
