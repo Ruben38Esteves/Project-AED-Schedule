@@ -23,6 +23,8 @@ Horario_UC::Horario_UC(string UCCode, vector<classes> ClassLines){
             }
         }
     }
+    sort(horario.begin(), horario.end(), sortHorario_hora);
+    sort(horario.begin(), horario.end(), sortHorario_weekday);
     
     this->UCCode = UCCode;
     this->aulas=horario;
@@ -30,10 +32,15 @@ Horario_UC::Horario_UC(string UCCode, vector<classes> ClassLines){
 
 void Horario_UC::Print_Horario(){
     cout << "O Horario da UC " << this->UCCode << " é: " << '\n';
-    map<string,vector<aula>>::iterator itr;
-    for(itr = this->aulas.begin(); itr !=this->aulas.end();itr++ ){
-        for(auto a: itr->second){
-            cout << "Aula " << a.Type << " da turma " << itr->first << " no dia " <<  a.Weekday << " desde as " << a.StartHour << " ate " << a.EndHour << '\n';
+    string lastday;
+    lastday = this->aulas[0].second.Weekday;
+    cout<< lastday << ':' << "\n";
+    for(auto a: aulas) {
+        if (a.second.Weekday != lastday) {
+            lastday = a.second.Weekday;
+            cout << lastday << ':' << "\n";
         }
+        cout << "Aula " << a.second.Type << " da turma " << a.first << " no dia " <<  a.second.Weekday << " desde as " << a.second.StartHour << " ate " << a.second.EndHour << '\n';
     }
+
 }
