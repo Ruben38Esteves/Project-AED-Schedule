@@ -40,7 +40,7 @@ void Horario_UC::Print_Horario(){
             lastday = a.second.Weekday;
             cout << lastday << ':' << "\n";
         }
-        cout << "Aula " << a.second.Type << " da turma " << a.first << " no dia " <<  a.second.Weekday << " desde as " << a.second.StartHour << " ate " << a.second.EndHour << '\n';
+        cout << "Aula " << a.second.Type << " da turma " << a.first << " desde as " << a.second.StartHour << " ate " << a.second.EndHour << '\n';
     }
 
 }
