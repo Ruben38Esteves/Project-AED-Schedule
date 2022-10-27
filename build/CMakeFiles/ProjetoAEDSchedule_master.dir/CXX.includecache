@@ -38,6 +38,24 @@ ctype.h
 read.h
 /home/raben/AED/Projeto/src/read.h
 
+/home/raben/AED/Projeto/src/horario_uc.h
+vector
+-
+string
+-
+iostream
+-
+set
+-
+map
+-
+ctype.h
+-
+read.h
+/home/raben/AED/Projeto/src/read.h
+sort.h
+/home/raben/AED/Projeto/src/sort.h
+
 /home/raben/AED/Projeto/src/main.cpp
 iostream
 -
@@ -47,6 +65,8 @@ horario_turmas.h
 /home/raben/AED/Projeto/src/horario_turmas.h
 horario_aluno.h
 /home/raben/AED/Projeto/src/horario_aluno.h
+horario_uc.h
+/home/raben/AED/Projeto/src/horario_uc.h
 set
 -
 
