@@ -89,8 +89,9 @@ int main() {
                         set<pair<string,string>>::iterator it;
                         for(it=StudentsList.begin();it!=StudentsList.end();it++){
                             pair<string,string> temp2 = *it;
-                            cout << temp2.first << '(' << temp2.second << ") / ";
+                            cout << temp2.first << '(' << temp2.second << ")" <<"; " ;
                         }
+                        cout<<'\n';
                         break;
                     }
                     case 2:{
@@ -136,7 +137,7 @@ int main() {
                             cout<< a<< "; ";
                         }
 
-                        cout<< '\n';
+                        cout<< '\n'<< '\n';
 
                         break;
                     }
