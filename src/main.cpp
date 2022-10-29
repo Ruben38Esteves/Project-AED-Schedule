@@ -145,7 +145,47 @@ int main() {
 
                         break;
                     }
+
                 } 
+                break;
+            }
+            case 3:{
+                cout<< "1-> Show all classes"<< '\n';
+                cout<< "2-> Show a Student´s class"<< '\n';
+                cout<< "3-> Show classes by UC"<< '\n';
+                int menu3;
+                cin>> menu3;
+                switch(menu3){
+                    case 1:{
+                        for(auto a:SetClasses){
+                            cout<< a <<"; ";
+                        }
+                        cout<< '\n';
+                    break;
+                    }
+                    case 2:{
+                        cout<< "Write Student´s name or code:"<< '\n';
+                        string name_or_code;
+                        cin>> name_or_code;
+                        if(isdigit(name_or_code[0])==1){
+                            Read sc;
+                            vector<pair<string,string>> uc_turma;
+                            uc_turma=sc.read_students_classes_per_studentcode(name_or_code);
+                            for(auto a: uc_turma){
+                                cout<< a.first<< ": "<< a.second<< ";" << '\n';
+                            }
+                        }
+
+                        else{
+                            Read sc;
+                            vector<pair<string,string>> uc_turma;
+                            uc_turma=sc.read_students_classes_per_studentname(name_or_code);
+                            for(auto a: uc_turma){
+                                cout<< a.first<< ": "<< a.second<< ";" << '\n';
+                            }
+                        }
+                    }
+                }
                 break;
             }
         }
