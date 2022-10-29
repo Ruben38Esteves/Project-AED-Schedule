@@ -8,7 +8,7 @@
 #include <map>
 #include <ctype.h>
 #include "read.h"
-
+#include "sort.h"
 
 using namespace std;
 
@@ -17,7 +17,7 @@ class Horario_Turma{
     //identificar turma
         string ClassCode;
     //aulas da turma <UC / Aulas>
-        map<string,vector<aula>> aulas;
+        vector<pair<string,aula>> aulas;
 
     public:
         Horario_Turma(string ClassCode,vector<classes> ClassLine);

@@ -3,7 +3,7 @@
 Horario_Turma::Horario_Turma(string ClassCode,vector<classes> ClassLines){
     set<string> UCs;
     vector<aula> Aulas_Uc;
-    map<string,vector<aula>> horario;
+    vector<pair<string,aula>> horario;
     //criar set de Ucs
     for(auto a: ClassLines){
         if(a.ClassCode==ClassCode){
@@ -22,37 +22,27 @@ Horario_Turma::Horario_Turma(string ClassCode,vector<classes> ClassLines){
                 temp.EndHour = c.EndHour;
                 temp.Type = c.Type;
                 //adicionar aula a vetor de aulas
-                Aulas_Uc.push_back(temp);
+                horario.push_back(pair<string,aula>(b,temp));
             }
         }
-        //adicionar o par UC/vetor de aulas ao horario
-        horario.insert(pair<string,vector<aula>>(b,Aulas_Uc)); 
-        //limpar vetor de aulas
-        Aulas_Uc.clear();
     }
     //guardar valores na classe
     this->ClassCode=ClassCode;
+    sort(horario.begin(), horario.end(), sortHorario_hora);
+    sort(horario.begin(), horario.end(), sortHorario_weekday);
     this->aulas=horario;
 };
 
 void Horario_Turma::Print_Horario(){
     cout << "O Horario da turma " << this->ClassCode << " é: " << '\n';
-    map<string,vector<aula>>::iterator itr;
-    for(itr = this->aulas.begin(); itr !=this->aulas.end();itr++ ){
-        for(auto a: itr->second){
-            cout << "Aula " << a.Type << " de " << itr->first << " no dia " <<  a.Weekday << " desde as " << a.StartHour << " ate " << a.EndHour << '\n';
+    string lastday;
+    lastday = this->aulas[0].second.Weekday;
+    cout<< lastday << ':' << "\n";
+    for(auto a :aulas){
+        if(a.second.Weekday!=lastday){
+            lastday = a.second.Weekday;
+            cout<< lastday << ':' << "\n";
         }
-    }
-}
-
-void Horario_Turma::Print_Horario_Dia(string weekday){
-    cout << "O Horario da turma " << this->ClassCode << " no dia " << weekday << " é: " << '\n';
-    map<string,vector<aula>>::iterator itr;
-    for(itr = this->aulas.begin(); itr !=this->aulas.end();itr++ ){
-        for(auto a: itr->second){
-            if(a.Weekday == weekday){
-                cout << "Aula " << a.Type << " de " << itr->first << " desde as " << a.StartHour << " ate " << a.EndHour << '\n';
-            }
-        }
+        cout << a.first << ' ' << a.second.Type << " Class from " << a.second.StartHour << " until " << a.second.EndHour;
     }
 }
