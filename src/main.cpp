@@ -184,7 +184,20 @@ int main() {
                                 cout<< a.first<< ": "<< a.second<< ";" << '\n';
                             }
                         }
+                    break;
                     }
+                    case 3:{
+                        cout<< "Choose UC:"<< "\n";
+                        string uc;
+                        cin>> uc;
+                        for(auto a: CPU){
+                            if(a.UcCode==uc){
+                                cout<< a.ClassCode <<"; " ;
+                            }
+                        }
+                        cout << '\n';
+                    }
+                    break;
                 }
                 break;
             }
