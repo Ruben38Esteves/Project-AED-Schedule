@@ -77,6 +77,6 @@ void Horario_Aluno::Print_Horario(){
                     lastday = a.second.Weekday;
         }
         //print ao horario
-        cout << "    " << a.first.first << ", with class " << a.first.second<< ", which type is " << a.second.Type<< " since " << a.second.StartHour<< " until " << a.second.EndHour<< " / " <<'\n';
+        cout << "    " << a.first.first << ", with class " << a.first.second<< ", which type is " << a.second.Type<< " since " << a.second.StartHour<< " until " << a.second.EndHour<< " ; " <<'\n';
     }
 };
