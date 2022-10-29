@@ -118,6 +118,25 @@ int main() {
                         break;
                     }
                     case 3:{
+                        cout<< "Choose UC:"<<'\n';
+                        string uc;
+                        cin>> uc;
+
+                        vector<pair<string,string>> res;
+                        Read cpuc;
+                        res=cpuc.read_students_classes_per_UC(uc);
+
+                        vector<string> alunos;
+                        for(auto a: res){
+                            alunos.push_back(a.second);
+                        }
+                        sort(alunos.begin(),alunos.end());
+
+                        for(auto a:alunos){
+                            cout<< a<< "; ";
+                        }
+
+                        cout<< '\n';
 
                         break;
                     }
