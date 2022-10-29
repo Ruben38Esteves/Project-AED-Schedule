@@ -151,7 +151,7 @@ int main() {
             }
             case 3:{
                 cout<< "1-> Show all classes"<< '\n';
-                cout<< "2-> Show a Student´s class"<< '\n';
+                cout<< "2-> Show a Student's class"<< '\n';
                 cout<< "3-> Show classes by UC"<< '\n';
                 int menu3;
                 cin>> menu3;
@@ -164,7 +164,7 @@ int main() {
                     break;
                     }
                     case 2:{
-                        cout<< "Write Student´s name or code:"<< '\n';
+                        cout<< "Write Student's name or code:"<< '\n';
                         string name_or_code;
                         cin>> name_or_code;
                         if(isdigit(name_or_code[0])==1){
@@ -201,9 +201,65 @@ int main() {
                 }
                 break;
             }
+
+            case 4:{
+                cout<< "1-> Show all UC's"<< '\n';
+                cout<< "2-> Show UC's by class"<< '\n';
+                cout<< "3-> Show Student's UC's"<< '\n';
+                int menu4;
+                cin>> menu4;
+                switch(menu4){
+                    case 1:{
+                        for(auto a:SetUcs){
+                            cout<< a<< "; ";
+                        }
+                        break;
+                    }
+                    case 2:{
+                        cout<< "Choose Class:"<< '\n';
+                        string turma;
+                        cin>> turma;
+                        for(auto a: CPU){
+                            if(a.ClassCode==turma){
+                                cout<< a.UcCode <<"; " ;
+                            }
+                        }
+                        cout << '\n';
+
+                    }
+                    break;
+
+                    case 3:{
+                        cout<<"Write Student's name or code:"<< '\n';
+                        string name_or_code;
+                        cin>> name_or_code;
+                        if(isdigit(name_or_code[0])==1){
+                            Read su;
+                            vector<pair<string,string>> suc;
+                            suc= su.read_students_classes_per_studentcode(name_or_code);
+                            for(auto a: suc){
+                                cout<< a.first <<"; ";
+                            }
+                            cout<< '\n';
+                        }
+
+                        else{
+                            Read su;
+                            vector<pair<string,string>> suc;
+                            suc= su.read_students_classes_per_studentname(name_or_code);
+                            for(auto a: suc){
+                                cout<< a.first <<"; ";
+                            }
+                            cout<< '\n';
+                        }
+                    }
+                    break;
+                }
+
+            }
         }
     }
-    /*
+/*
     int escolha = 0;
     //funçoes de ler
     //xxxxxxxxxxx
