@@ -65,7 +65,7 @@ Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine){
 };
 
 void Horario_Aluno::Print_Horario(){
-    cout << "O horario do aluno " << this->StudentName << '(' << this->StudentCode << ") é:" << '\n';
+    cout << this->StudentName << "'s "<< '(' << this->StudentCode << ") schedule is:" << '\n';
     //inicializar o ultimo dia
     string lastday;
     lastday = this->horario_novo[0].second.Weekday;
@@ -77,6 +77,6 @@ void Horario_Aluno::Print_Horario(){
                     lastday = a.second.Weekday;
         }
         //print ao horario
-        cout << "    " << a.first.first << " com a turma " << a.first.second<< " do tipo " << a.second.Type<< " desde as " << a.second.StartHour<< " ate as " << a.second.EndHour<< " / " <<'\n';
+        cout << "    " << a.first.first << ", with class " << a.first.second<< ", which type is " << a.second.Type<< " since " << a.second.StartHour<< " until " << a.second.EndHour<< " / " <<'\n';
     }
 };
