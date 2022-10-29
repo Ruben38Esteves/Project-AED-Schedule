@@ -4,6 +4,7 @@
 #include "horario_aluno.h"
 #include "horario_uc.h"
 #include <set>
+#include <vector>
 
 int main() {
     Read ler;
@@ -16,7 +17,7 @@ int main() {
     }
     set<string> SetUcs;
     for(auto a: CPU){
-        SetClasses.insert(a.UcCode);
+        SetUcs.insert(a.UcCode);
     }
     int mainmenu = 0;
     while(mainmenu != 5){
@@ -75,7 +76,6 @@ int main() {
                 cout << "1 -> Show all students" << '\n';
                 cout << "2 -> Show students by class" << '\n';
                 cout << "3 -> Show students by UC" << '\n';
-                cout << "4 -> Show students by Class and UC" << '\n';
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -94,6 +94,26 @@ int main() {
                         break;
                     }
                     case 2:{
+                        cout<< "Choose class:" << '\n';
+                        string turma;
+                        cin>> turma;
+                        cout<< '\n';
+                        for(auto uc: SetUcs){
+                            vector<string> alunos;
+                            Read apu;
+                            alunos = apu.students_per_class_UC(turma, uc);
+                            sort(alunos.begin(),alunos.end());
+
+                            if(alunos.empty()==0){
+
+                                cout << uc << ':' << '\n';
+                                for(auto a:alunos){
+                                    cout<< a << '(' << apu.code_por_nome(a) << ") " << "; " ;
+                                }
+                                cout<<'\n'<<'\n';
+                            }
+
+                        }
 
                         break;
                     }

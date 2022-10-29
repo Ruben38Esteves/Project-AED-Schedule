@@ -35,7 +35,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ProjetoAEDSchedule_master::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ProjetoAEDSchedule_master-Debug-fe725e176f20cac57885.json",
+					"jsonFile" : "target-ProjetoAEDSchedule_master-Debug-17c0e192c1b5a3690eed.json",
 					"name" : "ProjetoAEDSchedule_master",
 					"projectIndex" : 0
 				}
@@ -45,8 +45,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Miguel Dion\u00edsio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug",
-		"source" : "C:/Users/Miguel Dion\u00edsio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master"
+		"build" : "C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug",
+		"source" : "C:/Users/up202/Downloads/ProjetoAEDSchedule-master"
 	},
 	"version" : 
 	{

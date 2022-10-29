@@ -1,5 +1,16 @@
-<<<<<<< HEAD
-"C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.3/bin/ninja/win/ninja.exe" -G Ninja -S "C:\Users\Miguel Dionísio\OneDrive\Documentos\AED\ProjetoAEDSchedule-master" -B "C:\Users\Miguel Dionísio\OneDrive\Documentos\AED\ProjetoAEDSchedule-master\cmake-build-debug"
+"C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.3/bin/ninja/win/ninja.exe" -G Ninja -S C:\Users\up202\Downloads\ProjetoAEDSchedule-master -B C:\Users\up202\Downloads\ProjetoAEDSchedule-master\cmake-build-debug
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 CMake Warning (dev) in CMakeLists.txt:
   No cmake_minimum_required command is present.  A line of code such as
 
@@ -12,19 +23,4 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug
-=======
-"C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.3/bin/ninja/win/ninja.exe" -G Ninja -S C:\Users\up202\Downloads\ProjetoAEDSchedule-master -B C:\Users\up202\Downloads\ProjetoAEDSchedule-master\cmake-build-debug
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 2. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 6. Offending entry: >>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 241. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 245. Offending entry: >>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 251. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 255. Offending entry: >>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 267. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 271. Offending entry: >>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 348. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt on line 352. Offending entry: >>>>>>> 9b755335538ec8f0986b0790bae84f42e0f64043
-CMake Error: The current CMakeCache.txt directory C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug/CMakeCache.txt is different than the directory c:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
-CMake Error: The source "C:/Users/up202/Downloads/ProjetoAEDSchedule-master/CMakeLists.txt" does not match the source "C:/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
->>>>>>> 36080b8059e23660bee3aa366a390e1a08f09d37
+-- Build files have been written to: C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug

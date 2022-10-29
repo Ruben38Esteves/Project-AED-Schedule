@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Miguel Dion\u00edsio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug"
+			"value" : "c:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -635,7 +635,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Miguel Dion\u00edsio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master"
+			"value" : "C:/Users/up202/Downloads/ProjetoAEDSchedule-master"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1275,7 +1275,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Miguel Dion\u00edsio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master/cmake-build-debug"
+			"value" : "C:/Users/up202/Downloads/ProjetoAEDSchedule-master/cmake-build-debug"
 		},
 		{
 			"name" : "ProjetoAEDSchedule_master_IS_TOP_LEVEL",
@@ -1299,7 +1299,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Miguel Dion\u00edsio/OneDrive/Documentos/AED/ProjetoAEDSchedule-master"
+			"value" : "C:/Users/up202/Downloads/ProjetoAEDSchedule-master"
 		}
 	],
 	"kind" : "cache",
