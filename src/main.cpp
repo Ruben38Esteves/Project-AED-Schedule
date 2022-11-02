@@ -39,7 +39,7 @@ int main() {
                         cout << "Write the students name or number" << '\n';
                         string nameorcode;
                         cin >> nameorcode;
-                        Horario_Aluno ChosenStudent(nameorcode,Classes);
+                        Horario_Aluno ChosenStudent(nameorcode,Classes,StuClasses);
                         ChosenStudent.Print_Horario();
                         break;
                     }
