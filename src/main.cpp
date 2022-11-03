@@ -91,30 +91,20 @@ int main() {
                             pair<string,string> temp2 = *it;
                             cout << temp2.first << '(' << temp2.second << ")" <<"; " ;
                         }
-                        cout<<'\n';
+                        cout<<'\n'<<'\n';
                         break;
                     }
                     case 2:{
                         cout<< "Choose class:" << '\n';
                         string turma;
                         cin>> turma;
-                        cout<< '\n';
-                        for(auto uc: SetUcs){
-                            vector<string> alunos;
-                            Read apu;
-                            alunos = apu.students_per_class_UC(turma, uc);
-                            sort(alunos.begin(),alunos.end());
 
-                            if(alunos.empty()==0){
-
-                                cout << uc << ':' << '\n';
-                                for(auto a:alunos){
-                                    cout<< a << '(' << apu.code_por_nome(a) << ") " << "; " ;
-                                }
-                                cout<<'\n'<<'\n';
+                        for(auto a: StuClasses){
+                            if(a.ClassCode==turma){
+                                cout<< a.StudentName<< "("<< a.StudentCode<< "); ";
                             }
-
                         }
+                        cout<< '\n'<< '\n';
                         break;
                     }
                     case 3:{
@@ -122,18 +112,10 @@ int main() {
                         string uc;
                         cin>> uc;
 
-                        vector<pair<string,string>> res;
-                        Read cpuc;
-                        res=cpuc.read_students_classes_per_UC(uc);
-
-                        vector<string> alunos;
-                        for(auto a: res){
-                            alunos.push_back(a.second);
-                        }
-                        sort(alunos.begin(),alunos.end());
-
-                        for(auto a:alunos){
-                            cout<< a<< "; ";
+                        for(auto a: StuClasses){
+                            if(a.UcCode==uc){
+                                cout<<a.StudentName<<"("<<a.StudentCode<<"); ";
+                            }
                         }
 
                         cout<< '\n'<< '\n';
@@ -157,7 +139,7 @@ int main() {
                         for(auto a:SetClasses){
                             cout<< a <<"; ";
                         }
-                        cout<< '\n';
+                        cout<< '\n'<< '\n';
                     break;
                     }
                     case 2:{
@@ -165,34 +147,19 @@ int main() {
                         string name_or_code;
                         cin>> name_or_code;
                         if(isdigit(name_or_code[0])==1){
-                            /*
-                            Read sc;
-                            vector<pair<string,string>> uc_turma;
-                            uc_turma=sc.read_students_classes_per_studentcode(name_or_code);
-                            for(auto a: uc_turma){
-                                cout<< a.first<< ": "<< a.second<< ";" << '\n';
-                            }
-                            */
                             for(auto a:StuClasses){
                                 if(name_or_code==a.StudentCode){
                                     cout<< a.UcCode<< " with "<< a.ClassCode<< '\n';
                                 }
                             }
                         }else{
-                            /*
-                            Read sc;
-                            vector<pair<string,string>> uc_turma;
-                            uc_turma=sc.read_students_classes_per_studentname(name_or_code);
-                            for(auto a: uc_turma){
-                                cout<< a.first<< ": "<< a.second<< ";" << '\n';
-                            }
-                            */
                             for(auto a:StuClasses){
                                 if(name_or_code==a.StudentName){
                                     cout<< a.UcCode<< " with "<< a.ClassCode<< '\n';
                                 }
                             }
                         }
+                        cout<< '\n';
                     break;
                     }
                     case 3:{
@@ -204,7 +171,7 @@ int main() {
                                 cout<< a.ClassCode <<"; " ;
                             }
                         }
-                        cout << '\n';
+                        cout << '\n'<< '\n';
                     }
                     break;
                 }
@@ -222,6 +189,7 @@ int main() {
                         for(auto a:SetUcs){
                             cout<< a<< "; ";
                         }
+                        cout<<'\n'<<'\n';
                         break;
                     }
                     case 2:{
@@ -233,7 +201,7 @@ int main() {
                                 cout<< a.UcCode <<"; " ;
                             }
                         }
-                        cout << '\n';
+                        cout << '\n'<<'\n';
                         break;
                     }
                     case 3:{
@@ -241,36 +209,19 @@ int main() {
                         string name_or_code;
                         cin>> name_or_code;
                         if(isdigit(name_or_code[0])==1){
-                            /*
-                            Read su;
-                            vector<pair<string,string>> suc;
-                            suc= su.read_students_classes_per_studentcode(name_or_code);
-                            for(auto a: suc){
-                                cout<< a.first <<"; ";
-                            }
-                            cout<< '\n';
-                            */
                             for(auto a:StuClasses){
                                 if(a.StudentCode==name_or_code){
                                     cout<<a.UcCode<<'\n';
                                 }
                             }
                         }else{
-                            /*
-                            Read su;
-                            vector<pair<string,string>> suc;
-                            suc= su.read_students_classes_per_studentname(name_or_code);
-                            for(auto a: suc){
-                                cout<< a.first <<"; ";
-                            }
-                            cout<< '\n';
-                            */
                             for(auto a:StuClasses){
                                 if(a.StudentName==name_or_code){
                                     cout<<a.UcCode<<'\n';
                                 }
                             }
                         }
+                        cout<<'\n';
                         break;
                     }
                     break;
