@@ -10,32 +10,34 @@ bool sortaula_dia(pair<pair<string,string>,aula> a, pair<pair<string,string>,aul
     return weekday_to_int(a.second.Weekday) < weekday_to_int(b.second.Weekday);
 }
 
-Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine){
+Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine,vector<students_classes> StuClasses){
     vector<pair<string,string>> turmas;
     vector<pair<pair<string,string>,aula>> horario_novo;
     vector<aula> aulas_sorted_weekday;
     //verificar set é code ou name
 
     if(isdigit(student[0])){
-        string Code = student;
-        //atribuir code
-        this->StudentCode = Code;
-        //atribuir turmas
-        Read ler;
-        turmas = ler.read_students_classes_per_studentcode(Code);
+        this->StudentCode = student;
+        for(auto a: StuClasses){
+            if(a.StudentCode==student){
+                turmas.push_back(make_pair(a.UcCode,a.ClassCode));
+            }
+            if(a.StudentCode==student){
+                this->StudentName=a.StudentName;
+            }
+        }
         this->turmas = turmas;
-        //atribuir name
-        this->StudentName = ler.nome_por_code(Code);
     }else{
-        string Name = student;
-        //atribuir name
-        this->StudentName= Name;
-        //atribuir turmas
-        Read ler;
-        turmas = ler.read_students_classes_per_studentname(Name);
+        this->StudentCode = student;
+        for(auto a: StuClasses){
+            if(a.StudentName==student){
+                turmas.push_back(make_pair(a.UcCode,a.ClassCode));
+            }
+            if(a.StudentName==student){
+                this->StudentCode=a.StudentCode;
+            }
+        }
         this->turmas = turmas;
-        //atribuir code
-        this->StudentCode = ler.code_por_nome(Name);
     }
     for(auto a:turmas){
         for(auto b:ClassLine){

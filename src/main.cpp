@@ -39,7 +39,7 @@ int main() {
                         cout << "Write the students name or number" << '\n';
                         string nameorcode;
                         cin >> nameorcode;
-                        Horario_Aluno ChosenStudent(nameorcode,Classes);
+                        Horario_Aluno ChosenStudent(nameorcode,Classes,StuClasses);
                         ChosenStudent.Print_Horario();
                         break;
                     }
@@ -115,7 +115,6 @@ int main() {
                             }
 
                         }
-
                         break;
                     }
                     case 3:{
@@ -138,14 +137,12 @@ int main() {
                         }
 
                         cout<< '\n'<< '\n';
-
                         break;
                     }
                     case 4:{
 
                         break;
                     }
-
                 } 
                 break;
             }
@@ -168,20 +165,32 @@ int main() {
                         string name_or_code;
                         cin>> name_or_code;
                         if(isdigit(name_or_code[0])==1){
+                            /*
                             Read sc;
                             vector<pair<string,string>> uc_turma;
                             uc_turma=sc.read_students_classes_per_studentcode(name_or_code);
                             for(auto a: uc_turma){
                                 cout<< a.first<< ": "<< a.second<< ";" << '\n';
                             }
-                        }
-
-                        else{
+                            */
+                            for(auto a:StuClasses){
+                                if(name_or_code==a.StudentCode){
+                                    cout<< a.UcCode<< " with "<< a.ClassCode<< '\n';
+                                }
+                            }
+                        }else{
+                            /*
                             Read sc;
                             vector<pair<string,string>> uc_turma;
                             uc_turma=sc.read_students_classes_per_studentname(name_or_code);
                             for(auto a: uc_turma){
                                 cout<< a.first<< ": "<< a.second<< ";" << '\n';
+                            }
+                            */
+                            for(auto a:StuClasses){
+                                if(name_or_code==a.StudentName){
+                                    cout<< a.UcCode<< " with "<< a.ClassCode<< '\n';
+                                }
                             }
                         }
                     break;
@@ -225,15 +234,14 @@ int main() {
                             }
                         }
                         cout << '\n';
-
+                        break;
                     }
-                    break;
-
                     case 3:{
                         cout<<"Write Student's name or code:"<< '\n';
                         string name_or_code;
                         cin>> name_or_code;
                         if(isdigit(name_or_code[0])==1){
+                            /*
                             Read su;
                             vector<pair<string,string>> suc;
                             suc= su.read_students_classes_per_studentcode(name_or_code);
@@ -241,9 +249,14 @@ int main() {
                                 cout<< a.first <<"; ";
                             }
                             cout<< '\n';
-                        }
-
-                        else{
+                            */
+                            for(auto a:StuClasses){
+                                if(a.StudentCode==name_or_code){
+                                    cout<<a.UcCode<<'\n';
+                                }
+                            }
+                        }else{
+                            /*
                             Read su;
                             vector<pair<string,string>> suc;
                             suc= su.read_students_classes_per_studentname(name_or_code);
@@ -251,7 +264,14 @@ int main() {
                                 cout<< a.first <<"; ";
                             }
                             cout<< '\n';
+                            */
+                            for(auto a:StuClasses){
+                                if(a.StudentName==name_or_code){
+                                    cout<<a.UcCode<<'\n';
+                                }
+                            }
                         }
+                        break;
                     }
                     break;
                 }
