@@ -80,6 +80,10 @@ int main() {
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
                 cout << "7 -> Add Student to Class/Uc" << '\n';
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4c5e76a5ff5d206527c7a62b6da2bb3cc12a639
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -135,9 +139,14 @@ int main() {
                                 SetStudents.insert(a.StudentName);
                             }
                         }
+<<<<<<< HEAD
 
                         for(auto a:SetStudents){
                             cout<< a << '\n';
+=======
+                        for(auto it=SetStudents.begin();it!=SetStudents.end();it++){
+                            cout << *it;
+>>>>>>> e4c5e76a5ff5d206527c7a62b6da2bb3cc12a639
                         }
                     }
                     case 5:{
