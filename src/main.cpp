@@ -80,7 +80,14 @@ int main() {
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
                 cout << "7 -> Add Student to Class/Uc" << '\n';
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0c6f8753027c125eafb3069691d9105d95ac88db
+>>>>>>> 29939b0789c33a995d618a27d05873580d557ff7
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -156,6 +163,13 @@ int main() {
                         cout << "Choose Year:" << '\n';
                         char year;
                         cin >> year;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0c6f8753027c125eafb3069691d9105d95ac88db
+>>>>>>> 29939b0789c33a995d618a27d05873580d557ff7
                         set<pair<string,string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
@@ -168,6 +182,36 @@ int main() {
                             cout<< a.first<<"("<< a.second<<")"<< "; ";
                         }
                         cout<<'\n'<<'\n';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                set<pair<string, string>> SetStudents;
+=======
+                        set<pair<string, string>> SetStudents;
+>>>>>>> 0c6f8753027c125eafb3069691d9105d95ac88db
+                        for(auto a: StuClasses ){
+                            if (a.ClassCode[0]==year){
+                                pair<string, string> temp;
+                                temp = make_pair(a.StudentName, a.StudentCode);
+                                SetStudents.insert(temp);
+                            }
+                        }
+<<<<<<< HEAD
+                        for(auto a:SetStudents){
+                            cout<< a << '\n';
+
+                        for(auto it=SetStudents.begin();it!=SetStudents.end();it++){
+                            cout << *it;
+
+                        }
+
+=======
+
+                        for(auto a:SetStudents){
+                            cout<< a << '\n';
+                        }
+>>>>>>> 0c6f8753027c125eafb3069691d9105d95ac88db
+>>>>>>> 29939b0789c33a995d618a27d05873580d557ff7
                         break;
                     }
 

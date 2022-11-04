@@ -1,3 +1,9 @@
+/**
+ * @file read.cpp
+ * @brief
+ * functions to process data from files
+ *
+ */
 #include "read.h"
 
 vector<classes_per_uc> Read::read_classes_per_uc(){

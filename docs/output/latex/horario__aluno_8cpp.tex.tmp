@@ -1,0 +1,25 @@
+\hypertarget{horario__aluno_8cpp}{}\doxysection{/mnt/c/\+Users/\+Miguel Dionísio/\+One\+Drive/\+Documentos/\+A\+E\+D/\+Projeto\+A\+E\+D\+Schedule-\/master/src/horario\+\_\+aluno.cpp File Reference}
+\label{horario__aluno_8cpp}\index{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-\/master/src/horario\_aluno.cpp@{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-\/master/src/horario\_aluno.cpp}}
+
+
+functions to display student\textquotesingle{}s schedules  
+
+
+{\ttfamily \#include \char`\"{}horario\+\_\+aluno.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for horario\+\_\+aluno.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{horario__aluno_8cpp_a40c71ebf0e05e1c5be15c7bef59ac375}\label{horario__aluno_8cpp_a40c71ebf0e05e1c5be15c7bef59ac375}} 
+bool {\bfseries sortaula\+\_\+hora} (pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ a, pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ b)
+\item 
+\mbox{\Hypertarget{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}\label{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}} 
+bool {\bfseries sortaula\+\_\+dia} (pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ a, pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+functions to display student\textquotesingle{}s schedules 
+
