@@ -128,18 +128,24 @@ int main() {
                     }
                     case 4:{
                         cout << "Choose Year:" << '\n';
-                        int year;
+                        char year;
                         cin >> year;
-                        set<string> SetStudents;
+                        set<pair<string, string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
-                                SetStudents.insert(a.StudentName);
+                                pair<string, string> temp;
+                                temp = make_pair(a.StudentName, a.StudentCode);
+                                SetStudents.insert(temp);
                             }
                         }
-                        for(auto it=SetStudents.begin();it!=SetStudents.end();it++){
-                            cout << *it;
+                        set<pair<string,string>>::iterator it;
+                        for(it=SetStudents.begin();it!=SetStudents.end();it++){
+                            pair<string,string> temp2 = *it;
+                            cout << temp2.first << '(' << temp2.second << ")" <<"; " ;
                         }
+                        break;
                     }
+
                     case 5:{
                         cout << "Choose the Student" << '\n';
                         string student;
