@@ -76,14 +76,10 @@ int main() {
                 cout << "1 -> Show all students" << '\n';
                 cout << "2 -> Show students by class" << '\n';
                 cout << "3 -> Show students by UC" << '\n';
-<<<<<<< HEAD
-                cout << "4 -> Remove student from UC" << '\n';
-                cout << "5 -> Remove Student from class" << '\n';
-=======
                 cout << "4 -> Show students by year" << '\n';
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
->>>>>>> e76c9d04d8e051b66a6e5d1638d68516412b295c
+
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -192,6 +188,28 @@ int main() {
                             }
                         }
                         cout<< "Choose the Class you want to remove from:"<< '\n';
+                        string turma;
+                        cin>> turma;
+                        if(isdigit(student[0])){
+                            auto it = StuClasses.begin();
+                            while(it != StuClasses.end()){
+                                if(it->StudentCode==student && it->ClassCode==turma){
+                                    it = StuClasses.erase(it);
+                                }else{
+                                    ++it;
+                                }
+                            }
+                        }else{
+                            auto it = StuClasses.begin();
+                            while(it != StuClasses.end()){
+                                if(it->StudentName==student && it->ClassCode==turma){
+                                    it = StuClasses.erase(it);
+                                }else{
+                                    ++it;
+                                }
+                            }
+                        }
+                        break;
                     }
                 } 
                 break;
