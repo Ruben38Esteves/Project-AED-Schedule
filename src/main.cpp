@@ -79,7 +79,11 @@ int main() {
                 cout << "4 -> Show students by year" << '\n';
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
+<<<<<<< HEAD
 
+=======
+                cout << "7 -> Add Student to Class/Uc" << '\n';
+>>>>>>> 07c61edc03a1e3826d19b246b78e649113d9a080
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -210,6 +214,20 @@ int main() {
                             }
                         }
                         break;
+                    }
+                    case 7:{
+                        map<string, int>ClassOcup;
+                        for(auto a:StuClasses){
+                            map<string,int>::iterator it =ClassOcup.find(a.ClassCode);
+                            if(it !=ClassOcup.end()){
+                                it->second++;
+                            }else{
+                                ClassOcup.insert(make_pair(a.ClassCode,1));
+                            }
+                        }
+                        for(auto a: ClassOcup){
+                            cout<< "Class "<<a.first<< " has " << a.second << " students." << '\n';
+                        }
                     }
                 } 
                 break;
