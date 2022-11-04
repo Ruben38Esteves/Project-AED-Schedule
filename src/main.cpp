@@ -80,6 +80,10 @@ int main() {
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
                 cout << "7 -> Add Student to Class/Uc" << '\n';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -129,7 +133,7 @@ int main() {
                         cout << "Choose Year:" << '\n';
                         char year;
                         cin >> year;
-<<<<<<< HEAD
+
                         set<pair<string,string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
@@ -142,6 +146,7 @@ int main() {
                             cout<< a.first<<"("<< a.second<<")"<< "; ";
                         }
                         cout<<'\n'<<'\n';
+<<<<<<< HEAD
 =======
                         set<pair<string, string>> SetStudents;
                         for(auto a: StuClasses ){
@@ -161,6 +166,8 @@ int main() {
 >>>>>>> e4c5e76a5ff5d206527c7a62b6da2bb3cc12a639
                         }
 >>>>>>> 021a4783401f8f9998ce17e2b62ab251c77b3729
+=======
+>>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                         break;
                     }
 
