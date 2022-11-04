@@ -1,3 +1,10 @@
+/**
+ * @file horario_uc.cpp
+ * @brief
+ * functions to display a unit's schedules
+ *
+ */
+
 #include "horario_uc.h"
 #include <algorithm>
 

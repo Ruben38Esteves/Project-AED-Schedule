@@ -80,10 +80,7 @@ int main() {
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
                 cout << "7 -> Add Student to Class/Uc" << '\n';
-<<<<<<< HEAD
-=======
 
->>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -133,10 +130,7 @@ int main() {
                         cout << "Choose Year:" << '\n';
                         char year;
                         cin >> year;
-<<<<<<< HEAD
-=======
 
->>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                         set<pair<string,string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
@@ -149,10 +143,7 @@ int main() {
                             cout<< a.first<<"("<< a.second<<")"<< "; ";
                         }
                         cout<<'\n'<<'\n';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                        set<pair<string, string>> SetStudents;
+                set<pair<string, string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
                                 pair<string, string> temp;
@@ -160,21 +151,14 @@ int main() {
                                 SetStudents.insert(temp);
                             }
                         }
-<<<<<<< HEAD
-
                         for(auto a:SetStudents){
                             cout<< a << '\n';
-=======
+
                         for(auto it=SetStudents.begin();it!=SetStudents.end();it++){
                             cout << *it;
->>>>>>> e4c5e76a5ff5d206527c7a62b6da2bb3cc12a639
-                        }
->>>>>>> 021a4783401f8f9998ce17e2b62ab251c77b3729
-=======
 
->>>>>>> 17900ba107edd2a3acef7d49f95308dc161bed6d
-=======
->>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
+                        }
+
                         break;
                     }
 

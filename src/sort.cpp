@@ -1,3 +1,9 @@
+/**
+ * @file sort.cpp
+ * @brief
+ * functions used throughout the program assist in sorting
+ *
+ */
 #include "sort.h"
 
 int weekday_to_int(string weekday){

@@ -1,3 +1,9 @@
+/**
+ * @file horario_aluno.cpp
+ * @brief
+ * functions to display student's schedules
+ *
+ */
 #include "horario_aluno.h"
 #include <algorithm>
 
