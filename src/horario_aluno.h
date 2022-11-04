@@ -23,7 +23,7 @@ class Horario_Aluno{
         vector<pair<pair<string,string>,aula>> horario_novo;
 
     public:
-        Horario_Aluno(string student,vector<classes> ClassLine);
+        Horario_Aluno(string student,vector<classes> ClassLine,vector<students_classes> StuClasses);
         void Print_Horario();
 };
 

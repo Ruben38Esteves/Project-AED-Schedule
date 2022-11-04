@@ -183,6 +183,21 @@ src/read.s:
 	$(MAKE) -f CMakeFiles/ProjetoAEDSchedule_master.dir/build.make CMakeFiles/ProjetoAEDSchedule_master.dir/src/read.s
 .PHONY : src/read.s
 
+# target to build an object file
+src/sort.o:
+	$(MAKE) -f CMakeFiles/ProjetoAEDSchedule_master.dir/build.make CMakeFiles/ProjetoAEDSchedule_master.dir/src/sort.o
+.PHONY : src/sort.o
+
+# target to preprocess a source file
+src/sort.i:
+	$(MAKE) -f CMakeFiles/ProjetoAEDSchedule_master.dir/build.make CMakeFiles/ProjetoAEDSchedule_master.dir/src/sort.i
+.PHONY : src/sort.i
+
+# target to generate assembly for a file
+src/sort.s:
+	$(MAKE) -f CMakeFiles/ProjetoAEDSchedule_master.dir/build.make CMakeFiles/ProjetoAEDSchedule_master.dir/src/sort.s
+.PHONY : src/sort.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -204,6 +219,9 @@ help:
 	@echo "... src/read.o"
 	@echo "... src/read.i"
 	@echo "... src/read.s"
+	@echo "... src/sort.o"
+	@echo "... src/sort.i"
+	@echo "... src/sort.s"
 .PHONY : help
 
 

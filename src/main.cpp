@@ -4,6 +4,7 @@
 #include "horario_aluno.h"
 #include "horario_uc.h"
 #include <set>
+#include <vector>
 
 int main() {
     Read ler;
@@ -16,7 +17,7 @@ int main() {
     }
     set<string> SetUcs;
     for(auto a: CPU){
-        SetClasses.insert(a.UcCode);
+        SetUcs.insert(a.UcCode);
     }
     int mainmenu = 0;
     while(mainmenu != 5){
@@ -38,7 +39,7 @@ int main() {
                         cout << "Write the students name or number" << '\n';
                         string nameorcode;
                         cin >> nameorcode;
-                        Horario_Aluno ChosenStudent(nameorcode,Classes);
+                        Horario_Aluno ChosenStudent(nameorcode,Classes,StuClasses);
                         ChosenStudent.Print_Horario();
                         break;
                     }
@@ -75,7 +76,8 @@ int main() {
                 cout << "1 -> Show all students" << '\n';
                 cout << "2 -> Show students by class" << '\n';
                 cout << "3 -> Show students by UC" << '\n';
-                cout << "4 -> Show students by Class and UC" << '\n';
+                cout << "4 -> Remove student from UC" << '\n';
+                cout << "5 -> remove Student from class" << '\n';
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -89,28 +91,183 @@ int main() {
                         set<pair<string,string>>::iterator it;
                         for(it=StudentsList.begin();it!=StudentsList.end();it++){
                             pair<string,string> temp2 = *it;
-                            cout << temp2.first << '(' << temp2.second << ") / ";
+                            cout << temp2.first << '(' << temp2.second << ")" <<"; " ;
                         }
+                        cout<<'\n'<<'\n';
                         break;
                     }
                     case 2:{
+                        cout<< "Choose class:" << '\n';
+                        string turma;
+                        cin>> turma;
 
+                        for(auto a: StuClasses){
+                            if(a.ClassCode==turma){
+                                cout<< a.StudentName<< "("<< a.StudentCode<< "); ";
+                            }
+                        }
+                        cout<< '\n'<< '\n';
                         break;
                     }
                     case 3:{
+                        cout<< "Choose UC:"<<'\n';
+                        string uc;
+                        cin>> uc;
 
+                        for(auto a: StuClasses){
+                            if(a.UcCode==uc){
+                                cout<<a.StudentName<<"("<<a.StudentCode<<"); ";
+                            }
+                        }
+
+                        cout<< '\n'<< '\n';
                         break;
                     }
                     case 4:{
-
+                        cout << "Choose the Student" << '\n';
+                        string student;
+                        cin >> student;
+                        if(isdigit(student[0])){
+                            for(auto a: StuClasses){
+                                if(student==a.StudentCode){
+                                    cout << a.UcCode << '\n';
+                                }
+                            }
+                        }else{
+                            for(auto a: StuClasses){
+                                if(student==a.StudentName){
+                                    cout << a.UcCode << '\n';
+                                }
+                            }
+                        }
+                        string removeUC;
+                        cin >> removeUC;
+                        if(isdigit(student[0])){
+                            auto it = StuClasses.begin();
+                            while(it != StuClasses.end()){
+                                if(it->StudentCode==student && it->UcCode==removeUC){
+                                    it = StuClasses.erase(it);
+                                }else{
+                                    ++it;
+                                }
+                            }
+                        }else{
+                            auto it = StuClasses.begin();
+                            while(it != StuClasses.end()){
+                                if(it->StudentName==student && it->UcCode==removeUC){
+                                    it = StuClasses.erase(it);
+                                }else{
+                                    ++it;
+                                }
+                            }
+                        }
                         break;
                     }
                 } 
                 break;
             }
+            case 3:{
+                cout<< "1-> Show all classes"<< '\n';
+                cout<< "2-> Show a Student's class"<< '\n';
+                cout<< "3-> Show classes by UC"<< '\n';
+                int menu3;
+                cin>> menu3;
+                switch(menu3){
+                    case 1:{
+                        for(auto a:SetClasses){
+                            cout<< a <<"; ";
+                        }
+                        cout<< '\n'<< '\n';
+                    break;
+                    }
+                    case 2:{
+                        cout<< "Write Student's name or code:"<< '\n';
+                        string name_or_code;
+                        cin>> name_or_code;
+                        if(isdigit(name_or_code[0])==1){
+                            for(auto a:StuClasses){
+                                if(name_or_code==a.StudentCode){
+                                    cout<< a.UcCode<< " with "<< a.ClassCode<< '\n';
+                                }
+                            }
+                        }else{
+                            for(auto a:StuClasses){
+                                if(name_or_code==a.StudentName){
+                                    cout<< a.UcCode<< " with "<< a.ClassCode<< '\n';
+                                }
+                            }
+                        }
+                        cout<< '\n';
+                    break;
+                    }
+                    case 3:{
+                        cout<< "Choose UC:"<< "\n";
+                        string uc;
+                        cin>> uc;
+                        for(auto a: CPU){
+                            if(a.UcCode==uc){
+                                cout<< a.ClassCode <<"; " ;
+                            }
+                        }
+                        cout << '\n'<< '\n';
+                    }
+                    break;
+                }
+                break;
+            }
+            case 4:{
+                cout<< "1-> Show all UC's"<< '\n';
+                cout<< "2-> Show UC's by class"<< '\n';
+                cout<< "3-> Show Student's UC's"<< '\n';
+                int menu4;
+                cin>> menu4;
+                switch(menu4){
+                    case 1:{
+                        for(auto a:SetUcs){
+                            cout<< a<< "; ";
+                        }
+                        cout<<'\n'<<'\n';
+                        break;
+                    }
+                    case 2:{
+                        cout<< "Choose Class:"<< '\n';
+                        string turma;
+                        cin>> turma;
+                        for(auto a: CPU){
+                            if(a.ClassCode==turma){
+                                cout<< a.UcCode <<"; " ;
+                            }
+                        }
+                        cout << '\n'<<'\n';
+                        break;
+                    }
+                    case 3:{
+                        cout<<"Write Student's name or code:"<< '\n';
+                        string name_or_code;
+                        cin>> name_or_code;
+                        if(isdigit(name_or_code[0])==1){
+                            for(auto a:StuClasses){
+                                if(a.StudentCode==name_or_code){
+                                    cout<<a.UcCode<<'\n';
+                                }
+                            }
+                        }else{
+                            for(auto a:StuClasses){
+                                if(a.StudentName==name_or_code){
+                                    cout<<a.UcCode<<'\n';
+                                }
+                            }
+                        }
+                        cout<<'\n';
+                        break;
+                    }
+                    break;
+                }
+            break;
+            }
         }
     }
-    /*
+/*
     int escolha = 0;
     //funçoes de ler
     //xxxxxxxxxxx
