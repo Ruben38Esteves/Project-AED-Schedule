@@ -80,14 +80,7 @@ int main() {
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
                 cout << "7 -> Add Student to Class/Uc" << '\n';
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> e4c5e76a5ff5d206527c7a62b6da2bb3cc12a639
->>>>>>> 021a4783401f8f9998ce17e2b62ab251c77b3729
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -137,7 +130,7 @@ int main() {
                         cout << "Choose Year:" << '\n';
                         char year;
                         cin >> year;
-<<<<<<< HEAD
+
                         set<pair<string,string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
@@ -150,32 +143,6 @@ int main() {
                             cout<< a.first<<"("<< a.second<<")"<< "; ";
                         }
                         cout<<'\n'<<'\n';
-=======
-                        set<pair<string, string>> SetStudents;
-                        for(auto a: StuClasses ){
-                            if (a.ClassCode[0]==year){
-                                pair<string, string> temp;
-                                temp = make_pair(a.StudentName, a.StudentCode);
-                                SetStudents.insert(temp);
-                            }
-                        }
-<<<<<<< HEAD
-                        set<pair<string,string>>::iterator it;
-                        for(it=SetStudents.begin();it!=SetStudents.end();it++){
-                            pair<string,string> temp2 = *it;
-                            cout << temp2.first << '(' << temp2.second << ")" <<"; " ;
-=======
-<<<<<<< HEAD
-
-                        for(auto a:SetStudents){
-                            cout<< a << '\n';
-=======
-                        for(auto it=SetStudents.begin();it!=SetStudents.end();it++){
-                            cout << *it;
->>>>>>> e4c5e76a5ff5d206527c7a62b6da2bb3cc12a639
->>>>>>> db319bdcf6667222d02f168100359432935423ad
-                        }
->>>>>>> 021a4783401f8f9998ce17e2b62ab251c77b3729
                         break;
                     }
 
