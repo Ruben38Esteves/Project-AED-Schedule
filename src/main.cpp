@@ -216,13 +216,18 @@ int main() {
                         break;
                     }
                     case 7:{
+                        cout<<"Choose the UC"<<'\n';
+                        string chosenuc;
+                        cin >> chosenuc;
                         map<string, int>ClassOcup;
                         for(auto a:StuClasses){
-                            map<string,int>::iterator it =ClassOcup.find(a.ClassCode);
-                            if(it !=ClassOcup.end()){
-                                it->second++;
-                            }else{
-                                ClassOcup.insert(make_pair(a.ClassCode,1));
+                            if(a.UcCode==chosenuc){
+                                map<string,int>::iterator it =ClassOcup.find(a.ClassCode);
+                                if(it !=ClassOcup.end()){
+                                    it->second++;
+                                }else{
+                                    ClassOcup.insert(make_pair(a.ClassCode,1));
+                                }
                             }
                         }
                         for(auto a: ClassOcup){
