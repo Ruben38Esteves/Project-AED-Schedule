@@ -79,17 +79,7 @@ int main() {
                 cout << "4 -> Show students by year" << '\n';
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                 cout << "7 -> Add Student to Class/Uc" << '\n';
->>>>>>> b5bb8871ee852d61b8a1800150feeceb3b416cca
-=======
-
-=======
-                cout << "7 -> Add Student to Class/Uc" << '\n';
->>>>>>> 07c61edc03a1e3826d19b246b78e649113d9a080
->>>>>>> 417aaf63a09789a2267a5679d171686b4a8ced00
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -146,8 +136,8 @@ int main() {
                             }
                         }
 
-                        for(it=SetStudents.begin();it!=SetStudents.end();it++){
-                            cout << SetStudents[it];
+                        for(auto a:SetStudents){
+                            cout<< a << '\n';
                         }
                     }
                     case 5:{
@@ -248,9 +238,26 @@ int main() {
                                 }
                             }
                         }
+                        int minstu=50;
+                        int maxstu=0;
                         for(auto a: ClassOcup){
                             cout<< "Class "<<a.first<< " has " << a.second << " students." << '\n';
+                            if(a.second>maxstu){
+                                maxstu=a.second;
+                            }
+                            if(a.second<minstu){
+                                minstu=a.second;
+                            }
                         }
+                        cout<<"Choose the class you wish to add the student to:"<< '\n';
+                        string chosenclass;
+                        cin >> chosenclass;
+                        if(ClassOcup[chosenclass]-minstu>4 && maxstu-ClassOcup[chosenclass]>4){
+                            cout<<"Adding to this class won't create imbalance"<<'\n';
+                        }else{
+                            cout<<"Adding to this class will create imbalance"<<'\n';
+                        }
+                        break;
                     }
                 } 
                 break;
