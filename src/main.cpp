@@ -77,7 +77,7 @@ int main() {
                 cout << "2 -> Show students by class" << '\n';
                 cout << "3 -> Show students by UC" << '\n';
                 cout << "4 -> Remove student from UC" << '\n';
-                cout << "5 -> remove Student from class" << '\n';
+                cout << "5 -> Remove Student from class" << '\n';
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -140,6 +140,8 @@ int main() {
                                 }
                             }
                         }
+                        cout<< '\n';
+                        cout<< "Choose the UC you want to remove from:"<<'\n';
                         string removeUC;
                         cin >> removeUC;
                         if(isdigit(student[0])){
@@ -162,6 +164,25 @@ int main() {
                             }
                         }
                         break;
+                    }
+                    case 5:{
+                        cout << "Choose the Student" << '\n';
+                        string student;
+                        cin >> student;
+                        if(isdigit(student[0])){
+                            for(auto a: StuClasses){
+                                if(student==a.StudentCode){
+                                    cout << a.ClassCode << '\n';
+                                }
+                            }
+                        }else{
+                            for(auto a: StuClasses){
+                                if(student==a.StudentName){
+                                    cout << a.ClassCode << '\n';
+                                }
+                            }
+                        }
+                        cout<< "Choose the Class you want to remove from:"
                     }
                 } 
                 break;
