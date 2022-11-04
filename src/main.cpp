@@ -133,7 +133,10 @@ int main() {
                         cout << "Choose Year:" << '\n';
                         char year;
                         cin >> year;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                         set<pair<string,string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
@@ -146,6 +149,7 @@ int main() {
                             cout<< a.first<<"("<< a.second<<")"<< "; ";
                         }
                         cout<<'\n'<<'\n';
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                         set<pair<string, string>> SetStudents;
@@ -166,6 +170,9 @@ int main() {
 >>>>>>> e4c5e76a5ff5d206527c7a62b6da2bb3cc12a639
                         }
 >>>>>>> 021a4783401f8f9998ce17e2b62ab251c77b3729
+=======
+
+>>>>>>> 17900ba107edd2a3acef7d49f95308dc161bed6d
 =======
 >>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                         break;
