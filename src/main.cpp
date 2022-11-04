@@ -76,8 +76,14 @@ int main() {
                 cout << "1 -> Show all students" << '\n';
                 cout << "2 -> Show students by class" << '\n';
                 cout << "3 -> Show students by UC" << '\n';
+<<<<<<< HEAD
                 cout << "4 -> Remove student from UC" << '\n';
                 cout << "5 -> Remove Student from class" << '\n';
+=======
+                cout << "4 -> Show students by year" << '\n';
+                cout << "5 -> Remove student from UC" << '\n';
+                cout << "6 -> Remove Student from class" << '\n';
+>>>>>>> e76c9d04d8e051b66a6e5d1638d68516412b295c
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -124,6 +130,9 @@ int main() {
                         break;
                     }
                     case 4:{
+
+                    }
+                    case 5:{
                         cout << "Choose the Student" << '\n';
                         string student;
                         cin >> student;
