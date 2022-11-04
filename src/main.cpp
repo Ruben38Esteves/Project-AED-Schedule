@@ -79,6 +79,10 @@ int main() {
                 cout << "4 -> Show students by year" << '\n';
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
+<<<<<<< HEAD
+=======
+                cout << "7 -> Add Student to Class/Uc" << '\n';
+>>>>>>> b5bb8871ee852d61b8a1800150feeceb3b416cca
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -181,7 +185,7 @@ int main() {
                         }
                         break;
                     }
-                    case 5:{
+                    case 6:{
                         cout << "Choose the Student" << '\n';
                         string student;
                         cin >> student;
@@ -198,7 +202,26 @@ int main() {
                                 }
                             }
                         }
-                        cout<< "Choose the Class you want to remove from:"
+                        cout<< "Choose the Class you want to remove from:"<< '\n';
+                    }
+                    case 7:{
+                        cout<<"Choose the UC"<<'\n';
+                        string chosenuc;
+                        cin >> chosenuc;
+                        map<string, int>ClassOcup;
+                        for(auto a:StuClasses){
+                            if(a.UcCode==chosenuc){
+                                map<string,int>::iterator it =ClassOcup.find(a.ClassCode);
+                                if(it !=ClassOcup.end()){
+                                    it->second++;
+                                }else{
+                                    ClassOcup.insert(make_pair(a.ClassCode,1));
+                                }
+                            }
+                        }
+                        for(auto a: ClassOcup){
+                            cout<< "Class "<<a.first<< " has " << a.second << " students." << '\n';
+                        }
                     }
                 } 
                 break;
