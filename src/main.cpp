@@ -174,7 +174,7 @@ int main() {
                         }
                         break;
                     }
-                    case 5:{
+                    case 6:{
                         cout << "Choose the Student" << '\n';
                         string student;
                         cin >> student;
@@ -191,7 +191,7 @@ int main() {
                                 }
                             }
                         }
-                        cout<< "Choose the Class you want to remove from:"
+                        cout<< "Choose the Class you want to remove from:"<< '\n';
                     }
                 } 
                 break;
