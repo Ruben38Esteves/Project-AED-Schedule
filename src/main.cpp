@@ -76,6 +76,8 @@ int main() {
                 cout << "1 -> Show all students" << '\n';
                 cout << "2 -> Show students by class" << '\n';
                 cout << "3 -> Show students by UC" << '\n';
+                cout << "4 -> Remove student from UC" << '\n';
+                cout << "5 -> remove Student from class" << '\n';
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -122,7 +124,43 @@ int main() {
                         break;
                     }
                     case 4:{
-
+                        cout << "Choose the Student" << '\n';
+                        string student;
+                        cin >> student;
+                        if(isdigit(student[0])){
+                            for(auto a: StuClasses){
+                                if(student==a.StudentCode){
+                                    cout << a.UcCode << '\n';
+                                }
+                            }
+                        }else{
+                            for(auto a: StuClasses){
+                                if(student==a.StudentName){
+                                    cout << a.UcCode << '\n';
+                                }
+                            }
+                        }
+                        string removeUC;
+                        cin >> removeUC;
+                        if(isdigit(student[0])){
+                            auto it = StuClasses.begin();
+                            while(it != StuClasses.end()){
+                                if(it->StudentCode==student && it->UcCode==removeUC){
+                                    it = StuClasses.erase(it);
+                                }else{
+                                    ++it;
+                                }
+                            }
+                        }else{
+                            auto it = StuClasses.begin();
+                            while(it != StuClasses.end()){
+                                if(it->StudentName==student && it->UcCode==removeUC){
+                                    it = StuClasses.erase(it);
+                                }else{
+                                    ++it;
+                                }
+                            }
+                        }
                         break;
                     }
                 } 
@@ -177,7 +215,6 @@ int main() {
                 }
                 break;
             }
-
             case 4:{
                 cout<< "1-> Show all UC's"<< '\n';
                 cout<< "2-> Show UC's by class"<< '\n';
