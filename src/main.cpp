@@ -80,10 +80,7 @@ int main() {
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
                 cout << "7 -> Add Student to Class/Uc" << '\n';
-<<<<<<< HEAD
-=======
 
->>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -106,12 +103,38 @@ int main() {
                         cout<< "Choose class:" << '\n';
                         string turma;
                         cin>> turma;
-
+                        vector<pair<string,string>> alunos;
                         for(auto a: StuClasses){
                             if(a.ClassCode==turma){
-                                cout<< a.StudentName<< "("<< a.StudentCode<< "); ";
+                                pair<string,string> temp;
+                                temp= make_pair(a.StudentName,a.StudentCode);
+                                alunos.push_back(temp);
                             }
                         }
+
+                        cout<< "1 -> Show sorted by alphabetical order" << '\n';
+                        cout<< "2 -> Show sorted by inverted alphabetical order" << '\n';
+
+                        int menu5;
+                        cin>> menu5;
+                        switch(menu5){
+                            case 1:{
+                                sort(alunos.begin(),alunos.end());
+                                for(auto a:alunos){
+                                    cout<< a.first<< "("<< a.second <<")"<< "; ";
+                                }
+                                break;
+                            }
+                            case 2:{
+                                sort(alunos.begin(), alunos.end(), greater<pair<string,string>>());
+                                for(auto a:alunos){
+                                    cout<< a.first<< "("<< a.second <<")"<< "; ";
+                                }
+                                break;
+                            }
+
+                        }
+
                         cout<< '\n'<< '\n';
                         break;
                     }
@@ -122,7 +145,7 @@ int main() {
 
                         for(auto a: StuClasses){
                             if(a.UcCode==uc){
-                                cout<<a.StudentName<<"("<<a.StudentCode<<"); ";
+                                cout<< a.StudentName<< "("<< a.StudentCode<< "); ";
                             }
                         }
 
@@ -133,10 +156,6 @@ int main() {
                         cout << "Choose Year:" << '\n';
                         char year;
                         cin >> year;
-<<<<<<< HEAD
-=======
-
->>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                         set<pair<string,string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
@@ -149,32 +168,6 @@ int main() {
                             cout<< a.first<<"("<< a.second<<")"<< "; ";
                         }
                         cout<<'\n'<<'\n';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                        set<pair<string, string>> SetStudents;
-                        for(auto a: StuClasses ){
-                            if (a.ClassCode[0]==year){
-                                pair<string, string> temp;
-                                temp = make_pair(a.StudentName, a.StudentCode);
-                                SetStudents.insert(temp);
-                            }
-                        }
-<<<<<<< HEAD
-
-                        for(auto a:SetStudents){
-                            cout<< a << '\n';
-=======
-                        for(auto it=SetStudents.begin();it!=SetStudents.end();it++){
-                            cout << *it;
->>>>>>> e4c5e76a5ff5d206527c7a62b6da2bb3cc12a639
-                        }
->>>>>>> 021a4783401f8f9998ce17e2b62ab251c77b3729
-=======
-
->>>>>>> 17900ba107edd2a3acef7d49f95308dc161bed6d
-=======
->>>>>>> 02b6f37155405102d4ad4990798d999dc668ec58
                         break;
                     }
 
@@ -324,9 +317,34 @@ int main() {
                 cin>> menu3;
                 switch(menu3){
                     case 1:{
+                        vector<string> turma;
                         for(auto a:SetClasses){
-                            cout<< a <<"; ";
+                            turma.push_back(a);
                         }
+
+                        cout<< "1 -> Show sorted by ascending order" << '\n';
+                        cout<< "2 -> Show sorted by descending order" << '\n';
+
+                        int menu6;
+                        cin>> menu6;
+                        switch(menu6){
+                            case 1:{
+                                sort(turma.begin(),turma.end());
+                                for(auto a: turma){
+                                    cout<< a<< "; ";
+                                }
+                                break;
+                            }
+                            case 2:{
+                                sort(turma.begin(),turma.end(), greater<string>());
+                                for(auto a: turma){
+                                    cout<< a<< "; ";
+                                }
+                                break;
+                            }
+                        }
+
+
                         cout<< '\n'<< '\n';
                     break;
                     }

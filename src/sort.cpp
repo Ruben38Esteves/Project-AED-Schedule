@@ -27,3 +27,5 @@ bool sortHorario_hora(pair<string, aula> s1, pair<string, aula> s2){
 bool sortHorario_weekday(pair<string, aula> s1, pair<string, aula> s2){
     return weekday_to_int(s1.second.Weekday) < weekday_to_int(s2.second.Weekday);
 }
+
+
