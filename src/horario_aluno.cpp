@@ -35,9 +35,11 @@ bool sortaula_dia(pair<pair<string,string>,aula> a, pair<pair<string,string>,aul
     return weekday_to_int(a.second.Weekday) < weekday_to_int(b.second.Weekday);
 }
 /**
- * @brief Generates the student's schedule
+ * @brief Gathers information necessary for the student's schedule
  * @details
- * The function verifies if the user entered the student's name or code. It then stores in a vector turmas the UCCode and ClassCode of each line in which the student is the one chosen by the user.
+ * The function verifies if the user entered the student's name or code. It stores in a vector turmas pairs with UCCode and ClassCode of each line in which the student is the one chosen by the user.
+ * Then for each pair 'a' in turmas it goes through every class 'b' and checks if UCCode and ClassCode match, if so it creates a variable temp of type aula, stores the info of the class and adds to
+ * the vector horario_novo a pair with the current value of turmas and the temp variable containing all the info on the class.
  *
  * @param student
  * @param ClassLine
