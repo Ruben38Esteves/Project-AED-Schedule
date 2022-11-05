@@ -8,6 +8,15 @@
 #include "horario_uc.h"
 #include <algorithm>
 
+/**
+ * @brief
+ * generates the curricular unit's schedule
+ * @details
+ * runs a cycle by the vector with the classes,
+ * checking if they match with the user's choice and
+ * @param UCCode
+ * @param ClassLines
+ */
 Horario_UC::Horario_UC(string UCCode, vector<classes> ClassLines){
     set<string> Classes;
     vector <pair<string, aula>> horario;
@@ -36,7 +45,11 @@ Horario_UC::Horario_UC(string UCCode, vector<classes> ClassLines){
     this->UCCode = UCCode;
     this->aulas=horario;
 };
-
+/**
+ * @brief
+ * prints the curricular unit's schedule.
+ *
+ */
 void Horario_UC::Print_Horario(){
     cout << "O Horario da UC " << this->UCCode << " é: " << '\n';
     string lastday;
