@@ -16,7 +16,7 @@
  * checking if the UCCode match with the user's UC choice and adds the respective ClassCode to the set Classes.
  * Then every class 'b' existing (ClassLines) is searched for a match in UCCode and ClassCode of
  * every class 'a' in Classes using a double for loop. If both match, a variable temp of type aula is created and in it
- * is stored all the information of class 'b'. Then it is added to the set the matching ClassCode 'a' and the variable
+ * is stored all the information of class 'b'. Then it is added to the set horario the matching ClassCode 'a' and the variable
  * temp.
  *
  * @param UCCode
