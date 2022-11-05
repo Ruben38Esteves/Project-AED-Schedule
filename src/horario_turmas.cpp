@@ -43,6 +43,6 @@ void Horario_Turma::Print_Horario(){
             lastday = a.second.Weekday;
             cout<< lastday << ':' << "\n";
         }
-        cout << a.first << ' ' << a.second.Type << " Class from " << a.second.StartHour << " until " << a.second.EndHour;
+        cout << a.first << ' ' << a.second.Type << " class from " << a.second.StartHour << " until " << a.second.EndHour<<'\n';
     }
 }

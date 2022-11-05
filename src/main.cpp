@@ -5,6 +5,7 @@
 #include "horario_uc.h"
 #include <set>
 #include <vector>
+#include <queue>
 
 int main() {
     Read ler;
@@ -19,6 +20,7 @@ int main() {
     for(auto a: CPU){
         SetUcs.insert(a.UcCode);
     }
+    queue<students_classes> currentchanges;
     int mainmenu = 0;
     while(mainmenu != 5){
         //mostar opçoes
@@ -26,6 +28,7 @@ int main() {
         cout << "2 -> Show Students" << '\n';
         cout << "3 -> Show Classes" << '\n';
         cout << "4 -> Show UC's" << '\n';
+        cout << "5 -> Exit" << '\n';
         cin >> mainmenu;
         switch(mainmenu){
             case 1:{
@@ -54,6 +57,7 @@ int main() {
                         cin >> chosenclass;
                         Horario_Turma ChosenClass(chosenclass, Classes);
                         ChosenClass.Print_Horario();
+                        cout<<'\n';
                         break;
                     }
                     case 3:{
@@ -67,6 +71,7 @@ int main() {
                         cin >> chosenuc;
                         Horario_UC ChosenUC(chosenuc, Classes);
                         ChosenUC.Print_Horario();
+                        cout<<'\n';
                         break;
                     }
                 }
@@ -80,10 +85,7 @@ int main() {
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
                 cout << "7 -> Add Student to Class/Uc" << '\n';
-<<<<<<< HEAD
-
-=======
->>>>>>> 0c6f8753027c125eafb3069691d9105d95ac88db
+                cout << "8 -> Apply Changes" << '\n';
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -106,12 +108,38 @@ int main() {
                         cout<< "Choose class:" << '\n';
                         string turma;
                         cin>> turma;
-
+                        vector<pair<string,string>> alunos;
                         for(auto a: StuClasses){
                             if(a.ClassCode==turma){
-                                cout<< a.StudentName<< "("<< a.StudentCode<< "); ";
+                                pair<string,string> temp;
+                                temp= make_pair(a.StudentName,a.StudentCode);
+                                alunos.push_back(temp);
                             }
                         }
+
+                        cout<< "1 -> Show sorted by alphabetical order" << '\n';
+                        cout<< "2 -> Show sorted by inverted alphabetical order" << '\n';
+
+                        int menu5;
+                        cin>> menu5;
+                        switch(menu5){
+                            case 1:{
+                                sort(alunos.begin(),alunos.end());
+                                for(auto a:alunos){
+                                    cout<< a.first<< "("<< a.second <<")"<< "; ";
+                                }
+                                break;
+                            }
+                            case 2:{
+                                sort(alunos.begin(), alunos.end(), greater<pair<string,string>>());
+                                for(auto a:alunos){
+                                    cout<< a.first<< "("<< a.second <<")"<< "; ";
+                                }
+                                break;
+                            }
+
+                        }
+
                         cout<< '\n'<< '\n';
                         break;
                     }
@@ -120,11 +148,37 @@ int main() {
                         string uc;
                         cin>> uc;
 
+                        cout<< "1 -> Show sorted by alphabetical order" << '\n';
+                        cout<< "2 -> Show sorted by inverted alphabetical order" << '\n';
+
+                        vector<pair<string,string>> alunos;
                         for(auto a: StuClasses){
                             if(a.UcCode==uc){
-                                cout<<a.StudentName<<"("<<a.StudentCode<<"); ";
+                                pair<string,string> temp;
+                                temp=make_pair(a.StudentName,a.StudentCode);
+                                alunos.push_back(temp);
                             }
                         }
+                        int menu5;
+                        cin>> menu5;
+                        switch(menu5){
+                            case 1:{
+                                sort(alunos.begin(),alunos.end());
+                                for(auto a:alunos){
+                                    cout<< a.first<< "("<< a.second <<")"<< "; ";
+                                }
+                                break;
+                            }
+                            case 2:{
+                                sort(alunos.begin(), alunos.end(), greater<pair<string,string>>());
+                                for(auto a:alunos){
+                                    cout<< a.first<< "("<< a.second <<")"<< "; ";
+                                }
+                                break;
+                            }
+
+                        }
+
 
                         cout<< '\n'<< '\n';
                         break;
@@ -133,10 +187,7 @@ int main() {
                         cout << "Choose Year:" << '\n';
                         char year;
                         cin >> year;
-<<<<<<< HEAD
 
-=======
->>>>>>> 0c6f8753027c125eafb3069691d9105d95ac88db
                         set<pair<string,string>> SetStudents;
                         for(auto a: StuClasses ){
                             if (a.ClassCode[0]==year){
@@ -145,40 +196,36 @@ int main() {
                                 SetStudents.insert(temp);
                             }
                         }
-                        for(auto a: SetStudents){
-                            cout<< a.first<<"("<< a.second<<")"<< "; ";
+
+                        cout<< "1 -> Show sorted by alphabetical order" << '\n';
+                        cout<< "2 -> Show sorted by inverted alphabetical order" << '\n';
+
+                        int menu5;
+                        cin>> menu5;
+                        switch(menu5){
+                            case 1:{
+                                for(auto a:SetStudents){
+                                    cout<< a.first<< "("<< a.second <<")"<< "; ";
+                                }
+                                break;
+                            }
+                            case 2:{
+                                vector<pair<string,string>> alunos;
+                                for(auto a:SetStudents){
+                                    alunos.push_back(a);
+                                }
+                                sort(alunos.begin(), alunos.end(), greater<pair<string,string>>());
+                                for(auto a:alunos){
+                                    cout<< a.first<< "("<< a.second <<")"<< "; ";
+                                }
+                                break;
+                            }
+
                         }
                         cout<<'\n'<<'\n';
-<<<<<<< HEAD
-                set<pair<string, string>> SetStudents;
-=======
-                        set<pair<string, string>> SetStudents;
->>>>>>> 0c6f8753027c125eafb3069691d9105d95ac88db
-                        for(auto a: StuClasses ){
-                            if (a.ClassCode[0]==year){
-                                pair<string, string> temp;
-                                temp = make_pair(a.StudentName, a.StudentCode);
-                                SetStudents.insert(temp);
-                            }
-                        }
-<<<<<<< HEAD
-                        for(auto a:SetStudents){
-                            cout<< a << '\n';
 
-                        for(auto it=SetStudents.begin();it!=SetStudents.end();it++){
-                            cout << *it;
-
-                        }
-
-=======
-
-                        for(auto a:SetStudents){
-                            cout<< a << '\n';
-                        }
->>>>>>> 0c6f8753027c125eafb3069691d9105d95ac88db
                         break;
                     }
-
                     case 5:{
                         cout << "Choose the Student" << '\n';
                         string student;
@@ -263,56 +310,95 @@ int main() {
                         break;
                     }
                     case 7:{
-                        cout<<"Choose the UC"<<'\n';
-                        for(auto a:SetUcs){
-                            cout<< a<< "; ";
-                        }
-                        cout << '\n';
-                        string chosenuc;
-                        cin >> chosenuc;
-                        map<string, int>ClassOcup;
-                        for(auto a:StuClasses){
-                            if(a.UcCode==chosenuc){
-                                map<string,int>::iterator it =ClassOcup.find(a.ClassCode);
-                                if(it !=ClassOcup.end()){
-                                    it->second++;
-                                }else{
-                                    ClassOcup.insert(make_pair(a.ClassCode,1));
+                        bool changing=true;
+                        while(changing){
+                            cout<<"Choose the UC"<<'\n';
+                            for(auto a:SetUcs){
+                                cout<< a<< "; ";
+                            }
+                            cout << '\n';
+                            string chosenuc;
+                            cin >> chosenuc;
+                            map<string, int>ClassOcup;
+                            for(auto a:StuClasses){
+                                if(a.UcCode==chosenuc){
+                                    map<string,int>::iterator it =ClassOcup.find(a.ClassCode);
+                                    if(it !=ClassOcup.end()){
+                                        it->second++;
+                                    }else{
+                                        ClassOcup.insert(make_pair(a.ClassCode,1));
+                                    }
                                 }
                             }
-                        }
-                        int minstu=50;
-                        int maxstu=0;
-                        for(auto a: ClassOcup){
-                            cout<< "Class "<<a.first<< " has " << a.second << " students." << '\n';
-                            if(a.second>maxstu){
-                                maxstu=a.second;
+                            int minstu=50;
+                            int maxstu=0;
+                            for(auto a: ClassOcup){
+                                cout<< "Class "<<a.first<< " has " << a.second << " students." << '\n';
+                                if(a.second>maxstu){
+                                    maxstu=a.second;
+                                }
+                                if(a.second<minstu){
+                                    minstu=a.second;
+                                }
                             }
-                            if(a.second<minstu){
-                                minstu=a.second;
+                            cout<<"Choose the class you wish to add the student to:"<< '\n';
+                            string chosenclass;
+                            cin >> chosenclass;
+                            if(ClassOcup[chosenclass]-minstu<4 && maxstu-ClassOcup[chosenclass]<4){
+                                cout<<"Adding to this class won't create imbalance"<<'\n';
+                                students_classes temp;
+                                temp.ClassCode= chosenclass;
+                                temp.UcCode = chosenuc;
+                                string chosencode;
+                                cout<<"What's the students code?"<<'\n';
+                                cin>>chosencode;
+                                temp.StudentCode=chosencode;
+                                string chosenname;
+                                cout<<"What's the students name?"<<'\n';
+                                cin>>chosenname;
+                                temp.StudentName=chosenname;
+                                currentchanges.push(temp);
+                            }else{
+                                cout<<"Adding to this class will create imbalance"<<'\n';
+                                cout << "Do you wish to continue?(Y/N)" << '\n';
+                                string option;
+                                cin>>option;
+                                if(option=="Y"||option=="y"){
+                                    students_classes temp;
+                                    temp.ClassCode= chosenclass;
+                                    temp.UcCode = chosenuc;
+                                    string chosencode;
+                                    cout<<"What's the students code?"<<'\n';
+                                    cin>>chosencode;
+                                    temp.StudentCode=chosencode;
+                                    string chosenname;
+                                    cout<<"What's the students name?"<<'\n';
+                                    cin>>chosenname;
+                                    temp.StudentName=chosenname;
+                                    currentchanges.push(temp);
+                                }
+
+                            }
+                            cout<<"Do you wish to make more changes?"<<'\n';
+                            string keepchanging = "r";
+                            while(!(keepchanging=="Y"||keepchanging=="y"||keepchanging=="N"||keepchanging=="n")){
+                                cin>>keepchanging;
+                            }
+                            if(keepchanging=="Y"||keepchanging=="y"){
+                                changing=true;
+                            }else{
+                                changing=false;
                             }
                         }
-                        cout<<"Choose the class you wish to add the student to:"<< '\n';
-                        string chosenclass;
-                        cin >> chosenclass;
-                        if(ClassOcup[chosenclass]-minstu<4 && maxstu-ClassOcup[chosenclass]<4){
-                            cout<<"Adding to this class won't create imbalance"<<'\n';
-                            students_classes temp;
-                            temp.ClassCode= chosenclass;
-                            temp.UcCode = chosenuc;
-                            string chosencode;
-                            cout<<"What's the students code?:"<<'\n';
-                            cin>>chosencode;
-                            temp.StudentCode=chosencode;
-                            string chosenname;
-                            cout<<"What's the students name?:"<<'\n';
-                            cin>>chosenname;
-                            temp.StudentName=chosenname;
-                            StuClasses.push_back(temp);
-                        }else{
-                            cout<<"Adding to this class will create imbalance"<<'\n';
-                        }
+                        cout<<"The changes were saved but not applied, to apply them select the apply changes option."<< '\n';
                         break;
+                    }
+                    case 8:{
+                        while(currentchanges.size()>0){
+                            StuClasses.push_back(currentchanges.front());
+                            currentchanges.pop();
+                        }
+                        cout<<"Changes were applied." << '\n';
                     }
                 } 
                 break;
@@ -325,9 +411,34 @@ int main() {
                 cin>> menu3;
                 switch(menu3){
                     case 1:{
+                        vector<string> turma;
                         for(auto a:SetClasses){
-                            cout<< a <<"; ";
+                            turma.push_back(a);
                         }
+
+                        cout<< "1 -> Show sorted by ascending order" << '\n';
+                        cout<< "2 -> Show sorted by descending order" << '\n';
+
+                        int menu6;
+                        cin>> menu6;
+                        switch(menu6){
+                            case 1:{
+                                sort(turma.begin(),turma.end());
+                                for(auto a: turma){
+                                    cout<< a<< "; ";
+                                }
+                                break;
+                            }
+                            case 2:{
+                                sort(turma.begin(),turma.end(), greater<string>());
+                                for(auto a: turma){
+                                    cout<< a<< "; ";
+                                }
+                                break;
+                            }
+                        }
+
+
                         cout<< '\n'<< '\n';
                     break;
                     }
@@ -355,11 +466,35 @@ int main() {
                         cout<< "Choose UC:"<< "\n";
                         string uc;
                         cin>> uc;
+                        vector<string> turma;
                         for(auto a: CPU){
                             if(a.UcCode==uc){
-                                cout<< a.ClassCode <<"; " ;
+                                turma.push_back(a.ClassCode);
                             }
                         }
+
+                        cout<< "1 -> Show sorted by ascending order" << '\n';
+                        cout<< "2 -> Show sorted by descending order" << '\n';
+
+                        int menu6;
+                        cin>> menu6;
+                        switch(menu6){
+                            case 1:{
+                                sort(turma.begin(),turma.end());
+                                for(auto a: turma){
+                                    cout<< a<< "; ";
+                                }
+                                break;
+                            }
+                            case 2:{
+                                sort(turma.begin(),turma.end(), greater<string>());
+                                for(auto a: turma){
+                                    cout<< a<< "; ";
+                                }
+                                break;
+                            }
+                        }
+
                         cout << '\n'<< '\n';
                     }
                     break;
