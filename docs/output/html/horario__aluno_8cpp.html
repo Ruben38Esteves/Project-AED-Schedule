@@ -72,7 +72,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>functions to display student's schedules  
+<p>Functions to display student's schedules.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;horario_aluno.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
@@ -84,16 +84,93 @@ Include dependency graph for horario_aluno.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a40c71ebf0e05e1c5be15c7bef59ac375"><td class="memItemLeft" align="right" valign="top"><a id="a40c71ebf0e05e1c5be15c7bef59ac375"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>sortaula_hora</b> (pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt; a, pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt; b)</td></tr>
+<tr class="memitem:a40c71ebf0e05e1c5be15c7bef59ac375"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horario__aluno_8cpp.html#a40c71ebf0e05e1c5be15c7bef59ac375">sortaula_hora</a> (pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt; a, pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt; b)</td></tr>
+<tr class="memdesc:a40c71ebf0e05e1c5be15c7bef59ac375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts classes by start hour.  <a href="horario__aluno_8cpp.html#a40c71ebf0e05e1c5be15c7bef59ac375">More...</a><br /></td></tr>
 <tr class="separator:a40c71ebf0e05e1c5be15c7bef59ac375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d01d62b6aa5de1b6ecbf8787945b285"><td class="memItemLeft" align="right" valign="top"><a id="a9d01d62b6aa5de1b6ecbf8787945b285"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>sortaula_dia</b> (pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt; a, pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt; b)</td></tr>
+<tr class="memitem:a9d01d62b6aa5de1b6ecbf8787945b285"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horario__aluno_8cpp.html#a9d01d62b6aa5de1b6ecbf8787945b285">sortaula_dia</a> (pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt; a, pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt; b)</td></tr>
+<tr class="memdesc:a9d01d62b6aa5de1b6ecbf8787945b285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts Classes by Weekday.  <a href="horario__aluno_8cpp.html#a9d01d62b6aa5de1b6ecbf8787945b285">More...</a><br /></td></tr>
 <tr class="separator:a9d01d62b6aa5de1b6ecbf8787945b285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>functions to display student's schedules </p>
-</div></div><!-- contents -->
+<div class="textblock"><p>Functions to display student's schedules. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a9d01d62b6aa5de1b6ecbf8787945b285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d01d62b6aa5de1b6ecbf8787945b285">&#9670;&nbsp;</a></span>sortaula_dia()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sortaula_dia </td>
+          <td>(</td>
+          <td class="paramtype">pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sorts Classes by Weekday. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td></td></tr>
+    <tr><td class="paramname">b</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a40c71ebf0e05e1c5be15c7bef59ac375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40c71ebf0e05e1c5be15c7bef59ac375">&#9670;&nbsp;</a></span>sortaula_hora()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sortaula_hora </td>
+          <td>(</td>
+          <td class="paramtype">pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pair&lt; pair&lt; string, string &gt;, <a class="el" href="structaula.html">aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sorts classes by start hour. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td></td></tr>
+    <tr><td class="paramname">b</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

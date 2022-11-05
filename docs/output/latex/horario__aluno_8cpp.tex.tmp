@@ -2,7 +2,7 @@
 \label{horario__aluno_8cpp}\index{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-\/master/src/horario\_aluno.cpp@{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedule-\/master/src/horario\_aluno.cpp}}
 
 
-functions to display student\textquotesingle{}s schedules  
+Functions to display student\textquotesingle{}s schedules.  
 
 
 {\ttfamily \#include \char`\"{}horario\+\_\+aluno.\+h\char`\"{}}\newline
@@ -12,14 +12,55 @@ Include dependency graph for horario\+\_\+aluno.\+cpp\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{horario__aluno_8cpp_a40c71ebf0e05e1c5be15c7bef59ac375}\label{horario__aluno_8cpp_a40c71ebf0e05e1c5be15c7bef59ac375}} 
-bool {\bfseries sortaula\+\_\+hora} (pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ a, pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ b)
-\item 
-\mbox{\Hypertarget{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}\label{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}} 
-bool {\bfseries sortaula\+\_\+dia} (pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ a, pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ b)
-\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{horario__aluno_8cpp_a40c71ebf0e05e1c5be15c7bef59ac375}{sortaula\+\_\+hora}} (pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ a, pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ b)
+\begin{DoxyCompactList}\small\item\em Sorts classes by start hour. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}{sortaula\+\_\+dia}} (pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ a, pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$ b)
+\begin{DoxyCompactList}\small\item\em Sorts Classes by Weekday. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-functions to display student\textquotesingle{}s schedules 
+Functions to display student\textquotesingle{}s schedules. 
 
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}\label{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}} 
+\index{horario\_aluno.cpp@{horario\_aluno.cpp}!sortaula\_dia@{sortaula\_dia}}
+\index{sortaula\_dia@{sortaula\_dia}!horario\_aluno.cpp@{horario\_aluno.cpp}}
+\doxysubsubsection{\texorpdfstring{sortaula\_dia()}{sortaula\_dia()}}
+{\footnotesize\ttfamily bool sortaula\+\_\+dia (\begin{DoxyParamCaption}\item[{pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$}]{a,  }\item[{pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$}]{b }\end{DoxyParamCaption})}
+
+
+
+Sorts Classes by Weekday. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{horario__aluno_8cpp_a40c71ebf0e05e1c5be15c7bef59ac375}\label{horario__aluno_8cpp_a40c71ebf0e05e1c5be15c7bef59ac375}} 
+\index{horario\_aluno.cpp@{horario\_aluno.cpp}!sortaula\_hora@{sortaula\_hora}}
+\index{sortaula\_hora@{sortaula\_hora}!horario\_aluno.cpp@{horario\_aluno.cpp}}
+\doxysubsubsection{\texorpdfstring{sortaula\_hora()}{sortaula\_hora()}}
+{\footnotesize\ttfamily bool sortaula\+\_\+hora (\begin{DoxyParamCaption}\item[{pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$}]{a,  }\item[{pair$<$ pair$<$ string, string $>$, \mbox{\hyperlink{structaula}{aula}} $>$}]{b }\end{DoxyParamCaption})}
+
+
+
+Sorts classes by start hour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}

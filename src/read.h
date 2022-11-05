@@ -9,11 +9,18 @@
 #include <sstream>
 
 using namespace std;
-
+/**
+ * @brief
+ * This class helps arranging data from the csv file "classes_per_uc"
+ */
 struct classes_per_uc{
     string UcCode;
     string ClassCode;
 };
+/**
+ * @brief
+ * This class helps arranging data from the csv file "classes"
+ */
 
 struct classes{
     string ClassCode;
@@ -24,6 +31,10 @@ struct classes{
     double EndHour;
     string Type;
 };
+/**
+ * @brief
+ * This class helps arranging data from the csv file "students_classes"
+ */
 
 struct students_classes{
     string StudentCode;
@@ -32,6 +43,10 @@ struct students_classes{
     string ClassCode;
 };
 
+/**
+ * @brief
+ * This class stores the separated values obtained from read.cpp of the csv file "classes"
+ */
 struct aula{
     string Weekday;
     double StartHour;
@@ -39,6 +54,7 @@ struct aula{
     double EndHour;
     string Type;
 };
+
 
 class Read{
     public:
