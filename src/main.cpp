@@ -5,6 +5,7 @@
 #include "horario_uc.h"
 #include <set>
 #include <vector>
+#include <queue>
 
 int main() {
     Read ler;
@@ -19,6 +20,7 @@ int main() {
     for(auto a: CPU){
         SetUcs.insert(a.UcCode);
     }
+    queue<students_classes> currentchanges;
     int mainmenu = 0;
     while(mainmenu != 5){
         //mostar opçoes
@@ -42,7 +44,6 @@ int main() {
                         cin >> nameorcode;
                         Horario_Aluno ChosenStudent(nameorcode,Classes,StuClasses);
                         ChosenStudent.Print_Horario();
-                        cout<<'\n';
                         break;
                     }
                     case 2:{
@@ -84,7 +85,7 @@ int main() {
                 cout << "5 -> Remove student from UC" << '\n';
                 cout << "6 -> Remove Student from class" << '\n';
                 cout << "7 -> Add Student to Class/Uc" << '\n';
-
+                cout << "8 -> Apply Changes" << '\n';
                 int menu2;
                 cin >> menu2;
                 switch(menu2){
@@ -225,7 +226,6 @@ int main() {
 
                         break;
                     }
-
                     case 5:{
                         cout << "Choose the Student" << '\n';
                         string student;
@@ -310,56 +310,95 @@ int main() {
                         break;
                     }
                     case 7:{
-                        cout<<"Choose the UC"<<'\n';
-                        for(auto a:SetUcs){
-                            cout<< a<< "; ";
-                        }
-                        cout << '\n';
-                        string chosenuc;
-                        cin >> chosenuc;
-                        map<string, int>ClassOcup;
-                        for(auto a:StuClasses){
-                            if(a.UcCode==chosenuc){
-                                map<string,int>::iterator it =ClassOcup.find(a.ClassCode);
-                                if(it !=ClassOcup.end()){
-                                    it->second++;
-                                }else{
-                                    ClassOcup.insert(make_pair(a.ClassCode,1));
+                        bool changing=true;
+                        while(changing){
+                            cout<<"Choose the UC"<<'\n';
+                            for(auto a:SetUcs){
+                                cout<< a<< "; ";
+                            }
+                            cout << '\n';
+                            string chosenuc;
+                            cin >> chosenuc;
+                            map<string, int>ClassOcup;
+                            for(auto a:StuClasses){
+                                if(a.UcCode==chosenuc){
+                                    map<string,int>::iterator it =ClassOcup.find(a.ClassCode);
+                                    if(it !=ClassOcup.end()){
+                                        it->second++;
+                                    }else{
+                                        ClassOcup.insert(make_pair(a.ClassCode,1));
+                                    }
                                 }
                             }
-                        }
-                        int minstu=50;
-                        int maxstu=0;
-                        for(auto a: ClassOcup){
-                            cout<< "Class "<<a.first<< " has " << a.second << " students." << '\n';
-                            if(a.second>maxstu){
-                                maxstu=a.second;
+                            int minstu=50;
+                            int maxstu=0;
+                            for(auto a: ClassOcup){
+                                cout<< "Class "<<a.first<< " has " << a.second << " students." << '\n';
+                                if(a.second>maxstu){
+                                    maxstu=a.second;
+                                }
+                                if(a.second<minstu){
+                                    minstu=a.second;
+                                }
                             }
-                            if(a.second<minstu){
-                                minstu=a.second;
+                            cout<<"Choose the class you wish to add the student to:"<< '\n';
+                            string chosenclass;
+                            cin >> chosenclass;
+                            if(ClassOcup[chosenclass]-minstu<4 && maxstu-ClassOcup[chosenclass]<4){
+                                cout<<"Adding to this class won't create imbalance"<<'\n';
+                                students_classes temp;
+                                temp.ClassCode= chosenclass;
+                                temp.UcCode = chosenuc;
+                                string chosencode;
+                                cout<<"What's the students code?"<<'\n';
+                                cin>>chosencode;
+                                temp.StudentCode=chosencode;
+                                string chosenname;
+                                cout<<"What's the students name?"<<'\n';
+                                cin>>chosenname;
+                                temp.StudentName=chosenname;
+                                currentchanges.push(temp);
+                            }else{
+                                cout<<"Adding to this class will create imbalance"<<'\n';
+                                cout << "Do you wish to continue?(Y/N)" << '\n';
+                                string option;
+                                cin>>option;
+                                if(option=="Y"||option=="y"){
+                                    students_classes temp;
+                                    temp.ClassCode= chosenclass;
+                                    temp.UcCode = chosenuc;
+                                    string chosencode;
+                                    cout<<"What's the students code?"<<'\n';
+                                    cin>>chosencode;
+                                    temp.StudentCode=chosencode;
+                                    string chosenname;
+                                    cout<<"What's the students name?"<<'\n';
+                                    cin>>chosenname;
+                                    temp.StudentName=chosenname;
+                                    currentchanges.push(temp);
+                                }
+
+                            }
+                            cout<<"Do you wish to make more changes?"<<'\n';
+                            string keepchanging = "r";
+                            while(!(keepchanging=="Y"||keepchanging=="y"||keepchanging=="N"||keepchanging=="n")){
+                                cin>>keepchanging;
+                            }
+                            if(keepchanging=="Y"||keepchanging=="y"){
+                                changing=true;
+                            }else{
+                                changing=false;
                             }
                         }
-                        cout<<"Choose the class you wish to add the student to:"<< '\n';
-                        string chosenclass;
-                        cin >> chosenclass;
-                        if(ClassOcup[chosenclass]-minstu<4 && maxstu-ClassOcup[chosenclass]<4){
-                            cout<<"Adding to this class won't create imbalance"<<'\n';
-                            students_classes temp;
-                            temp.ClassCode= chosenclass;
-                            temp.UcCode = chosenuc;
-                            string chosencode;
-                            cout<<"What's the students code?"<<'\n';
-                            cin>>chosencode;
-                            temp.StudentCode=chosencode;
-                            string chosenname;
-                            cout<<"What's the students name?"<<'\n';
-                            cin>>chosenname;
-                            temp.StudentName=chosenname;
-                            StuClasses.push_back(temp);
-                        }else{
-                            cout<<"Adding to this class will create imbalance"<<'\n';
-                        }
+                        cout<<"The changes were saved but not applied, to apply them select the apply changes option."<< '\n';
                         break;
+                    }
+                    case 8:{
+                        while(currentchanges.size()>0){
+                            StuClasses.push_back(currentchanges.front());
+                            currentchanges.pop();
+                        }
+                        cout<<"Changes were applied." << '\n';
                     }
                 } 
                 break;
