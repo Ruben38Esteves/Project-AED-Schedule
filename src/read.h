@@ -1,3 +1,8 @@
+/**
+ * @file read.h
+ * @brief
+ * read header file
+ */
 #ifndef _READ_H_
 #define _READ_H_
 
@@ -54,7 +59,9 @@ struct aula{
     double EndHour;
     string Type;
 };
-
+/**
+ * @brief This class
+ */
 
 class Read{
     public:

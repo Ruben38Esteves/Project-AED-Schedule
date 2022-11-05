@@ -1,11 +1,18 @@
 /**
  * @file read.cpp
  * @brief
- * functions to process data from files
+ * Functions to process data from files
  *
  */
 #include "read.h"
 
+/**
+ * @brief Reads contents of the csv file "classes_per_uc"
+ * @details
+ * Starts by opening the file and checking if it was successful,
+ * proceeds to discard the first line
+ * @return
+ */
 vector<classes_per_uc> Read::read_classes_per_uc(){
     vector<classes_per_uc> cpu;
     //abrir ficheiro
@@ -40,6 +47,13 @@ vector<classes_per_uc> Read::read_classes_per_uc(){
     }
     return cpu;
 }
+/**
+ * @brief Reads contents of the csv file "classes"
+ * @details
+ * Starts by opening the file and checking if it was successful,
+ * proceeds to discard the first line
+ * @return
+ */
 
 vector<classes> Read::read_classes(){
     vector<classes> aulas;
@@ -99,7 +113,13 @@ vector<classes> Read::read_classes(){
     }
     return aulas;
 }
-
+/**
+ * @brief Reads contents of the csv file "students_classes"
+ * @details
+ * Starts by opening the file and checking if it was successful,
+ * proceeds to discard the first line
+ * @return
+ */
 vector<students_classes> Read::read_students_classes(){
     vector<students_classes> sc;
     //abrir ficheiro

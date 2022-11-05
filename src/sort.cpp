@@ -12,7 +12,7 @@
  * @details Associates each weekday to a number.
  *
  * @param weekday
- * @return
+ * @return int
  */
 int weekday_to_int(string weekday){
     if(weekday=="Monday"){

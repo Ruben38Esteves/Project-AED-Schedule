@@ -16,7 +16,7 @@
  *
  * @param a
  * @param b
- * @return
+ * @return bool
  */
 bool sortaula_hora(pair<pair<string,string>,aula> a, pair<pair<string,string>,aula> b){
     return a.second.StartHour < b.second.StartHour;
@@ -34,7 +34,14 @@ bool sortaula_hora(pair<pair<string,string>,aula> a, pair<pair<string,string>,au
 bool sortaula_dia(pair<pair<string,string>,aula> a, pair<pair<string,string>,aula> b){
     return weekday_to_int(a.second.Weekday) < weekday_to_int(b.second.Weekday);
 }
-
+/**
+ * @brief Generates the student's schedule
+ * @details
+ *
+ * @param student
+ * @param ClassLine
+ * @param StuClasses
+ */
 Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine,vector<students_classes> StuClasses){
     vector<pair<string,string>> turmas;
     vector<pair<pair<string,string>,aula>> horario_novo;
@@ -90,7 +97,9 @@ Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine,vector<stu
     //guardar
     this->horario_novo=horario_novo;
 };
-
+/**
+ * @brief Prints the student's schedule
+ */
 void Horario_Aluno::Print_Horario(){
     cout << this->StudentName << "'s "<< '(' << this->StudentCode << ") schedule is:" << '\n';
     //inicializar o ultimo dia

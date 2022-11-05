@@ -21,7 +21,7 @@ bool \mbox{\hyperlink{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}{sor
 \doxysubsection{Detailed Description}
 Functions to display student\textquotesingle{}s schedules. 
 
-
+horario\+\_\+aluno header file
 
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}\label{horario__aluno_8cpp_a9d01d62b6aa5de1b6ecbf8787945b285}} 

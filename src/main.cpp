@@ -1,3 +1,7 @@
+/**
+ * @brief main file
+ *
+ */
 #include <iostream>
 #include "read.h"
 #include "horario_turmas.h"
@@ -6,7 +10,15 @@
 #include <set>
 #include <vector>
 #include <queue>
-
+/**
+ * @brief main function
+ * @details Guides the user through the program and prints its request.
+ * It prints classes' schedules, chosen students' or UC's.
+ * It also prints, if requested, a list of students by year, class, UC or all.
+ * Also takes in the user's requests to remove/add students to UCs or classes, adding the requests to a lists and applying changes when asked.
+ * It does this by: ------
+ * @return
+ */
 int main() {
     Read ler;
     vector <classes_per_uc> CPU = ler.read_classes_per_uc();

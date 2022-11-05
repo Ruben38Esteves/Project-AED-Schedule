@@ -1,5 +1,16 @@
+/**
+ * @file horario_turmas
+ * @brief Functions to generate and print classes' schedules.
+ */
 #include "horario_turmas.h"
 
+/**
+ * @brief Generates the chosen classes' schedule
+ * @details
+ * Creates a set with
+ * @param ClassCode
+ * @param ClassLines
+ */
 Horario_Turma::Horario_Turma(string ClassCode,vector<classes> ClassLines){
     set<string> UCs;
     vector<aula> Aulas_Uc;
@@ -32,7 +43,9 @@ Horario_Turma::Horario_Turma(string ClassCode,vector<classes> ClassLines){
     sort(horario.begin(), horario.end(), sortHorario_weekday);
     this->aulas=horario;
 };
-
+/**
+ * @brief Prints out the classes' schedule
+ */
 void Horario_Turma::Print_Horario(){
     cout << "O Horario da turma " << this->ClassCode << " é: " << '\n';
     string lastday;

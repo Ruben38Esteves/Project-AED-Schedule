@@ -1,3 +1,9 @@
+/**
+ * @file horario_uc.h
+ * @brief
+ * horario_uc header file
+ *
+ */
 #ifndef _HORARIO_UC_H_
 #define _HORARIO_UC_H_
 
@@ -12,7 +18,10 @@
 
 
 using namespace std;
-
+/**
+ * @brief
+ *
+ */
 class Horario_UC{
     private :
         string UCCode;

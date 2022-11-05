@@ -5,13 +5,13 @@ digraph "/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedul
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="/mnt/c/Users/Miguel\l Dionísio/OneDrive\l/Documentos/AED/ProjetoAEDSchedule\l-master/src/sort.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="functions used throughout the program assist in sorting"];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="sort.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sort_8h_source.html",tooltip=" "];
+  Node2 [label="sort.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sort_8h.html",tooltip=" "];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="algorithm",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="read.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$read_8h_source.html",tooltip=" "];
+  Node5 [label="read.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$read_8h.html",tooltip="read header file"];
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

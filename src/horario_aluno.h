@@ -1,3 +1,8 @@
+/**
+ * @file horario_aluno.cpp
+ * @brief
+ * horario_aluno header file
+ */
 #ifndef _hORARIO_ALUNO_H_
 #define _HORARIO_ALUNO_H_
 

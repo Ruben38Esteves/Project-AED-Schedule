@@ -1,3 +1,8 @@
+/**
+ * @file horario_turmas.h
+ * @brief horario_turmas header file
+ *
+ */
 #ifndef _hORARIO_TURMAS_H_
 #define _HORARIO_TURMAS_H_
 
@@ -12,6 +17,9 @@
 
 using namespace std;
 
+/**
+ * @brief
+ */
 class Horario_Turma{
     private:
     //identificar turma

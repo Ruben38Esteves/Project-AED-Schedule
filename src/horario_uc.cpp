@@ -48,7 +48,6 @@ Horario_UC::Horario_UC(string UCCode, vector<classes> ClassLines){
 /**
  * @brief
  * prints the curricular unit's schedule.
- *
  */
 void Horario_UC::Print_Horario(){
     cout << "O Horario da UC " << this->UCCode << " é: " << '\n';
