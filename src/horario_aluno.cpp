@@ -1,17 +1,36 @@
 /**
  * @file horario_aluno.cpp
  * @brief
- * functions to display student's schedules
+ * Functions to display student's schedules
  *
  */
 #include "horario_aluno.h"
 #include <algorithm>
 
 //ordenar por hora de inicio
+/**
+ * @brief
+ * Sorts classes by start hour
+ * @details
+ *
+ *
+ * @param a
+ * @param b
+ * @return
+ */
 bool sortaula_hora(pair<pair<string,string>,aula> a, pair<pair<string,string>,aula> b){
     return a.second.StartHour < b.second.StartHour;
 }
-//ordenar por dia da semana
+/**
+ * @brief
+ * Sorts Classes by Weekday
+ * @details
+ *
+ *
+ * @param a
+ * @param b
+ * @return
+ */
 bool sortaula_dia(pair<pair<string,string>,aula> a, pair<pair<string,string>,aula> b){
     return weekday_to_int(a.second.Weekday) < weekday_to_int(b.second.Weekday);
 }

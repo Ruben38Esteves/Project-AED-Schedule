@@ -6,6 +6,14 @@
  */
 #include "sort.h"
 
+/**
+ * @brief
+ * Facilitates usage of weekdays
+ * @details Associates each weekday to a number.
+ *
+ * @param weekday
+ * @return
+ */
 int weekday_to_int(string weekday){
     if(weekday=="Monday"){
         return 1;
