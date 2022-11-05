@@ -37,6 +37,7 @@ bool sortaula_dia(pair<pair<string,string>,aula> a, pair<pair<string,string>,aul
 /**
  * @brief Generates the student's schedule
  * @details
+ * The function verifies if the user entered the student's name or code. It then stores in a vector turmas the UCCode and ClassCode of each line in which the student is the one chosen by the user.
  *
  * @param student
  * @param ClassLine

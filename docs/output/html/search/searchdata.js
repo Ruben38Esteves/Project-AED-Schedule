@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "achprsw",
   1: "achrs",
   2: "hrs",
-  3: "hpsw"
+  3: "hprsw"
 };
 
 var indexSectionNames =

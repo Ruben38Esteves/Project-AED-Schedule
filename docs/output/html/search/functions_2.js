@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['sortaula_5fdia_36',['sortaula_dia',['../horario__aluno_8cpp.html#a9d01d62b6aa5de1b6ecbf8787945b285',1,'horario_aluno.cpp']]],
-  ['sortaula_5fhora_37',['sortaula_hora',['../horario__aluno_8cpp.html#a40c71ebf0e05e1c5be15c7bef59ac375',1,'horario_aluno.cpp']]]
+  ['read_5fclasses_43',['read_classes',['../classRead.html#a139c013690e248336d72e2f94fb04983',1,'Read']]],
+  ['read_5fclasses_5fper_5fuc_44',['read_classes_per_uc',['../classRead.html#a039b3cb322b2f240cee4433c5086770e',1,'Read']]],
+  ['read_5fstudents_5fclasses_45',['read_students_classes',['../classRead.html#add0192e5419d73ecbef2ef9767743a18',1,'Read']]]
 ];

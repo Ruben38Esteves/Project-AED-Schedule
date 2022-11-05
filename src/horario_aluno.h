@@ -16,6 +16,10 @@
 
 using namespace std;
 
+
+/**
+ * @brief
+ */
 class Horario_Aluno{
     private:
     //identificar aluno

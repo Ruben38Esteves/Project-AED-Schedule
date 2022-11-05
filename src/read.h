@@ -60,14 +60,14 @@ struct aula{
     string Type;
 };
 /**
- * @brief This class
+ * @brief This class has functions to read and store the contents from the files
  */
-
 class Read{
     public:
-        vector<classes_per_uc> read_classes_per_uc();
-        vector<classes> read_classes();
-        vector<students_classes> read_students_classes();
+    vector<classes_per_uc> read_classes_per_uc();
+    vector<classes> read_classes();
+    vector<students_classes> read_students_classes();
+
 };
 
 #endif

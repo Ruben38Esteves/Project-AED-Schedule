@@ -12,8 +12,9 @@
  * @brief
  * generates the curricular unit's schedule
  * @details
- * runs a cycle by the vector with the classes,
- * checking if they match with the user's choice and
+ * runs a cycle through the vector with the classes
+ * checking if they match with the user's UC choice and adds it to the set Classes. AAAAAAAAAAAAAAAAAAAA
+ *
  * @param UCCode
  * @param ClassLines
  */
@@ -21,16 +22,16 @@ Horario_UC::Horario_UC(string UCCode, vector<classes> ClassLines){
     set<string> Classes;
     vector <pair<string, aula>> horario;
 
-    for(auto a: ClassLines){
-        if (a.UcCode == UCCode){
-            Classes.insert(a.ClassCode);
-        }
-    }
-    for (auto a: Classes){
-        for(auto b: ClassLines){
-            if (UCCode==b.UcCode && a==b.ClassCode){
-                aula temp;
-                temp.Weekday = b.Weekday;
+                for(auto a: ClassLines){
+                    if (a.UcCode == UCCode){
+                        Classes.insert(a.ClassCode);
+                    }
+                }
+                for (auto a: Classes){
+                    for(auto b: ClassLines){
+                        if (UCCode==b.UcCode && a==b.ClassCode){
+                            aula temp;
+                            temp.Weekday = b.Weekday;
                 temp.StartHour = stod(b.StartHour);
                 temp.Duration = stod(b.Duration);
                 temp.EndHour = b.EndHour;

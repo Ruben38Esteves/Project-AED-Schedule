@@ -117,21 +117,19 @@ vector<classes> Read::read_classes(){
  * @brief Reads contents of the csv file "students_classes"
  * @details
  * Starts by opening the file and checking if it was successful,
- * proceeds to discard the first line
+ * proceeds to discard the first line and run a cycle reading the file and storing the values in a variable "temp" of the type students_classes for each line.
+ * In the end of each line in the file, the variable temp is added to the vector sc.
  * @return
  */
 vector<students_classes> Read::read_students_classes(){
     vector<students_classes> sc;
-    //abrir ficheiro
     ifstream file_students_classes;
     file_students_classes.open("../students_classes.csv");
-    //verificar se foi possível abrir
     if(!file_students_classes.is_open()){
         return sc;
     }
 
     string str;
-    //ir buscar primeira linha(StudentCode,StudentName,UcCode,ClassCode)
     getline(file_students_classes, str);
 
     //ler linha a linha
@@ -158,65 +156,5 @@ vector<students_classes> Read::read_students_classes(){
 };
 
 
-/*string Read::nome_por_code(string code){
-    string ret;
-    //abrir ficheiro
-    ifstream file_students_classes;
-    file_students_classes.open("../students_classes.csv");
-    //verificar se foi possível abrir
-    if(!file_students_classes.is_open()){
-        return ret;
-    }
-    string str;
-    //ir buscar primeira linha(StudentCode,StudentName,UcCode,ClassCode)
-    getline(file_students_classes, str);
 
-    //ler linha a linha
-    while(getline(file_students_classes, str)){
-        stringstream line(str);
-        string buffer;
-        //buscar student code
-        getline(line,buffer,',');
-        if(buffer==code){
-            getline(line,buffer,',');
-            return buffer;
-        }else{
-            getline(line,buffer,'\r');
-        }
-
-    }
-    return ret;
-};
-
-string Read::code_por_nome(string nome){
-    string ret;
-    //abrir ficheiro
-    ifstream file_students_classes;
-    file_students_classes.open("../students_classes.csv");
-    //verificar se foi possível abrir
-    if(!file_students_classes.is_open()){
-        return ret;
-    }
-    string str;
-    //ir buscar primeira linha(StudentCode,StudentName,UcCode,ClassCode)
-    getline(file_students_classes, str);
-
-    //ler linha a linha
-    while(getline(file_students_classes, str)){
-        stringstream line(str);
-        string buffer;
-        string code;
-        //buscar student code
-        getline(line,buffer,',');
-        code=buffer;
-        //buscar nome
-        getline(line,buffer,',');
-        if(buffer==nome){
-            return code;
-        }else{
-            getline(line,buffer,'\r');
-        }
-    }
-    return ret;
-}*/
 

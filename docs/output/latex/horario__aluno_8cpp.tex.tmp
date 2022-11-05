@@ -62,5 +62,5 @@ Sorts classes by start hour.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+bool 
 \end{DoxyReturn}

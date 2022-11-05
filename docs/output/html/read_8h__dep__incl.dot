@@ -12,7 +12,7 @@ digraph "/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedul
   Node4 [label="/mnt/c/Users/Miguel\l Dionísio/OneDrive\l/Documentos/AED/ProjetoAEDSchedule\l-master/src/sort.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sort_8h.html",tooltip=" "];
   Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="/mnt/c/Users/Miguel\l Dionísio/OneDrive\l/Documentos/AED/ProjetoAEDSchedule\l-master/src/horario_turmas.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$horario__turmas_8h_source.html",tooltip=" "];
+  Node5 [label="/mnt/c/Users/Miguel\l Dionísio/OneDrive\l/Documentos/AED/ProjetoAEDSchedule\l-master/src/horario_turmas.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$horario__turmas_8h.html",tooltip="horario_turmas header file"];
   Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="/mnt/c/Users/Miguel\l Dionísio/OneDrive\l/Documentos/AED/ProjetoAEDSchedule\l-master/src/horario_uc.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$horario__uc_8h.html",tooltip="horario_uc header file"];
   Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -22,5 +22,5 @@ digraph "/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/AED/ProjetoAEDSchedul
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="/mnt/c/Users/Miguel\l Dionísio/OneDrive\l/Documentos/AED/ProjetoAEDSchedule\l-master/src/read.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$read_8cpp.html",tooltip="functions to process data from files"];
+  Node9 [label="/mnt/c/Users/Miguel\l Dionísio/OneDrive\l/Documentos/AED/ProjetoAEDSchedule\l-master/src/read.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$read_8cpp.html",tooltip="Functions to process data from files."];
 }
