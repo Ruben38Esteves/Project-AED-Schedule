@@ -5,9 +5,12 @@
 #include "horario_turmas.h"
 
 /**
- * @brief Generates the chosen classes' schedule
+ * @brief Gathers information necessary to generate the chosen classes' schedule
  * @details
- * Creates a set with
+ * Compares chosen ClassCode with ClassCode of every class using a for loop and when it matches, adds the respective
+ * UCCode to a set 'UCs'. Then using a double for loop, for every UCCode in 'UCs', searches every class for a matching
+ * UCCode and ClassCode. In each match a variable temp of type aula is created, the values containing the information of
+ * the lesson are stored in it, and it is added in a pair alongside the UCCode to the vector 'horario'.
  * @param ClassCode
  * @param ClassLines
  */

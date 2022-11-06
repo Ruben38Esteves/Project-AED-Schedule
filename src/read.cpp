@@ -10,8 +10,9 @@
  * @brief Reads contents of the csv file "classes_per_uc"
  * @details
  * Starts by opening the file and checking if it was successful,
- * proceeds to discard the first line
- * @return
+ * proceeds to discard the first line and runs a loop fetching the values between commas in the file and storing the
+ * values in a variable temp of type classes_per_uc. It then adds temp to the vector 'cpu' at the end of each cycle.
+ * @return vector with the file contents
  */
 vector<classes_per_uc> Read::read_classes_per_uc(){
     vector<classes_per_uc> cpu;
@@ -51,8 +52,10 @@ vector<classes_per_uc> Read::read_classes_per_uc(){
  * @brief Reads contents of the csv file "classes"
  * @details
  * Starts by opening the file and checking if it was successful,
- * proceeds to discard the first line
- * @return
+ * proceeds to discard the first line and runs a loop reading each value between commas in each line in the file
+ * and giving its values to a variable temp of type classes that is stored in the vector 'aulas' in
+ * the end of each cycle.
+ * @return vector with the file content
  */
 
 vector<classes> Read::read_classes(){
@@ -119,7 +122,7 @@ vector<classes> Read::read_classes(){
  * Starts by opening the file and checking if it was successful,
  * proceeds to discard the first line and run a cycle reading the file and storing the values in a variable "temp" of the type students_classes for each line.
  * In the end of each line in the file, the variable temp is added to the vector sc.
- * @return
+ * @return vector with the file content
  */
 vector<students_classes> Read::read_students_classes(){
     vector<students_classes> sc;
