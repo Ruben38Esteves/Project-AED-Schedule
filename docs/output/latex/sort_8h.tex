@@ -11,19 +11,57 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{sort_8h_a8d40a81f1e5a60eea5bae7b2b6a711ab}{weekday\+\_\+to\+\_\+int}} (string weekday)
-\begin{DoxyCompactList}\small\item\em Facilitates usage of weekdays. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{sort_8h_a6ffcb3fcd56082a6ff9180aeae6ae0bb}\label{sort_8h_a6ffcb3fcd56082a6ff9180aeae6ae0bb}} 
-bool {\bfseries sort\+Horario\+\_\+hora} (pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$ s1, pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$ s2)
-\item 
-\mbox{\Hypertarget{sort_8h_abc340909984e68e58d2047d2bc8c1857}\label{sort_8h_abc340909984e68e58d2047d2bc8c1857}} 
-bool {\bfseries sort\+Horario\+\_\+weekday} (pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$ s1, pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$ s2)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Facilitates usage of weekdays. Complexity 1. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{sort_8h_a6ffcb3fcd56082a6ff9180aeae6ae0bb}{sort\+Horario\+\_\+hora}} (pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$ s1, pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$ s2)
+\begin{DoxyCompactList}\small\item\em Compares the start hour of class s1 with s2. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{sort_8h_abc340909984e68e58d2047d2bc8c1857}{sort\+Horario\+\_\+weekday}} (pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$ s1, pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$ s2)
+\begin{DoxyCompactList}\small\item\em Compares the weekday of class s1 with s2. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 sort header file 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sort_8h_a6ffcb3fcd56082a6ff9180aeae6ae0bb}\label{sort_8h_a6ffcb3fcd56082a6ff9180aeae6ae0bb}} 
+\index{sort.h@{sort.h}!sortHorario\_hora@{sortHorario\_hora}}
+\index{sortHorario\_hora@{sortHorario\_hora}!sort.h@{sort.h}}
+\doxysubsubsection{\texorpdfstring{sortHorario\_hora()}{sortHorario\_hora()}}
+{\footnotesize\ttfamily bool sort\+Horario\+\_\+hora (\begin{DoxyParamCaption}\item[{pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$}]{s1,  }\item[{pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Compares the start hour of class s1 with s2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & \\
+\hline
+{\em s2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not s1 start hour is inferior to s2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sort_8h_abc340909984e68e58d2047d2bc8c1857}\label{sort_8h_abc340909984e68e58d2047d2bc8c1857}} 
+\index{sort.h@{sort.h}!sortHorario\_weekday@{sortHorario\_weekday}}
+\index{sortHorario\_weekday@{sortHorario\_weekday}!sort.h@{sort.h}}
+\doxysubsubsection{\texorpdfstring{sortHorario\_weekday()}{sortHorario\_weekday()}}
+{\footnotesize\ttfamily bool sort\+Horario\+\_\+weekday (\begin{DoxyParamCaption}\item[{pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$}]{s1,  }\item[{pair$<$ string, \mbox{\hyperlink{structaula}{aula}} $>$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Compares the weekday of class s1 with s2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & \\
+\hline
+{\em s2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not s1 weekday is inferior to s2 after is turned into an int by weekday\+\_\+to\+\_\+int. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{sort_8h_a8d40a81f1e5a60eea5bae7b2b6a711ab}\label{sort_8h_a8d40a81f1e5a60eea5bae7b2b6a711ab}} 
 \index{sort.h@{sort.h}!weekday\_to\_int@{weekday\_to\_int}}
 \index{weekday\_to\_int@{weekday\_to\_int}!sort.h@{sort.h}}
@@ -32,7 +70,7 @@ sort header file
 
 
 
-Facilitates usage of weekdays. 
+Facilitates usage of weekdays. Complexity 1. 
 
 Associates each weekday to a number.
 

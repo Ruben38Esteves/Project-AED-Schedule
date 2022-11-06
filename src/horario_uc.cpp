@@ -11,6 +11,7 @@
 /**
  * @brief
  * generates the curricular unit's schedule
+ * Complexity n^2
  * @details
  * runs a cycle through the vector with the classes
  * checking if the UCCode match with the user's UC choice and adds the respective ClassCode to the set Classes.

@@ -85,18 +85,94 @@ Include dependency graph for sort.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8d40a81f1e5a60eea5bae7b2b6a711ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8cpp.html#a8d40a81f1e5a60eea5bae7b2b6a711ab">weekday_to_int</a> (string weekday)</td></tr>
-<tr class="memdesc:a8d40a81f1e5a60eea5bae7b2b6a711ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Facilitates usage of weekdays.  <a href="sort_8cpp.html#a8d40a81f1e5a60eea5bae7b2b6a711ab">More...</a><br /></td></tr>
+<tr class="memdesc:a8d40a81f1e5a60eea5bae7b2b6a711ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Facilitates usage of weekdays. Complexity 1.  <a href="sort_8cpp.html#a8d40a81f1e5a60eea5bae7b2b6a711ab">More...</a><br /></td></tr>
 <tr class="separator:a8d40a81f1e5a60eea5bae7b2b6a711ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ffcb3fcd56082a6ff9180aeae6ae0bb"><td class="memItemLeft" align="right" valign="top"><a id="a6ffcb3fcd56082a6ff9180aeae6ae0bb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>sortHorario_hora</b> (pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt; s1, pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt; s2)</td></tr>
+<tr class="memitem:a6ffcb3fcd56082a6ff9180aeae6ae0bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8cpp.html#a6ffcb3fcd56082a6ff9180aeae6ae0bb">sortHorario_hora</a> (pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt; s1, pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt; s2)</td></tr>
+<tr class="memdesc:a6ffcb3fcd56082a6ff9180aeae6ae0bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the start hour of class s1 with s2.  <a href="sort_8cpp.html#a6ffcb3fcd56082a6ff9180aeae6ae0bb">More...</a><br /></td></tr>
 <tr class="separator:a6ffcb3fcd56082a6ff9180aeae6ae0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc340909984e68e58d2047d2bc8c1857"><td class="memItemLeft" align="right" valign="top"><a id="abc340909984e68e58d2047d2bc8c1857"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>sortHorario_weekday</b> (pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt; s1, pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt; s2)</td></tr>
+<tr class="memitem:abc340909984e68e58d2047d2bc8c1857"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8cpp.html#abc340909984e68e58d2047d2bc8c1857">sortHorario_weekday</a> (pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt; s1, pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt; s2)</td></tr>
+<tr class="memdesc:abc340909984e68e58d2047d2bc8c1857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the weekday of class s1 with s2.  <a href="sort_8cpp.html#abc340909984e68e58d2047d2bc8c1857">More...</a><br /></td></tr>
 <tr class="separator:abc340909984e68e58d2047d2bc8c1857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>functions used throughout the program assist in sorting </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a6ffcb3fcd56082a6ff9180aeae6ae0bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ffcb3fcd56082a6ff9180aeae6ae0bb">&#9670;&nbsp;</a></span>sortHorario_hora()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sortHorario_hora </td>
+          <td>(</td>
+          <td class="paramtype">pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares the start hour of class s1 with s2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s1</td><td></td></tr>
+    <tr><td class="paramname">s2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether or not s1 start hour is inferior to s2 </dd></dl>
+
+</div>
+</div>
+<a id="abc340909984e68e58d2047d2bc8c1857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc340909984e68e58d2047d2bc8c1857">&#9670;&nbsp;</a></span>sortHorario_weekday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sortHorario_weekday </td>
+          <td>(</td>
+          <td class="paramtype">pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pair&lt; string, <a class="el" href="structaula.html">aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares the weekday of class s1 with s2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s1</td><td></td></tr>
+    <tr><td class="paramname">s2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether or not s1 weekday is inferior to s2 after is turned into an int by weekday_to_int. </dd></dl>
+
+</div>
+</div>
 <a id="a8d40a81f1e5a60eea5bae7b2b6a711ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d40a81f1e5a60eea5bae7b2b6a711ab">&#9670;&nbsp;</a></span>weekday_to_int()</h2>
 
@@ -113,7 +189,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>sortHorario_weekday</
       </table>
 </div><div class="memdoc">
 
-<p>Facilitates usage of weekdays. </p>
+<p>Facilitates usage of weekdays. Complexity 1. </p>
 <p>Associates each weekday to a number.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

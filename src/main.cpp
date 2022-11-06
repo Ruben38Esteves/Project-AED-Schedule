@@ -15,8 +15,9 @@
  * @details Guides the user through the program and prints its request.
  * It prints classes' schedules, chosen students' or UC's.
  * It also prints, if requested, a list of students by year, class, UC or all.
- * Also takes in the user's requests to remove/add students to UCs or classes, adding the requests to a lists and applying changes when asked.
- * It does this by: ------
+ * Also takes in the user's requests to remove/add students to UCs or classes, adding the requests to a lists and
+ * applying changes when asked.
+ *
  * @return
  */
 int main() {

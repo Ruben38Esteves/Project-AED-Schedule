@@ -4,10 +4,10 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classHorario__Aluno_a2b64dc595f277aacf4d761d2ff4ae2ae}{Horario\+\_\+\+Aluno}} (string student, vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ Class\+Line, vector$<$ \mbox{\hyperlink{structstudents__classes}{students\+\_\+classes}} $>$ Stu\+Classes)
-\begin{DoxyCompactList}\small\item\em Generates the student\textquotesingle{}s schedule. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gathers information for the student\textquotesingle{}s schedule. Complexity n$^\wedge$2. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHorario__Aluno_a912680b1ecf7dfbc6aab13a7c22cb596}\label{classHorario__Aluno_a912680b1ecf7dfbc6aab13a7c22cb596}} 
 void \mbox{\hyperlink{classHorario__Aluno_a912680b1ecf7dfbc6aab13a7c22cb596}{Print\+\_\+\+Horario}} ()
-\begin{DoxyCompactList}\small\item\em Prints the student\textquotesingle{}s schedule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints the student\textquotesingle{}s schedule complexity n. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -19,7 +19,9 @@ void \mbox{\hyperlink{classHorario__Aluno_a912680b1ecf7dfbc6aab13a7c22cb596}{Pri
 
 
 
-Generates the student\textquotesingle{}s schedule. 
+Gathers information for the student\textquotesingle{}s schedule. Complexity n$^\wedge$2. 
+
+The function verifies if the user entered the student\textquotesingle{}s name or code. It stores in a vector turmas pairs with U\+C\+Code and Class\+Code of each line in which the student is the one chosen by the user. Then for each pair \textquotesingle{}a\textquotesingle{} in turmas it goes through every class \textquotesingle{}b\textquotesingle{} and checks if U\+C\+Code and Class\+Code match, if so it creates a variable temp of type aula, stores the info of the class and adds to the vector horario\+\_\+novo a pair with the current value of turmas and the temp variable containing all the info on the class.
 
 
 \begin{DoxyParams}{Parameters}

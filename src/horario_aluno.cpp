@@ -35,7 +35,8 @@ bool sortaula_dia(pair<pair<string,string>,aula> a, pair<pair<string,string>,aul
     return weekday_to_int(a.second.Weekday) < weekday_to_int(b.second.Weekday);
 }
 /**
- * @brief Gathers information necessary for the student's schedule
+ * @brief Gathers information for the student's schedule.
+ * Complexity n^2
  * @details
  * The function verifies if the user entered the student's name or code. It stores in a vector turmas pairs with UCCode and ClassCode of each line in which the student is the one chosen by the user.
  * Then for each pair 'a' in turmas it goes through every class 'b' and checks if UCCode and ClassCode match, if so it creates a variable temp of type aula, stores the info of the class and adds to
@@ -102,6 +103,7 @@ Horario_Aluno::Horario_Aluno(string student,vector<classes> ClassLine,vector<stu
 };
 /**
  * @brief Prints the student's schedule
+ * complexity n
  */
 void Horario_Aluno::Print_Horario(){
     cout << this->StudentName << "'s "<< '(' << this->StudentCode << ") schedule is:" << '\n';
