@@ -10,6 +10,8 @@
 #include <set>
 #include <vector>
 #include <queue>
+#include <fstream>
+#include "erros"
 /**
  * @brief main function
  * @details Guides the user through the program and prints its request.
@@ -392,19 +394,18 @@ int main() {
                                 cin >> chosenname;
                                 temp.StudentName = chosenname;
 
-                                //verificar se não se sobrepõem
 
-                                vector<pair<string,string>> class_uc; //vai armazenar todas as classes,ucs do aluno escolhido
+                                vector<pair<string,string>> class_uc;
 
                                 for(auto a:StuClasses) {
-                                    //encontrar as classes e uc do aluno escolhido
+
                                     if (a.StudentName == chosenname) {
                                         pair<string, string> temp;
                                         temp = make_pair(a.ClassCode, a.UcCode);
                                         class_uc.push_back(temp);
                                     }
                                 }
-                                //guardar os dados de horário da class e uc definida
+
                                 classes chosen;
                                 for(auto a: Classes){
                                     if(a.UcCode==chosenuc && a.ClassCode==chosenclass){
@@ -414,18 +415,42 @@ int main() {
 
                                 for(auto a: class_uc){
                                     for(auto b: Classes){
-                                        if(a.first==b.ClassCode && a.second==b.UcCode && chosen.Weekday==b.Weekday && ((b.Type=="TP" && chosen.Type=="TP") || (b.Type=="PL" && chosen.Type=="PL"))) {
+                                        if(a.first==b.ClassCode && a.second==b.UcCode && chosen.Weekday==b.Weekday /*&& ((b.Type=="TP" && chosen.Type=="TP") || (b.Type=="PL" && chosen.Type=="PL"))*/) {
 
                                             if (b.StartHour == chosen.StartHour) {
                                                 cout << "That´s not possible because there will be overlapping lessons"<< '\n';
+                                                string filename("erros");
+                                                fstream file_out;
+                                                file_out.open(filename);
+                                                if (!file_out.is_open()) {
+                                                    cout << "failed to open " << filename << '\n';
+                                                } else {
+                                                    file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                }
                                             }
 
                                             if (stod(chosen.StartHour) > b.EndHour && chosen.StartHour < b.StartHour) {
                                                 cout << "That´s not possible because there will be overlapping lessons"<< '\n';
+                                                string filename("erros");
+                                                fstream file_out;
+                                                file_out.open(filename);
+                                                if (!file_out.is_open()) {
+                                                    cout << "failed to open " << filename << '\n';
+                                                } else {
+                                                    file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                }
                                             }
 
                                             if (stod(b.StartHour) < chosen.EndHour && b.StartHour > chosen.StartHour) {
                                                 cout << "That´s not possible because there will be overlapping lessons"<< '\n';
+                                                string filename("erros");
+                                                fstream file_out;
+                                                file_out.open(filename);
+                                                if (!file_out.is_open()) {
+                                                    cout << "failed to open " << filename << '\n';
+                                                } else {
+                                                    file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                }
                                             }
                                         }
                                         else{
@@ -453,19 +478,18 @@ int main() {
                                     cin >> chosenname;
                                     temp.StudentName = chosenname;
 
-                                    //verificar se não se sobrepõem
 
-                                    vector<pair<string,string>> class_uc; //vai armazenar todas as classes,ucs do aluno escolhido
+                                    vector<pair<string,string>> class_uc;
 
                                     for(auto a:StuClasses){
-                                        //encontrar as classes e uc do aluno escolhido
+
                                         if(a.StudentName==chosenname){
                                             pair<string,string> temp;
                                             temp=make_pair(a.ClassCode,a.UcCode);
                                             class_uc.push_back(temp);
                                         }
                                     }
-                                    //guardar os dados de horário da class e uc definida
+
                                     classes chosen;
                                     for(auto a: Classes){
                                         if(a.UcCode==chosenuc && a.ClassCode==chosenclass){
@@ -479,14 +503,38 @@ int main() {
 
                                                 if (b.StartHour == chosen.StartHour) {
                                                     cout<< "That´s not possible because there will be overlapping lessons" << '\n';
+                                                    string filename("erros");
+                                                    fstream file_out;
+                                                    file_out.open(filename);
+                                                    if (!file_out.is_open()) {
+                                                        cout << "failed to open " << filename << '\n';
+                                                    } else {
+                                                        file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                    }
                                                 }
 
                                                 if (stod(chosen.StartHour) > b.EndHour && chosen.StartHour < b.StartHour) {
                                                     cout<< "That´s not possible because there will be overlapping lessons" << '\n';
+                                                    string filename("erros");
+                                                    fstream file_out;
+                                                    file_out.open(filename);
+                                                    if (!file_out.is_open()) {
+                                                        cout << "failed to open " << filename << '\n';
+                                                    } else {
+                                                        file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                    }
                                                 }
 
                                                 if (stod(b.StartHour) < chosen.EndHour && b.StartHour > chosen.StartHour) {
                                                     cout<< "That´s not possible because there will be overlapping lessons"<< '\n';
+                                                    string filename("erros");
+                                                    fstream file_out;
+                                                    file_out.open(filename);
+                                                    if (!file_out.is_open()) {
+                                                        cout << "failed to open " << filename << '\n';
+                                                    } else {
+                                                        file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                    }
                                                 }
                                             }
                                             else{
