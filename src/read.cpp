@@ -8,6 +8,7 @@
 
 /**
  * @brief Reads contents of the csv file "classes_per_uc"
+ * Complexity n
  * @details
  * Starts by opening the file and checking if it was successful,
  * proceeds to discard the first line and runs a loop fetching the values between commas in the file and storing the
@@ -118,6 +119,7 @@ vector<classes> Read::read_classes(){
 }
 /**
  * @brief Reads contents of the csv file "students_classes"
+ * Complexity n
  * @details
  * Starts by opening the file and checking if it was successful,
  * proceeds to discard the first line and run a cycle reading the file and storing the values in a variable "temp" of the type students_classes for each line.

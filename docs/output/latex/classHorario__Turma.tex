@@ -4,10 +4,10 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classHorario__Turma_aeb0c73370664b2efb7949564eaabfcce}{Horario\+\_\+\+Turma}} (string Class\+Code, vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ Class\+Line)
-\begin{DoxyCompactList}\small\item\em Generates the chosen classes\textquotesingle{} schedule. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gathers information to generate classes\textquotesingle{} schedule. Complexity n$^\wedge$2. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHorario__Turma_a7e21502812ff213a1f2981e3b6aee914}\label{classHorario__Turma_a7e21502812ff213a1f2981e3b6aee914}} 
 void \mbox{\hyperlink{classHorario__Turma_a7e21502812ff213a1f2981e3b6aee914}{Print\+\_\+\+Horario}} ()
-\begin{DoxyCompactList}\small\item\em Prints out the classes\textquotesingle{} schedule. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Prints out the classes\textquotesingle{} schedule Complexity n. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHorario__Turma_a875c86545b106fe08ecad943009b8435}\label{classHorario__Turma_a875c86545b106fe08ecad943009b8435}} 
 void {\bfseries Print\+\_\+\+Horario\+\_\+\+Dia} (string weekday)
 \end{DoxyCompactItemize}
@@ -22,9 +22,9 @@ void {\bfseries Print\+\_\+\+Horario\+\_\+\+Dia} (string weekday)
 
 
 
-Generates the chosen classes\textquotesingle{} schedule. 
+Gathers information to generate classes\textquotesingle{} schedule. Complexity n$^\wedge$2. 
 
-Creates a set with 
+Compares chosen Class\+Code with Class\+Code of every class using a for loop and when it matches, adds the respective U\+C\+Code to a set \textquotesingle{}U\+Cs\textquotesingle{}. Then using a double for loop, for every U\+C\+Code in \textquotesingle{}U\+Cs\textquotesingle{}, searches every class for a matching U\+C\+Code and Class\+Code. In each match a variable temp of type aula is created, the values containing the information of the lesson are stored in it, and it is added in a pair alongside the U\+C\+Code to the vector \textquotesingle{}horario\textquotesingle{}. 
 \begin{DoxyParams}{Parameters}
 {\em Class\+Code} & \\
 \hline

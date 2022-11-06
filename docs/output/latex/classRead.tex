@@ -2,7 +2,7 @@
 \label{classRead}\index{Read@{Read}}
 
 
-This class.  
+This class has functions to read and store the contents from the files.  
 
 
 
@@ -13,15 +13,15 @@ This class.
 \begin{DoxyCompactItemize}
 \item 
 vector$<$ \mbox{\hyperlink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc}} $>$ \mbox{\hyperlink{classRead_a039b3cb322b2f240cee4433c5086770e}{read\+\_\+classes\+\_\+per\+\_\+uc}} ()
-\begin{DoxyCompactList}\small\item\em Reads contents of the csv file \char`\"{}classes\+\_\+per\+\_\+uc\char`\"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reads contents of the csv file \char`\"{}classes\+\_\+per\+\_\+uc\char`\"{} Complexity n. \end{DoxyCompactList}\item 
 vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ \mbox{\hyperlink{classRead_a139c013690e248336d72e2f94fb04983}{read\+\_\+classes}} ()
 \begin{DoxyCompactList}\small\item\em Reads contents of the csv file \char`\"{}classes\char`\"{}. \end{DoxyCompactList}\item 
 vector$<$ \mbox{\hyperlink{structstudents__classes}{students\+\_\+classes}} $>$ \mbox{\hyperlink{classRead_add0192e5419d73ecbef2ef9767743a18}{read\+\_\+students\+\_\+classes}} ()
-\begin{DoxyCompactList}\small\item\em Reads contents of the csv file \char`\"{}students\+\_\+classes\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reads contents of the csv file \char`\"{}students\+\_\+classes\char`\"{} Complexity n. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This class. 
+This class has functions to read and store the contents from the files. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classRead_a139c013690e248336d72e2f94fb04983}\label{classRead_a139c013690e248336d72e2f94fb04983}} 
@@ -34,8 +34,8 @@ This class.
 
 Reads contents of the csv file \char`\"{}classes\char`\"{}. 
 
-Starts by opening the file and checking if it was successful, proceeds to discard the first line \begin{DoxyReturn}{Returns}
-
+Starts by opening the file and checking if it was successful, proceeds to discard the first line and runs a loop reading each value between commas in each line in the file and giving its values to a variable temp of type classes that is stored in the vector \textquotesingle{}aulas\textquotesingle{} in the end of each cycle. \begin{DoxyReturn}{Returns}
+vector with the file content 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classRead_a039b3cb322b2f240cee4433c5086770e}\label{classRead_a039b3cb322b2f240cee4433c5086770e}} 
 \index{Read@{Read}!read\_classes\_per\_uc@{read\_classes\_per\_uc}}
@@ -45,10 +45,10 @@ Starts by opening the file and checking if it was successful, proceeds to discar
 
 
 
-Reads contents of the csv file \char`\"{}classes\+\_\+per\+\_\+uc\char`\"{}. 
+Reads contents of the csv file \char`\"{}classes\+\_\+per\+\_\+uc\char`\"{} Complexity n. 
 
-Starts by opening the file and checking if it was successful, proceeds to discard the first line \begin{DoxyReturn}{Returns}
-
+Starts by opening the file and checking if it was successful, proceeds to discard the first line and runs a loop fetching the values between commas in the file and storing the values in a variable temp of type \mbox{\hyperlink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc}}. It then adds temp to the vector \textquotesingle{}cpu\textquotesingle{} at the end of each cycle. \begin{DoxyReturn}{Returns}
+vector with the file contents 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classRead_add0192e5419d73ecbef2ef9767743a18}\label{classRead_add0192e5419d73ecbef2ef9767743a18}} 
 \index{Read@{Read}!read\_students\_classes@{read\_students\_classes}}
@@ -58,10 +58,10 @@ Starts by opening the file and checking if it was successful, proceeds to discar
 
 
 
-Reads contents of the csv file \char`\"{}students\+\_\+classes\char`\"{}. 
+Reads contents of the csv file \char`\"{}students\+\_\+classes\char`\"{} Complexity n. 
 
-Starts by opening the file and checking if it was successful, proceeds to discard the first line \begin{DoxyReturn}{Returns}
-
+Starts by opening the file and checking if it was successful, proceeds to discard the first line and run a cycle reading the file and storing the values in a variable \char`\"{}temp\char`\"{} of the type \mbox{\hyperlink{structstudents__classes}{students\+\_\+classes}} for each line. In the end of each line in the file, the variable temp is added to the vector sc. \begin{DoxyReturn}{Returns}
+vector with the file content 
 \end{DoxyReturn}
 
 

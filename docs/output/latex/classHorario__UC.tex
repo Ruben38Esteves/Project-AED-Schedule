@@ -4,7 +4,7 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classHorario__UC_a9c2fac914148b96b515353b201277033}{Horario\+\_\+\+UC}} (string U\+C\+Code, vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ Class\+Line)
-\begin{DoxyCompactList}\small\item\em generates the curricular unit\textquotesingle{}s schedule \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em generates the curricular unit\textquotesingle{}s schedule Complexity n$^\wedge$2 \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classHorario__UC_abc83da7c4fecadcc611602b7ef9be337}\label{classHorario__UC_abc83da7c4fecadcc611602b7ef9be337}} 
 void \mbox{\hyperlink{classHorario__UC_abc83da7c4fecadcc611602b7ef9be337}{Print\+\_\+\+Horario}} ()
 \begin{DoxyCompactList}\small\item\em prints the curricular unit\textquotesingle{}s schedule. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -19,9 +19,11 @@ void \mbox{\hyperlink{classHorario__UC_abc83da7c4fecadcc611602b7ef9be337}{Print\
 
 
 
-generates the curricular unit\textquotesingle{}s schedule 
+generates the curricular unit\textquotesingle{}s schedule Complexity n$^\wedge$2 
 
-runs a cycle by the vector with the classes, checking if they match with the user\textquotesingle{}s choice and 
+runs a cycle through the vector with the classes checking if the U\+C\+Code match with the user\textquotesingle{}s UC choice and adds the respective Class\+Code to the set Classes. Then every class \textquotesingle{}b\textquotesingle{} existing (Class\+Lines) is searched for a match in U\+C\+Code and Class\+Code of every class \textquotesingle{}a\textquotesingle{} in Classes using a double for loop. If both match, a variable temp of type aula is created and in it is stored all the information of class \textquotesingle{}b\textquotesingle{}. Then it is added to the set horario the matching Class\+Code \textquotesingle{}a\textquotesingle{} and the variable temp.
+
+
 \begin{DoxyParams}{Parameters}
 {\em U\+C\+Code} & \\
 \hline

@@ -5,7 +5,8 @@
 #include "horario_turmas.h"
 
 /**
- * @brief Gathers information necessary to generate the chosen classes' schedule
+ * @brief Gathers information to generate classes' schedule.
+ * Complexity n^2
  * @details
  * Compares chosen ClassCode with ClassCode of every class using a for loop and when it matches, adds the respective
  * UCCode to a set 'UCs'. Then using a double for loop, for every UCCode in 'UCs', searches every class for a matching
@@ -48,6 +49,7 @@ Horario_Turma::Horario_Turma(string ClassCode,vector<classes> ClassLines){
 };
 /**
  * @brief Prints out the classes' schedule
+ * Complexity n
  */
 void Horario_Turma::Print_Horario(){
     cout << "O Horario da turma " << this->ClassCode << " é: " << '\n';

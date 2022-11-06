@@ -8,7 +8,8 @@
 
 /**
  * @brief
- * Facilitates usage of weekdays
+ * Facilitates usage of weekdays.
+ * Complexity 1
  * @details Associates each weekday to a number.
  *
  * @param weekday

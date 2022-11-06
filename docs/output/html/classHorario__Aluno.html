@@ -72,11 +72,11 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b64dc595f277aacf4d761d2ff4ae2ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHorario__Aluno.html#a2b64dc595f277aacf4d761d2ff4ae2ae">Horario_Aluno</a> (string student, vector&lt; <a class="el" href="structclasses.html">classes</a> &gt; ClassLine, vector&lt; <a class="el" href="structstudents__classes.html">students_classes</a> &gt; StuClasses)</td></tr>
-<tr class="memdesc:a2b64dc595f277aacf4d761d2ff4ae2ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the student's schedule.  <a href="classHorario__Aluno.html#a2b64dc595f277aacf4d761d2ff4ae2ae">More...</a><br /></td></tr>
+<tr class="memdesc:a2b64dc595f277aacf4d761d2ff4ae2ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gathers information for the student's schedule. Complexity n^2.  <a href="classHorario__Aluno.html#a2b64dc595f277aacf4d761d2ff4ae2ae">More...</a><br /></td></tr>
 <tr class="separator:a2b64dc595f277aacf4d761d2ff4ae2ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a912680b1ecf7dfbc6aab13a7c22cb596"><td class="memItemLeft" align="right" valign="top"><a id="a912680b1ecf7dfbc6aab13a7c22cb596"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHorario__Aluno.html#a912680b1ecf7dfbc6aab13a7c22cb596">Print_Horario</a> ()</td></tr>
-<tr class="memdesc:a912680b1ecf7dfbc6aab13a7c22cb596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the student's schedule. <br /></td></tr>
+<tr class="memdesc:a912680b1ecf7dfbc6aab13a7c22cb596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the student's schedule complexity n. <br /></td></tr>
 <tr class="separator:a912680b1ecf7dfbc6aab13a7c22cb596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -112,7 +112,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Generates the student's schedule. </p>
+<p>Gathers information for the student's schedule. Complexity n^2. </p>
+<p>The function verifies if the user entered the student's name or code. It stores in a vector turmas pairs with UCCode and ClassCode of each line in which the student is the one chosen by the user. Then for each pair 'a' in turmas it goes through every class 'b' and checks if UCCode and ClassCode match, if so it creates a variable temp of type aula, stores the info of the class and adds to the vector horario_novo a pair with the current value of turmas and the temp variable containing all the info on the class.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">student</td><td></td></tr>

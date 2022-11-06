@@ -72,7 +72,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c2fac914148b96b515353b201277033"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHorario__UC.html#a9c2fac914148b96b515353b201277033">Horario_UC</a> (string UCCode, vector&lt; <a class="el" href="structclasses.html">classes</a> &gt; ClassLine)</td></tr>
-<tr class="memdesc:a9c2fac914148b96b515353b201277033"><td class="mdescLeft">&#160;</td><td class="mdescRight">generates the curricular unit's schedule  <a href="classHorario__UC.html#a9c2fac914148b96b515353b201277033">More...</a><br /></td></tr>
+<tr class="memdesc:a9c2fac914148b96b515353b201277033"><td class="mdescLeft">&#160;</td><td class="mdescRight">generates the curricular unit's schedule Complexity n^2  <a href="classHorario__UC.html#a9c2fac914148b96b515353b201277033">More...</a><br /></td></tr>
 <tr class="separator:a9c2fac914148b96b515353b201277033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc83da7c4fecadcc611602b7ef9be337"><td class="memItemLeft" align="right" valign="top"><a id="abc83da7c4fecadcc611602b7ef9be337"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHorario__UC.html#abc83da7c4fecadcc611602b7ef9be337">Print_Horario</a> ()</td></tr>
@@ -106,8 +106,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>generates the curricular unit's schedule </p>
-<p>runs a cycle by the vector with the classes, checking if they match with the user's choice and </p><dl class="params"><dt>Parameters</dt><dd>
+<p>generates the curricular unit's schedule Complexity n^2 </p>
+<p>runs a cycle through the vector with the classes checking if the UCCode match with the user's UC choice and adds the respective ClassCode to the set Classes. Then every class 'b' existing (ClassLines) is searched for a match in UCCode and ClassCode of every class 'a' in Classes using a double for loop. If both match, a variable temp of type aula is created and in it is stored all the information of class 'b'. Then it is added to the set horario the matching ClassCode 'a' and the variable temp.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">UCCode</td><td></td></tr>
     <tr><td class="paramname">ClassLines</td><td></td></tr>
