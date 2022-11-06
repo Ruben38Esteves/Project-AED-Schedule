@@ -33,6 +33,8 @@ int main() {
     for (auto a: CPU) {
         SetUcs.insert(a.UcCode);
     }
+    queue<pair<string,string>> currentremoveuc;
+    queue<pair<string,string>> currentremoveclass;
     queue <students_classes> currentchanges;
     int mainmenu = 0;
     while (mainmenu != 5) {
@@ -261,86 +263,80 @@ int main() {
                         break;
                     }
                     case 5: {
-                        cout << "Choose the Student" << '\n';
-                        string student;
-                        cin >> student;
-                        if (isdigit(student[0])) {
-                            for (auto a: StuClasses) {
-                                if (student == a.StudentCode) {
-                                    cout << a.UcCode << '\n';
+                        bool changing = true;
+                        while (changing){
+                            cout << "Choose the Student" << '\n';
+                            string student;
+                            cin >> student;
+                            if (isdigit(student[0])) {
+                                for (auto a: StuClasses) {
+                                    if (student == a.StudentCode) {
+                                        cout << a.UcCode << '\n';
+                                    }
+                                }
+                            } else {
+                                for (auto a: StuClasses) {
+                                    if (student == a.StudentName) {
+                                        cout << a.UcCode << '\n';
+                                    }
                                 }
                             }
-                        } else {
-                            for (auto a: StuClasses) {
-                                if (student == a.StudentName) {
-                                    cout << a.UcCode << '\n';
-                                }
+                            cout << '\n';
+                            cout << "Choose the UC you want to remove from:" << '\n';
+                            string removeUC;
+                            cin >> removeUC;
+                            currentremoveuc.push(make_pair(student,removeUC));
+                            cout << "Do you wish to make more changes?(Y/N)" << '\n';
+                            string keepchanging = "r";
+                            while (!(keepchanging == "Y" || keepchanging == "y" || keepchanging == "N" ||keepchanging == "n")) {
+                                cin >> keepchanging;
                             }
-                        }
-                        cout << '\n';
-                        cout << "Choose the UC you want to remove from:" << '\n';
-                        string removeUC;
-                        cin >> removeUC;
-                        if (isdigit(student[0])) {
-                            auto it = StuClasses.begin();
-                            while (it != StuClasses.end()) {
-                                if (it->StudentCode == student && it->UcCode == removeUC) {
-                                    it = StuClasses.erase(it);
-                                } else {
-                                    ++it;
-                                }
-                            }
-                        } else {
-                            auto it = StuClasses.begin();
-                            while (it != StuClasses.end()) {
-                                if (it->StudentName == student && it->UcCode == removeUC) {
-                                    it = StuClasses.erase(it);
-                                } else {
-                                    ++it;
-                                }
+                            if (keepchanging == "Y" || keepchanging == "y") {
+                                changing = true;
+                            } else {
+                                changing = false;
                             }
                         }
+                        cout << "The changes were saved but not applied, to apply them select the apply changes option."
+                             << '\n';
                         break;
                     }
                     case 6: {
-                        cout << "Choose the Student" << '\n';
-                        string student;
-                        cin >> student;
-                        if (isdigit(student[0])) {
-                            for (auto a: StuClasses) {
-                                if (student == a.StudentCode) {
-                                    cout << a.ClassCode << '\n';
+                        bool changing = true;
+                        while (changing){
+                            cout << "Choose the Student" << '\n';
+                            string student;
+                            cin >> student;
+                            if (isdigit(student[0])) {
+                                for (auto a: StuClasses) {
+                                    if (student == a.StudentCode) {
+                                        cout << a.ClassCode << '\n';
+                                    }
+                                }
+                            } else {
+                                for (auto a: StuClasses) {
+                                    if (student == a.StudentName) {
+                                        cout << a.ClassCode << '\n';
+                                    }
                                 }
                             }
-                        } else {
-                            for (auto a: StuClasses) {
-                                if (student == a.StudentName) {
-                                    cout << a.ClassCode << '\n';
-                                }
+                            cout << "Choose the Class you want to remove from:" << '\n';
+                            string turma;
+                            cin >> turma;
+                            currentremoveclass.push(make_pair(student,turma));
+                            cout << "Do you wish to make more changes?(Y/N)" << '\n';
+                            string keepchanging = "r";
+                            while (!(keepchanging == "Y" || keepchanging == "y" || keepchanging == "N" ||keepchanging == "n")) {
+                                cin >> keepchanging;
                             }
-                        }
-                        cout << "Choose the Class you want to remove from:" << '\n';
-                        string turma;
-                        cin >> turma;
-                        if (isdigit(student[0])) {
-                            auto it = StuClasses.begin();
-                            while (it != StuClasses.end()) {
-                                if (it->StudentCode == student && it->ClassCode == turma) {
-                                    it = StuClasses.erase(it);
-                                } else {
-                                    ++it;
-                                }
-                            }
-                        } else {
-                            auto it = StuClasses.begin();
-                            while (it != StuClasses.end()) {
-                                if (it->StudentName == student && it->ClassCode == turma) {
-                                    it = StuClasses.erase(it);
-                                } else {
-                                    ++it;
-                                }
+                            if (keepchanging == "Y" || keepchanging == "y") {
+                                changing = true;
+                            } else {
+                                changing = false;
                             }
                         }
+                        cout << "The changes were saved but not applied, to apply them select the apply changes option."
+                             << '\n';
                         break;
                     }
                     case 7: {
@@ -430,6 +426,52 @@ int main() {
                         break;
                     }
                     case 8: {
+                        while(currentremoveclass.size()>0){
+                            if (isdigit(currentremoveclass.front().first[0])) {
+                                auto it = StuClasses.begin();
+                                while (it != StuClasses.end()) {
+                                    if (it->StudentCode == currentremoveclass.front().first && it->ClassCode == currentremoveclass.front().second) {
+                                        it = StuClasses.erase(it);
+                                        currentremoveclass.pop();
+                                    } else {
+                                        ++it;
+                                    }
+                                }
+                            } else {
+                                auto it = StuClasses.begin();
+                                while (it != StuClasses.end()) {
+                                    if (it->StudentName == currentremoveclass.front().first && it->ClassCode == currentremoveclass.front().second) {
+                                        it = StuClasses.erase(it);
+                                        currentremoveclass.pop();
+                                    } else {
+                                        ++it;
+                                    }
+                                }
+                            }
+                        }
+                        while(currentremoveuc.size()>0){
+                            if (isdigit(currentremoveuc.front().first[0])) {
+                                auto it = StuClasses.begin();
+                                while (it != StuClasses.end()) {
+                                    if (it->StudentCode == currentremoveuc.front().first && it->UcCode == currentremoveuc.front().second) {
+                                        it = StuClasses.erase(it);
+                                        currentremoveuc.pop();
+                                    } else {
+                                        ++it;
+                                    }
+                                }
+                            } else {
+                                auto it = StuClasses.begin();
+                                while (it != StuClasses.end()) {
+                                    if (it->StudentName == currentremoveuc.front().first && it->UcCode == currentremoveuc.front().second) {
+                                        it = StuClasses.erase(it);
+                                        currentremoveuc.pop();
+                                    } else {
+                                        ++it;
+                                    }
+                                }
+                            }
+                        }
                         while (currentchanges.size() > 0) {
                             StuClasses.push_back(currentchanges.front());
                             currentchanges.pop();
