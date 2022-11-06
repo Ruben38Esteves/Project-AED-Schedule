@@ -391,7 +391,50 @@ int main() {
                                 cout << "What's the students name?" << '\n';
                                 cin >> chosenname;
                                 temp.StudentName = chosenname;
-                                currentchanges.push(temp);
+
+                                //verificar se não se sobrepõem
+
+                                vector<pair<string,string>> class_uc; //vai armazenar todas as classes,ucs do aluno escolhido
+
+                                for(auto a:StuClasses) {
+                                    //encontrar as classes e uc do aluno escolhido
+                                    if (a.StudentName == chosenname) {
+                                        pair<string, string> temp;
+                                        temp = make_pair(a.ClassCode, a.UcCode);
+                                        class_uc.push_back(temp);
+                                    }
+                                }
+                                //guardar os dados de horário da class e uc definida
+                                classes chosen;
+                                for(auto a: Classes){
+                                    if(a.UcCode==chosenuc && a.ClassCode==chosenclass){
+                                        chosen=a;
+                                    }
+                                }
+
+                                for(auto a: class_uc){
+                                    for(auto b: Classes){
+                                        if(a.first==b.ClassCode && a.second==b.UcCode && chosen.Weekday==b.Weekday && ((b.Type=="TP" && chosen.Type=="TP") || (b.Type=="PL" && chosen.Type=="PL"))) {
+
+                                            if (b.StartHour == chosen.StartHour) {
+                                                cout << "That´s not possible because there will be overlapping lessons"<< '\n';
+                                            }
+
+                                            if (stod(chosen.StartHour) > b.EndHour && chosen.StartHour < b.StartHour) {
+                                                cout << "That´s not possible because there will be overlapping lessons"<< '\n';
+                                            }
+
+                                            if (stod(b.StartHour) < chosen.EndHour && b.StartHour > chosen.StartHour) {
+                                                cout << "That´s not possible because there will be overlapping lessons"<< '\n';
+                                            }
+                                        }
+                                        else{
+                                                currentchanges.push(temp);
+                                        }
+
+                                    }
+                                }
+
                             } else {
                                 cout << "Adding to this class will create imbalance" << '\n';
                                 cout << "Do you wish to continue?(Y/N)" << '\n';
@@ -409,7 +452,49 @@ int main() {
                                     cout << "What's the students name?" << '\n';
                                     cin >> chosenname;
                                     temp.StudentName = chosenname;
-                                    currentchanges.push(temp);
+
+                                    //verificar se não se sobrepõem
+
+                                    vector<pair<string,string>> class_uc; //vai armazenar todas as classes,ucs do aluno escolhido
+
+                                    for(auto a:StuClasses){
+                                        //encontrar as classes e uc do aluno escolhido
+                                        if(a.StudentName==chosenname){
+                                            pair<string,string> temp;
+                                            temp=make_pair(a.ClassCode,a.UcCode);
+                                            class_uc.push_back(temp);
+                                        }
+                                    }
+                                    //guardar os dados de horário da class e uc definida
+                                    classes chosen;
+                                    for(auto a: Classes){
+                                        if(a.UcCode==chosenuc && a.ClassCode==chosenclass){
+                                            chosen=a;
+                                        }
+                                    }
+
+                                    for(auto a: class_uc){
+                                        for(auto b: Classes){
+                                            if(a.first==b.ClassCode && a.second==b.UcCode && chosen.Weekday==b.Weekday && ((b.Type=="TP" && chosen.Type=="TP") || (b.Type=="PL" && chosen.Type=="PL"))) {
+
+                                                if (b.StartHour == chosen.StartHour) {
+                                                    cout<< "That´s not possible because there will be overlapping lessons" << '\n';
+                                                }
+
+                                                if (stod(chosen.StartHour) > b.EndHour && chosen.StartHour < b.StartHour) {
+                                                    cout<< "That´s not possible because there will be overlapping lessons" << '\n';
+                                                }
+
+                                                if (stod(b.StartHour) < chosen.EndHour && b.StartHour > chosen.StartHour) {
+                                                    cout<< "That´s not possible because there will be overlapping lessons"<< '\n';
+                                                }
+                                            }
+                                            else{
+                                                    currentchanges.push(temp);
+                                            }
+
+                                        }
+                                    }
                                 }
 
                             }
