@@ -420,19 +420,18 @@ int main() {
                                                  (b.Type == "PL" && chosen.Type == "PL"))) {
 
                                                 if (b.StartHour == chosen.StartHour) {
-                                                    cout
-                                                            << "That´s not possible because there will be overlapping lessons"
-                                                            << '\n';
+                                                    cout<< "That´s not possible because there will be overlapping lessons"<< '\n';
                                                     string filename("erros");
                                                     fstream file_out;
                                                     file_out.open(filename);
                                                     if (!file_out.is_open()) {
                                                         cout << "failed to open " << filename << '\n';
-                                                    } else {
+                                                    }
+                                                    else {
                                                         file_out << "Problem with changes from student: " << chosenname
                                                                  << "(" << chosencode << ")- " << chosenuc
                                                                  << " with class " << chosenclass << " overlaps "
-                                                                 << b.UcCode << " with class " << chosenclass << endl;
+                                                                 << a.second << " with class " << a.first << endl;
                                                     }
                                                 }
 
@@ -450,7 +449,7 @@ int main() {
                                                         file_out << "Problem with changes from student: " << chosenname
                                                                  << "(" << chosencode << ")- " << chosenuc
                                                                  << " with class " << chosenclass << " overlaps "
-                                                                 << b.UcCode << " with class " << chosenclass << endl;
+                                                                 << a.second << " with class " << a.first << endl;
                                                     }
                                                 }
 
@@ -468,7 +467,7 @@ int main() {
                                                         file_out << "Problem with changes from student: " << chosenname
                                                                  << "(" << chosencode << ")- " << chosenuc
                                                                  << " with class " << chosenclass << " overlaps "
-                                                                 << b.UcCode << " with class " << chosenclass << endl;
+                                                                 << a.second << " with class " << a.first << endl;
                                                     }
                                                 }
                                             }
@@ -539,7 +538,7 @@ int main() {
                                                                      << chosenname
                                                                      << "(" << chosencode << ")- " << chosenuc
                                                                      << " with class " << chosenclass << " overlaps "
-                                                                     << b.UcCode << " with class " << chosenclass
+                                                                     << a.second << " with class " << a.first
                                                                      << endl;
                                                         }
                                                     }
@@ -559,7 +558,7 @@ int main() {
                                                                      << chosenname
                                                                      << "(" << chosencode << ")- " << chosenuc
                                                                      << " with class " << chosenclass << " overlaps "
-                                                                     << b.UcCode << " with class " << chosenclass
+                                                                     << a.second << " with class " << a.first
                                                                      << endl;
                                                         }
                                                     }
@@ -579,7 +578,7 @@ int main() {
                                                                      << chosenname
                                                                      << "(" << chosencode << ")- " << chosenuc
                                                                      << " with class " << chosenclass << " overlaps "
-                                                                     << b.UcCode << " with class " << chosenclass
+                                                                     << a.second << " with class " << a.first
                                                                      << endl;
                                                         }
                                                     }
