@@ -402,60 +402,82 @@ int main() {
                                     }
                                 }
 
-                                classes chosen;
+                                vector<classes> chosen_classes;
+                                classes b;
                                 for(auto a: Classes){
                                     if(a.UcCode==chosenuc && a.ClassCode==chosenclass){
-                                        chosen=a;
+                                        b=a;
+                                        chosen_classes.push_back(b);
                                     }
                                 }
 
-                                for(auto a: class_uc){
-                                    for(auto b: Classes){
-                                        if(a.first==b.ClassCode && a.second==b.UcCode && chosen.Weekday==b.Weekday /*&& ((b.Type=="TP" && chosen.Type=="TP") || (b.Type=="PL" && chosen.Type=="PL"))*/) {
+                                for(auto a: class_uc) {
+                                    for (auto chosen: chosen_classes) {
+                                        for (auto b: Classes) {
+                                            if (a.first == b.ClassCode && a.second == b.UcCode &&
+                                                chosen.Weekday == b.Weekday &&
+                                                ((b.Type == "TP" && chosen.Type == "TP") ||
+                                                 (b.Type == "PL" && chosen.Type == "PL"))) {
 
-                                            if (b.StartHour == chosen.StartHour) {
-                                                cout << "That´s not possible because there will be overlapping lessons"<< '\n';
-                                                string filename("erros");
-                                                fstream file_out;
-                                                file_out.open(filename);
-                                                if (!file_out.is_open()) {
-                                                    cout << "failed to open " << filename << '\n';
-                                                } else {
-                                                    file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                if (b.StartHour == chosen.StartHour) {
+                                                    cout
+                                                            << "That´s not possible because there will be overlapping lessons"
+                                                            << '\n';
+                                                    string filename("erros");
+                                                    fstream file_out;
+                                                    file_out.open(filename);
+                                                    if (!file_out.is_open()) {
+                                                        cout << "failed to open " << filename << '\n';
+                                                    } else {
+                                                        file_out << "Problem with changes from student: " << chosenname
+                                                                 << "(" << chosencode << ")- " << chosenuc
+                                                                 << " with class " << chosenclass << " overlaps "
+                                                                 << b.UcCode << " with class " << chosenclass << endl;
+                                                    }
+                                                }
+
+                                                if (stod(chosen.StartHour) > b.EndHour &&
+                                                    chosen.StartHour < b.StartHour) {
+                                                    cout
+                                                            << "That´s not possible because there will be overlapping lessons"
+                                                            << '\n';
+                                                    string filename("erros");
+                                                    fstream file_out;
+                                                    file_out.open(filename);
+                                                    if (!file_out.is_open()) {
+                                                        cout << "failed to open " << filename << '\n';
+                                                    } else {
+                                                        file_out << "Problem with changes from student: " << chosenname
+                                                                 << "(" << chosencode << ")- " << chosenuc
+                                                                 << " with class " << chosenclass << " overlaps "
+                                                                 << b.UcCode << " with class " << chosenclass << endl;
+                                                    }
+                                                }
+
+                                                if (stod(b.StartHour) < chosen.EndHour &&
+                                                    b.StartHour > chosen.StartHour) {
+                                                    cout
+                                                            << "That´s not possible because there will be overlapping lessons"
+                                                            << '\n';
+                                                    string filename("erros");
+                                                    fstream file_out;
+                                                    file_out.open(filename);
+                                                    if (!file_out.is_open()) {
+                                                        cout << "failed to open " << filename << '\n';
+                                                    } else {
+                                                        file_out << "Problem with changes from student: " << chosenname
+                                                                 << "(" << chosencode << ")- " << chosenuc
+                                                                 << " with class " << chosenclass << " overlaps "
+                                                                 << b.UcCode << " with class " << chosenclass << endl;
+                                                    }
                                                 }
                                             }
-
-                                            if (stod(chosen.StartHour) > b.EndHour && chosen.StartHour < b.StartHour) {
-                                                cout << "That´s not possible because there will be overlapping lessons"<< '\n';
-                                                string filename("erros");
-                                                fstream file_out;
-                                                file_out.open(filename);
-                                                if (!file_out.is_open()) {
-                                                    cout << "failed to open " << filename << '\n';
-                                                } else {
-                                                    file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
-                                                }
-                                            }
-
-                                            if (stod(b.StartHour) < chosen.EndHour && b.StartHour > chosen.StartHour) {
-                                                cout << "That´s not possible because there will be overlapping lessons"<< '\n';
-                                                string filename("erros");
-                                                fstream file_out;
-                                                file_out.open(filename);
-                                                if (!file_out.is_open()) {
-                                                    cout << "failed to open " << filename << '\n';
-                                                } else {
-                                                    file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
-                                                }
-                                            }
-                                        }
-                                        else{
+                                            else {
                                                 currentchanges.push(temp);
+                                            }
                                         }
-
                                     }
                                 }
-
                             } else {
                                 cout << "Adding to this class will create imbalance" << '\n';
                                 cout << "Do you wish to continue?(Y/N)" << '\n';
@@ -486,57 +508,85 @@ int main() {
                                         }
                                     }
 
-                                    classes chosen;
+                                    vector<classes> chosen_classes;
+                                    classes b;
                                     for(auto a: Classes){
                                         if(a.UcCode==chosenuc && a.ClassCode==chosenclass){
-                                            chosen=a;
+                                            b=a;
+                                            chosen_classes.push_back(b);
                                         }
                                     }
 
-                                    for(auto a: class_uc){
-                                        for(auto b: Classes){
-                                            if(a.first==b.ClassCode && a.second==b.UcCode && chosen.Weekday==b.Weekday && ((b.Type=="TP" && chosen.Type=="TP") || (b.Type=="PL" && chosen.Type=="PL"))) {
+                                    for(auto a: class_uc) {
+                                        for (auto chosen: chosen_classes) {
+                                            for (auto b: Classes) {
+                                                if (a.first == b.ClassCode && a.second == b.UcCode &&
+                                                    chosen.Weekday == b.Weekday &&
+                                                    ((b.Type == "TP" && chosen.Type == "TP") ||
+                                                     (b.Type == "PL" && chosen.Type == "PL"))) {
 
-                                                if (b.StartHour == chosen.StartHour) {
-                                                    cout<< "That´s not possible because there will be overlapping lessons" << '\n';
-                                                    string filename("erros");
-                                                    fstream file_out;
-                                                    file_out.open(filename);
-                                                    if (!file_out.is_open()) {
-                                                        cout << "failed to open " << filename << '\n';
-                                                    } else {
-                                                        file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                    if (b.StartHour == chosen.StartHour) {
+                                                        cout
+                                                                << "That´s not possible because there will be overlapping lessons"
+                                                                << '\n';
+                                                        string filename("erros");
+                                                        fstream file_out;
+                                                        file_out.open(filename);
+                                                        if (!file_out.is_open()) {
+                                                            cout << "failed to open " << filename << '\n';
+                                                        } else {
+                                                            file_out << "Problem with changes from student: "
+                                                                     << chosenname
+                                                                     << "(" << chosencode << ")- " << chosenuc
+                                                                     << " with class " << chosenclass << " overlaps "
+                                                                     << b.UcCode << " with class " << chosenclass
+                                                                     << endl;
+                                                        }
                                                     }
-                                                }
 
-                                                if (stod(chosen.StartHour) > b.EndHour && chosen.StartHour < b.StartHour) {
-                                                    cout<< "That´s not possible because there will be overlapping lessons" << '\n';
-                                                    string filename("erros");
-                                                    fstream file_out;
-                                                    file_out.open(filename);
-                                                    if (!file_out.is_open()) {
-                                                        cout << "failed to open " << filename << '\n';
-                                                    } else {
-                                                        file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                    if (stod(chosen.StartHour) > b.EndHour &&
+                                                        chosen.StartHour < b.StartHour) {
+                                                        cout
+                                                                << "That´s not possible because there will be overlapping lessons"
+                                                                << '\n';
+                                                        string filename("erros");
+                                                        fstream file_out;
+                                                        file_out.open(filename);
+                                                        if (!file_out.is_open()) {
+                                                            cout << "failed to open " << filename << '\n';
+                                                        } else {
+                                                            file_out << "Problem with changes from student: "
+                                                                     << chosenname
+                                                                     << "(" << chosencode << ")- " << chosenuc
+                                                                     << " with class " << chosenclass << " overlaps "
+                                                                     << b.UcCode << " with class " << chosenclass
+                                                                     << endl;
+                                                        }
                                                     }
-                                                }
 
-                                                if (stod(b.StartHour) < chosen.EndHour && b.StartHour > chosen.StartHour) {
-                                                    cout<< "That´s not possible because there will be overlapping lessons"<< '\n';
-                                                    string filename("erros");
-                                                    fstream file_out;
-                                                    file_out.open(filename);
-                                                    if (!file_out.is_open()) {
-                                                        cout << "failed to open " << filename << '\n';
-                                                    } else {
-                                                        file_out << "Problem with changes from student: "<< chosenname<<"("<<chosencode<<")- "<< chosenuc << " with class "<< chosenclass<< " overlaps "<< b.UcCode<< " with class "<< chosenclass<< endl;
+                                                    if (stod(b.StartHour) < chosen.EndHour &&
+                                                        b.StartHour > chosen.StartHour) {
+                                                        cout
+                                                                << "That´s not possible because there will be overlapping lessons"
+                                                                << '\n';
+                                                        string filename("erros");
+                                                        fstream file_out;
+                                                        file_out.open(filename);
+                                                        if (!file_out.is_open()) {
+                                                            cout << "failed to open " << filename << '\n';
+                                                        } else {
+                                                            file_out << "Problem with changes from student: "
+                                                                     << chosenname
+                                                                     << "(" << chosencode << ")- " << chosenuc
+                                                                     << " with class " << chosenclass << " overlaps "
+                                                                     << b.UcCode << " with class " << chosenclass
+                                                                     << endl;
+                                                        }
                                                     }
-                                                }
-                                            }
-                                            else{
+                                                } else {
                                                     currentchanges.push(temp);
+                                                }
                                             }
-
                                         }
                                     }
                                 }
